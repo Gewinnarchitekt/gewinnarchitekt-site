@@ -1,17 +1,30 @@
 ---
-
+// This is the "Frontmatter" - it runs on the server at build time.
+import Services from "../components/Services.astro";
+import "../styles/global.css";
 ---
 
-<html lang="en">
+<html lang="de">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Gewinnarchitekt | Pricing & Analytics as a Service</title>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="bg-white text-slate-900 antialiased">
+		<main class="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+			<header class="text-center mb-16">
+				<h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl">
+					Gewinnarchitekt
+				</h1>
+				<p class="mt-4 text-xl text-slate-600">
+					Systematisch zu profitablen Angeboten.
+				</p>
+			</header>
+
+			<Services />
+		</main>
 	</body>
 </html>
