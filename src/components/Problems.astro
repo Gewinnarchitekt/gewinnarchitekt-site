@@ -3,7 +3,7 @@
 
 const groups = [
   {
-    num: '01',
+    num: 'A',
     title: 'Fehlkonstruktion in der Preislogik',
     stat: '> 20%',
     statLabel: 'des möglichen Umsatzes entgehen ohne optimiertes Angebot.',
@@ -16,7 +16,7 @@ const groups = [
     ]
   },
   {
-    num: '02',
+    num: 'B',
     title: 'Reibungsverluste in der Umsetzung',
     stat: '66%',
     statLabel: 'des Potenzials von Preisanpassungen geht durch falsche Prozesse verloren.',
@@ -29,7 +29,7 @@ const groups = [
     ]
   },
   {
-    num: '03',
+    num: 'C',
     title: 'Strukturelle Lücken in der Planung',
     stat: '30%',
     statLabel: 'der wichtigen Entscheidungen verfehlen den besten Preis.',
@@ -85,11 +85,9 @@ const groups = [
           </div>
 
           <ul class="space-y-3">
-            {g.points.map((p, idx) => (
+            {g.points.map((p) => (
               <li class="flex gap-3 text-[14px] text-[#1f2937] leading-[1.55]">
-                <span class="tabular-nums text-[11px] text-[#6b7280] pt-1 w-6 shrink-0">
-                  0{idx + 1}
-                </span>
+                <span class="inline-block w-1.5 h-1.5 bg-[#16a34a] rounded-full mt-[7px] shrink-0" aria-hidden="true"></span>
                 <span>{p}</span>
               </li>
             ))}

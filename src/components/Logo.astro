@@ -2,18 +2,28 @@
 // src/components/Logo.astro
 interface Props {
   class?: string;
-  width?: number;
-  height?: number;
   "data-id"?: string;
 }
 
-const { class: className = "", width = 120, height = 40, "data-id": dataId } = Astro.props;
+const { class: className = "", "data-id": dataId } = Astro.props;
 ---
 
-<img
-  src="https://cdn.magicpatterns.com/design-systems/ds-3f24de7c-0892-4a55-9ee6-18f7934b304a/logos/9d68d632-a818-40a8-a6a8-c1e7af19d3d1.png"
-  alt="Logo"
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 300 50"
   class={className}
-  style={`width: ${width}px; height: ${height}px; object-fit: contain;`}
+  role="img"
+  aria-label="Gewinnarchitekt Logo"
   data-id={dataId}
-/>
+>
+  <text
+    x="10"
+    y="35"
+    font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+    font-size="28"
+    font-weight="700"
+    letter-spacing="-0.5"
+  >
+    <tspan fill="#16a34a">Gewinn</tspan><tspan fill="currentColor">architekt</tspan>
+  </text>
+</svg>

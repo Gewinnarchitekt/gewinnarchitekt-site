@@ -3,31 +3,30 @@
 import Logo from './Logo.astro';
 
 const links = [
-  { href: '#herausforderungen', label: 'Herausforderungen', num: '01' },
-  { href: '#architektur', label: 'Architektur', num: '02' },
-  { href: '#leistungen', label: 'Leistungen', num: '03' },
-  { href: '#methodik', label: 'Methodik', num: '04' },
-  { href: '#ueber-mich', label: 'Über mich', num: '05' }
+  { href: '#herausforderungen', label: 'Diagnose' },
+  { href: '#architektur', label: 'Methodik' },
+  { href: '#leistungen', label: 'Zielpublikum' },
+  { href: '#methodik', label: 'Leistungen' },
+  { href: '#ueber-mich', label: 'Profil' }
 ];
 ---
 
 <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-[#e5e7eb]">
   <div class="max-w-[1280px] mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
     <a href="#top" aria-label="Gewinnarchitekt — zur Startseite" class="flex items-center">
-      <Logo width={140} height={32} />
+      <Logo class="h-10 w-auto text-[#1f2937]" />
     </a>
 
     <nav aria-label="Hauptnavigation" class="hidden lg:flex items-center gap-8">
       {links.map((l) => (
-        <a href={l.href} class="group flex items-baseline gap-1.5 text-[13px] text-[#1f2937] hover:text-[#16a34a] transition-colors">
-          <span class="text-[10px] tabular-nums text-[#6b7280] group-hover:text-[#16a34a]">{l.num}</span>
-          <span>{l.label}</span>
+        <a href={l.href} class="text-[13px] text-[#1f2937] hover:text-[#16a34a] transition-colors">
+          {l.label}
         </a>
       ))}
     </nav>
 
     <div class="flex items-center gap-3">
-      <a href="#kontakt" class="hidden md:inline-flex items-center gap-2 bg-[#16a34a] text-white text-[13px] font-medium px-4 py-2.5 hover:bg-[#15803d] transition-colors">
+      <a href="https://tidycal.com/gewinnarchitekt/potenzialcheck" target="_blank" rel="noopener" class="hidden md:inline-flex items-center gap-2 bg-[#16a34a] text-white text-[13px] font-medium px-4 py-2.5 hover:bg-[#15803d] transition-colors">
         Potenzial-Check
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
       </a>
@@ -41,12 +40,11 @@ const links = [
   <div id="mobile-menu" class="hidden lg:hidden border-t border-[#e5e7eb] bg-white">
     <nav class="max-w-[1280px] mx-auto px-6 py-4 flex flex-col">
       {links.map((l) => (
-        <a href={l.href} class="mobile-menu-link flex items-baseline gap-2 py-3 border-b border-[#f1f5f9] text-[14px] text-[#1f2937]">
-          <span class="text-[10px] tabular-nums text-[#6b7280] w-6">{l.num}</span>
+        <a href={l.href} class="mobile-menu-link flex items-baseline py-3 border-b border-[#f1f5f9] text-[14px] text-[#1f2937]">
           {l.label}
         </a>
       ))}
-      <a href="#kontakt" class="mobile-menu-link mt-4 inline-flex items-center justify-between bg-[#16a34a] text-white text-[13px] font-medium px-4 py-3">
+      <a href="https://tidycal.com/gewinnarchitekt/potenzialcheck" target="_blank" rel="noopener" class="mobile-menu-link mt-4 inline-flex items-center justify-between bg-[#16a34a] text-white text-[13px] font-medium px-4 py-3">
         Potenzial-Check buchen
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
       </a>
