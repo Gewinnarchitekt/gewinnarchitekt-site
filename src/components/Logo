@@ -1,0 +1,29 @@
+import React from 'react'
+
+// --- merged from src/Logo.tsx ---
+export interface LogoProps {
+  className?: string
+  width?: number
+  height?: number
+  'data-id'?: string
+}
+export function Logo({
+  className,
+  width = 120,
+  height = 40,
+  'data-id': dataId,
+}: LogoProps) {
+  return (
+    <img
+      src="https://cdn.magicpatterns.com/design-systems/ds-3f24de7c-0892-4a55-9ee6-18f7934b304a/logos/9d68d632-a818-40a8-a6a8-c1e7af19d3d1.png"
+      alt="Logo"
+      className={className}
+      style={{
+        width,
+        height,
+        objectFit: 'contain',
+      }}
+      data-id={dataId}
+    />
+  )
+}

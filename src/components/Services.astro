@@ -1,213 +1,81 @@
 ---
 // src/components/Services.astro
+const services = [
+  {
+    num: '01',
+    title: 'Strategische Planung',
+    lead: 'Wachstumsziele in eine klare Finanz- und Geschäftsstrategie übersetzen.',
+    body: 'Gemeinsam entwickeln wir eine skalierbare Gewinnarchitektur, die Geschäftsmodell, Preislogik und Ressourcenplanung auf profitables Wachstum ausrichtet, damit Investitionen, Kapazitäten und Angebote bewusst gesteuert werden.'
+  },
+  {
+    num: '02',
+    title: 'Finanzmodellierung',
+    lead: 'Annahmen, Szenarien und Risiken sichtbar machen.',
+    body: 'Mit praxistauglichen Finanzmodellen, von der Angebots-Unit bis zum Gesamtunternehmen, schaffen wir belastbare Entscheidungsgrundlagen. Neue Preismodelle, Produkte oder Märkte simulieren wir, bevor Sie investieren.'
+  },
+  {
+    num: '03',
+    title: 'Angebotsgestaltung',
+    lead: 'Kundennutzen, Preislogik und Marge in einer Linie.',
+    body: 'Wir schärfen Ihr Angebot von der Value Proposition bis zur Paket- und Preisstruktur. Klar strukturierte Angebote machen Mehrwerte greifbar und erhöhen Abschluss- und Upselling-Quoten.'
+  },
+  {
+    num: '04',
+    title: 'Controlling',
+    lead: 'Statt Vergangenheit zu erklären, Gewinn aktiv steuern.',
+    body: 'Wir bauen ein schlankes Controlling-System mit klaren Kennzahlen, Routinen und Verantwortlichkeiten. Statt Excel-Wildwuchs entsteht Fokus auf die wirklich ergebnisrelevanten Hebel.'
+  },
+  {
+    num: '05',
+    title: 'Dashboards & Reporting',
+    lead: 'Vom Pflichtreport zum Führungsinstrument.',
+    body: 'Management-Dashboards, die die wichtigsten Kennzahlen auf einen Blick sichtbar machen. Reportings werden klar strukturiert, visuell verständlich und konsequent auf Gewinn- und Wachstumsziele ausgerichtet.'
+  }
+];
 ---
 
-<section class="py-24 bg-white font-sans text-gray-800">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center max-w-4xl mx-auto mb-16">
-      <h2 class="text-4xl md:text-5xl font-extrabold text-slate-800 mb-6 tracking-tight">
-        Deine All-in-One Lösung für nachhaltigen Gewinn
-      </h2>
-      <p class="text-lg text-slate-500 leading-relaxed max-w-3xl mx-auto">
-        Ein holistisches Profit-System: Produkt, Markt, Daten & Finance. Im Abo halte ich Pricing kontinuierlich im Blick, messe Wirkung und optimiere weiter. Statt einmaliger Projektarbeit stabilisiere ich Marge und Cashflow laufend und schliesse Profit-Leaks.
-      </p>
+<section id="methodik" class="bg-[#f9fafb] border-b border-[#e5e7eb]">
+  <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-20 lg:py-28">
+    <div class="grid grid-cols-12 gap-6 lg:gap-10 mb-16">
+      <div class="col-span-12 lg:col-span-2">
+        <span class="label-eyebrow">04 Methodik</span>
+      </div>
+      <div class="col-span-12 lg:col-span-10">
+        <h2 class="font-serif-display text-[#1f2937] font-light leading-[1.05] text-[36px] sm:text-[48px] lg:text-[60px]">
+          Fünf Dimensionen der{' '}
+          <span class="text-[#16a34a]">Gewinnmaximierung</span>.
+        </h2>
+        <p class="mt-6 max-w-[640px] text-[16px] leading-[1.6] text-[#6b7280]">
+          Wählen Sie den Einstiegspunkt, der zu Ihrer Phase passt; von dort
+          aus kalibrieren wir die Arbeit.
+        </p>
+      </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      
-      {/* Card 1: Der Pricingbaustein */}
-      <div class="bg-white group rounded-sm shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col border border-gray-100 border-t-4 border-t-[#295b58] relative -translate-y-0 hover:-translate-y-1">
-        <div class="p-8 flex-grow">
-          <div class="flex items-center gap-3 mb-6">
-            <div class="text-[#295b58]">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-            </div>
-            <h3 class="text-2xl font-bold text-slate-800">Der Pricingbaustein</h3>
+    <!-- Services list — editorial rows -->
+    <div class="border-t border-[#1f2937]">
+      {services.map((s) => (
+        <article class="group grid grid-cols-12 gap-6 lg:gap-10 py-10 lg:py-12 border-b border-[#e5e7eb] hover:bg-white transition-colors">
+          <div class="col-span-12 lg:col-span-1">
+            <span class="font-serif-display text-[#16a34a] text-[28px]">
+              {s.num}
+            </span>
           </div>
-          
-          <p class="text-xs font-bold text-slate-500 tracking-wider uppercase mb-4">Punktuelle Ad-hoc Unterstützung</p>
-          <p class="text-slate-600 mb-8 min-h-[4.5rem]">Du benötigst punktuelle Expertise für spezifische Kalkulationen oder eine neutrale Zweitmeinung.</p>
-          
-          <hr class="border-gray-100 mb-6" />
-          
-          <p class="text-xs font-bold text-slate-400 tracking-wider uppercase mb-4">Deine Vorteile</p>
-          <ul class="space-y-3 mb-8">
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-slate-600 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              <span class="text-slate-600">Sofortiger Zugriff auf Experten-Know-how</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-slate-600 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              <span class="text-slate-600">Prüfen von Kalkulationen, Reports und Entscheidungsvorlagen</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-slate-600 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              <span class="text-slate-600">Gezielte Unterstützung bei Kapazitätsengpässen</span>
-            </li>
-          </ul>
-
-          <hr class="border-gray-100 mb-6" />
-          
-          <p class="text-xs font-bold text-slate-400 tracking-wider uppercase mb-4">Beinhaltet</p>
-          <ul class="space-y-2 mb-8 text-sm text-slate-600">
-            <li class="flex items-start gap-2">
-              <span class="text-slate-400 mt-0.5 font-bold">•</span>
-              <span>Individueller Output (z.B. Kalkulations-Vorlage, Analyse-Sheet oder Leitfaden)</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-slate-400 mt-0.5 font-bold">•</span>
-              <span>Fachlicher Review von Pricing-Themen & Kalkulationen</span>
-            </li>
-          </ul>
-        </div>
-        
-        <div class="p-8 pt-0 bg-white">
-          <div class="flex flex-col min-h-[48px] justify-end mb-6">
-            <div class="flex items-baseline gap-2 mb-1">
-              <span class="text-3xl font-extrabold text-slate-800">Ab CHF 490</span>
-              <span class="text-slate-500 text-sm font-medium">/ Einmalig</span>
-            </div>
-            {/* Empty space to align with other cards that have a subtext */}
-            <p class="text-xs text-transparent font-medium select-none">&nbsp;</p>
+          <div class="col-span-12 lg:col-span-4">
+            <h3 class="font-serif-display text-[#1f2937] text-[26px] lg:text-[30px] leading-[1.15]">
+              {s.title}
+            </h3>
+            <p class="mt-3 text-[14px] text-[#6b7280] italic font-serif-display">
+              {s.lead}
+            </p>
           </div>
-          <a href="#" class="block w-full py-4 px-4 text-center text-white font-semibold tracking-wide bg-[#295b58] hover:bg-[#1f4542] transition-colors rounded-none">
-            Angebot sichern
-          </a>
-        </div>
-      </div>
-
-      {/* Card 2: Die Margensanierung */}
-      <div class="bg-white group rounded-sm shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col border border-gray-100 border-t-4 border-t-[#de61b7] relative -translate-y-0 hover:-translate-y-1">
-        <div class="p-8 flex-grow">
-          <div class="flex items-center gap-3 mb-6">
-            <div class="text-[#de61b7]">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
-            </div>
-            <h3 class="text-2xl font-bold text-slate-800">Die Margensanierung</h3>
+          <div class="col-span-12 lg:col-span-6 lg:col-start-7">
+            <p class="text-[15px] lg:text-[16px] leading-[1.65] text-[#1f2937]">
+              {s.body}
+            </p>
           </div>
-          
-          <p class="text-xs font-bold text-[#de61b7] tracking-wider uppercase mb-4">Angebotsoptimierung, Umsetzung & Monitoring</p>
-          <p class="text-slate-600 mb-8 min-h-[4.5rem]">Du willst eine starke Marge und einen stabilen Cashflow durch kontinuierliches Preiscontrolling.</p>
-          
-          <hr class="border-gray-100 mb-6" />
-          
-          <p class="text-xs font-bold text-slate-400 tracking-wider uppercase mb-4">Deine Vorteile</p>
-          <ul class="space-y-3 mb-8">
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-[#de61b7] flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              <span class="text-slate-600">Profit-Leaks schliessen</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-[#de61b7] flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              <span class="text-slate-600">Entscheiden. Umsetzen. Messen.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-[#de61b7] flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              <span class="text-slate-600">Nachhaltig bessere Unit Economics</span>
-            </li>
-          </ul>
-
-          <hr class="border-gray-100 mb-6" />
-          
-          <p class="text-xs font-bold text-slate-400 tracking-wider uppercase mb-4">Beinhaltet</p>
-          <ul class="space-y-2 mb-8 text-sm text-slate-600">
-            <li class="flex items-start gap-2">
-              <span class="text-[#de61b7] mt-0.5 font-bold">•</span>
-              <span>Kontinuierliche Aktivitäten nach Wahl</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-[#de61b7] mt-0.5 font-bold">•</span>
-              <span>Wöchentliches Alignment Meeting (1:1 Priorisierung)</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-[#de61b7] mt-0.5 font-bold">•</span>
-              <span>Monatlicher Entscheidungs-Report</span>
-            </li>
-          </ul>
-        </div>
-        
-        <div class="p-8 pt-0 bg-white">
-          <div class="flex flex-col min-h-[48px] justify-end mb-6">
-            <div class="flex items-baseline gap-2 mb-1">
-              <span class="text-3xl font-extrabold text-slate-800">Ab CHF 2'900</span>
-              <span class="text-slate-500 text-sm font-medium">/ pro Monat</span>
-            </div>
-            <p class="text-xs text-slate-400 font-medium">Monatlich kündbar</p>
-          </div>
-          <a href="#" class="block w-full py-4 px-4 text-center text-white font-semibold tracking-wide bg-[#de61b7] hover:bg-[#c951a3] transition-colors rounded-none">
-            Angebot sichern
-          </a>
-        </div>
-      </div>
-
-      {/* Card 3: Die Gewinnarchitektur */}
-      <div class="bg-white group rounded-sm shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col border border-gray-100 border-t-4 border-t-[#6db254] relative -translate-y-0 hover:-translate-y-1">
-        <div class="p-8 flex-grow">
-          <div class="flex items-center gap-3 mb-6">
-            <div class="text-[#6db254]">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-            </div>
-            <h3 class="text-2xl font-bold text-slate-800">Die Gewinnarchitektur</h3>
-          </div>
-          
-          <p class="text-xs font-bold text-[#6db254] tracking-wider uppercase mb-4">Full Partnership: Das strategische Gesamtprojekt</p>
-          <p class="text-slate-600 mb-8 min-h-[4.5rem]">Du willst deine nächste Wachstumsphase konsequent auf Profit ausrichten.</p>
-          
-          <hr class="border-gray-100 mb-6" />
-          
-          <p class="text-xs font-bold text-slate-400 tracking-wider uppercase mb-4">Deine Vorteile</p>
-          <ul class="space-y-3 mb-8">
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-[#6db254] flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              <span class="text-slate-600">Von fragmentierten Daten zu skalierbarem Gewinn</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-[#6db254] flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              <span class="text-slate-600">Alignierung sämtlicher Abteilungen</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-[#6db254] flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              <span class="text-slate-600">Strategisches Preismanagement aus einer Hand</span>
-            </li>
-          </ul>
-
-          <hr class="border-gray-100 mb-6" />
-          
-          <p class="text-xs font-bold text-slate-400 tracking-wider uppercase mb-4">Beinhaltet</p>
-          <ul class="space-y-2 mb-8 text-sm text-slate-600">
-            <li class="flex items-start gap-2">
-              <span class="text-[#6db254] mt-0.5 font-bold">•</span>
-              <span>Koordination & Projektmanagement</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-[#6db254] mt-0.5 font-bold">•</span>
-              <span>Laufendes Alignment & Workshops (Mo-Do, 24h response time)</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-[#6db254] mt-0.5 font-bold">•</span>
-              <span>Monatlicher Entscheidungs-Report</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-[#6db254] mt-0.5 font-bold">•</span>
-              <span>Quartalsweiser Performance-Review</span>
-            </li>
-          </ul>
-        </div>
-        
-        <div class="p-8 pt-0 bg-white">
-          <div class="flex flex-col min-h-[48px] justify-end mb-6">
-            <div class="flex items-baseline gap-2 mb-1">
-              <span class="text-3xl font-extrabold text-slate-800">Ab CHF 4'900</span>
-              <span class="text-slate-500 text-sm font-medium">/ pro Monat</span>
-            </div>
-            <p class="text-xs text-slate-400 font-medium">Quartalsweise kündbar</p>
-          </div>
-          <a href="#" class="block w-full py-4 px-4 text-center text-white font-semibold tracking-wide bg-[#6db254] hover:bg-[#5da045] transition-colors rounded-none">
-            Angebot sichern
-          </a>
-        </div>
-      </div>
-
+        </article>
+      ))}
     </div>
   </div>
 </section>

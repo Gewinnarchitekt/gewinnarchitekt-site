@@ -1,0 +1,187 @@
+---
+// src/components/Architektur.astro
+const explanationRows = [
+  {
+    k: 'A',
+    t: 'Der Preis',
+    d: 'Der stärkste Hebel mit direkter Auswirkung auf weitere Grundpfeiler. Die Kalibrierung steuert das Gleichgewicht zwischen Volumen und Marge.',
+    accent: true
+  },
+  {
+    k: 'B',
+    t: 'Das Volumen',
+    d: 'Entspricht 50 % der Bruttogewinngleichung. Skalierung führt zu stärkerer Markenbekanntheit und höherer Marktdurchdringung.'
+  },
+  {
+    k: 'C',
+    t: 'Die Marge',
+    d: 'Entspricht 50 % der Bruttogewinngleichung. Sie definiert den Gewinnbeitrag pro Stück nach Abzug der variablen Kosten.'
+  },
+  {
+    k: 'D',
+    t: 'Die Fixkosten',
+    d: 'Die statische Grundlast des Systems. Muss vollständig gedeckt sein, bevor die Gewinnzone erreicht werden kann.'
+  }
+];
+---
+
+<section id="architektur" class="bg-[#1f2937] text-white border-b border-[#1f2937] relative overflow-hidden">
+  <div class="relative max-w-[1280px] mx-auto px-6 lg:px-10 py-20 lg:py-32">
+    <div class="grid grid-cols-12 gap-6 lg:gap-10 mb-16 lg:mb-24">
+      <div class="col-span-12 lg:col-span-2">
+        <span class="label-eyebrow text-white/60">02 Methode</span>
+      </div>
+      <div class="col-span-12 lg:col-span-10">
+        <h2 class="font-serif-display font-light leading-[1.05] text-[36px] sm:text-[48px] lg:text-[64px]">
+          Die Statik des Gewinns.
+          <br />
+          <span class="italic text-[#16a34a]">jedes Element trägt.</span>
+        </h2>
+        <p class="mt-6 max-w-[640px] text-[16px] leading-[1.65] text-white/70">
+          Wie bei einem Gebäude müssen auch im Ertragsmodell alle Elemente
+          präzise aufeinander abgestimmt sein. Verändert man eine tragende
+          Wand, bewegt sich das gesamte Dach. Preis, Volumen, Marge und
+          Fixkosten sind untrennbar verzahnt.
+        </p>
+      </div>
+    </div>
+
+    <!-- Architectural diagram -->
+    <div class="grid grid-cols-12 gap-6 lg:gap-10 items-stretch">
+      <!-- Diagram -->
+      <div class="col-span-12 lg:col-span-7">
+        <div class="relative border border-white/15 aspect-[5/4] p-6 lg:p-10">
+          <div class="absolute top-4 left-4 right-4 flex items-center justify-between text-[10px] tracking-[0.25em] uppercase text-white/40">
+            <span>Fig. 02 — Tragwerk</span>
+            <span>M 1:50</span>
+          </div>
+
+          <svg viewBox="0 0 600 490" class="w-full h-full" aria-hidden="true">
+            <!-- Roof - Gewinn -->
+            <polygon points="120,140 480,140 300,60" fill="none" stroke="#16a34a" stroke-width="2" />
+            <text x="270" y="115" fill="#16a34a" font-family="Fraunces" font-size="22" font-style="italic">Gewinn</text>
+
+            <!-- Top plate -->
+            <line x1="100" y1="150" x2="500" y2="150" stroke="#16a34a" stroke-width="3" />
+
+            <!-- Two columns — green -->
+            <g stroke="#16a34a" stroke-width="2">
+              <line x1="180" y1="150" x2="180" y2="415" />
+              <line x1="420" y1="283" x2="420" y2="415" />
+            </g>
+
+            <!-- Column caps — green -->
+            <g fill="#16a34a">
+              <rect x="170" y="148" width="20" height="6" />
+              <rect x="410" y="148" width="20" height="6" />
+              <rect x="170" y="411" width="20" height="6" />
+              <rect x="410" y="411" width="20" height="6" />
+            </g>
+
+            <!-- Variable Kosten -->
+            <g>
+              <rect x="395" y="152" width="50" height="131" fill="#1f2937" stroke="#9ca3af" stroke-width="1" stroke-dasharray="3 2" />
+              <g stroke="#9ca3af" stroke-width="0.5" opacity="0.45">
+                {Array.from({ length: 13 }).map((_, i) => (
+                  <line x1="395" y1={158 + i * 10} x2="445" y2={158 + i * 10} />
+                ))}
+              </g>
+              <text x="420" y="212" fill="#ffffff" font-family="Inter" font-size="10" letter-spacing="2" text-anchor="middle" font-weight="600">VARIABLE</text>
+              <text x="420" y="227" fill="#ffffff" font-family="Inter" font-size="10" letter-spacing="2" text-anchor="middle" font-weight="600">KOSTEN</text>
+            </g>
+
+            <!-- Column labels -->
+            <text x="168" y="335" fill="#16a34a" font-family="Inter" font-size="12" letter-spacing="2" text-anchor="end" font-weight="700">VOLUMEN</text>
+            <text x="432" y="335" fill="#16a34a" font-family="Inter" font-size="12" letter-spacing="2" text-anchor="start" font-weight="700">MARGE</text>
+
+            <!-- PREIS — interaction element -->
+            <g>
+              <defs>
+                <marker id="arrL" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                  <path d="M10,0 L0,5 L10,10 z" fill="#16a34a" />
+                </marker>
+                <marker id="arrR" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                  <path d="M0,0 L10,5 L0,10 z" fill="#16a34a" />
+                </marker>
+              </defs>
+              <rect x="265" y="315" width="70" height="40" fill="#1f2937" stroke="#16a34a" stroke-width="1.5" />
+              <text x="300" y="340" fill="#16a34a" font-family="Inter" font-size="12" letter-spacing="2" text-anchor="middle" font-weight="700">PREIS</text>
+              <line x1="265" y1="335" x2="195" y2="335" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arrR)" />
+              <line x1="335" y1="335" x2="415" y2="335" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arrR)" />
+            </g>
+
+            <!-- Foundation -->
+            <rect x="80" y="380" width="440" height="35" fill="#1f2937" stroke="#9ca3af" stroke-width="1" stroke-dasharray="3 2" />
+            <g stroke="#9ca3af" stroke-width="0.5" opacity="0.45">
+              {Array.from({ length: 4 }).map((_, i) => (
+                <line x1="80" y1={386 + i * 8} x2="520" y2={386 + i * 8} />
+              ))}
+            </g>
+            <text x="300" y="402" fill="#ffffff" font-family="Inter" font-size="12" letter-spacing="2" text-anchor="middle" font-weight="700">FIXKOSTEN</text>
+
+            <!-- Profit equation -->
+            <g>
+              <line x1="80" y1="445" x2="520" y2="445" stroke="#ffffff" stroke-width="0.5" opacity="0.2" />
+              <text x="300" y="470" fill="#ffffff" font-family="Inter" font-size="11" letter-spacing="1.5" text-anchor="middle" font-weight="600">
+                <tspan>VOLUMEN</tspan>
+                <tspan fill="#16a34a"> × </tspan>
+                <tspan>MARGE</tspan>
+                <tspan fill="#16a34a"> = </tspan>
+                <tspan>BRUTTOGEWINN</tspan>
+                <tspan fill="#16a34a"> − </tspan>
+                <tspan>FIXKOSTEN</tspan>
+                <tspan fill="#16a34a"> = </tspan>
+                <tspan fill="#16a34a">NETTOGEWINN</tspan>
+              </text>
+            </g>
+
+            <!-- Side measurement -->
+            <line x1="40" y1="60" x2="40" y2="390" stroke="#9ca3af" stroke-width="0.5" opacity="0.5" />
+            <line x1="35" y1="60" x2="45" y2="60" stroke="#9ca3af" stroke-width="0.5" opacity="0.5" />
+            <line x1="35" y1="150" x2="45" y2="150" stroke="#9ca3af" stroke-width="0.5" opacity="0.5" />
+            <line x1="35" y1="390" x2="45" y2="390" stroke="#9ca3af" stroke-width="0.5" opacity="0.5" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Explanation -->
+      <div class="col-span-12 lg:col-span-5">
+        <div class="h-full flex flex-col justify-between gap-8">
+          {explanationRows.map((row) => (
+            <div class="grid grid-cols-[40px_1fr] gap-4 pb-6 border-b border-white/10 last:border-b-0 last:pb-0">
+              <div class={`font-serif-display text-2xl ${row.accent ? 'text-[#16a34a]' : 'text-white/70'}`}>
+                {row.k}
+              </div>
+              <div>
+                <div class={`font-serif-display text-[20px] mb-1 ${row.accent ? 'text-[#16a34a]' : 'text-white'}`}>
+                  {row.t}
+                </div>
+                <p class="text-[14px] leading-[1.6] text-white/65">
+                  {row.d}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Closing note -->
+    <div class="mt-16 lg:mt-24 pt-10 border-t border-white/10 grid grid-cols-12 gap-10">
+      <div class="col-span-12 lg:col-span-2">
+        <span class="label-eyebrow text-white/40">Prinzip</span>
+      </div>
+      <div class="col-span-12 lg:col-span-10">
+        <p class="font-serif-display italic font-light text-[22px] sm:text-[28px] lg:text-[34px] leading-[1.3] text-white max-w-[900px]">
+          Ein hoher Preis nützt nichts, wenn das Volumen wegbricht, und hohe
+          Volumen dank tiefer Preise garantieren keinen Gewinn. Ich justiere
+          das Verhältnis von Preis, Menge und Kosten so, dass am Ende ein{' '}
+          <span class="text-[#16a34a] not-italic">
+            maximaler Überschuss
+          </span>{' '}
+          bleibt: sicher, planbar, nachhaltig.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

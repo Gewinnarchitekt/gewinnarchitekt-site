@@ -1,5 +1,12 @@
-@import "tailwindcss";
+/* @import url() FONT IMPORTS MUST ALWAYS BE AT THE VERY TOP OF THIS FILE, ABOVE THE TAILWIND IMPORTS — DO NOT DELETE THIS COMMENT */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* CRITICAL: THE FOLLOWING TAILWIND IMPORTS MUST NEVER BE DELETED OR REORDERED — DO NOT DELETE THIS COMMENT */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* END TAILWIND IMPORTS — ALL OTHER CSS MUST GO BELOW THIS LINE */
 
 :root {
   --ga-green: #16a34a;
@@ -8,7 +15,9 @@
   --ga-light: #f9fafb;
   --ga-line: #e5e7eb;
 }
-
+html, body, #root {
+  height: 100%;
+}
 body {
   font-family: 'Inter', system-ui, sans-serif;
   color: #1f2937;
@@ -16,26 +25,25 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
-
+/* Display headlines — sans, tight tracking, light weight for editorial feel */
 .font-display {
   font-family: 'Inter', system-ui, sans-serif;
   letter-spacing: -0.035em;
   font-weight: 400;
 }
-
+/* Backwards-compat: old class name now also sans */
 .font-serif-display {
   font-family: 'Inter', system-ui, sans-serif;
   letter-spacing: -0.035em;
   font-weight: 400;
   font-style: normal;
 }
-
+/* Neutralize any italic on display headings — sans italic looks weak here */
 .font-display.italic,
 .font-serif-display.italic,
 h1.italic, h2.italic, h3.italic {
   font-style: normal;
 }
-
 .label-eyebrow {
   font-family: 'Inter', sans-serif;
   font-size: 11px;
@@ -44,11 +52,10 @@ h1.italic, h2.italic, h3.italic {
   font-weight: 500;
   color: #6b7280;
 }
-
+/* Sharp button reset */
 button, a.btn {
   border-radius: 0;
 }
-
 ::selection {
   background: #16a34a;
   color: #ffffff;

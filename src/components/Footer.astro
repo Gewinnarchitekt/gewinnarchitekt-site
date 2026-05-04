@@ -1,0 +1,86 @@
+---
+// src/components/Footer.astro
+import Logo from './Logo.astro';
+---
+
+<footer id="kontakt" class="bg-[#1f2937] text-white">
+  <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-20 lg:py-24">
+    <div class="grid grid-cols-12 gap-6 lg:gap-10 mb-16">
+      <div class="col-span-12 lg:col-span-2">
+        <span class="label-eyebrow text-white/50">Kontakt</span>
+      </div>
+      <div class="col-span-12 lg:col-span-10">
+        <h2 class="font-serif-display font-light leading-[1.05] text-[36px] sm:text-[48px] lg:text-[60px]">
+          Lassen Sie uns über
+          <br />
+          <span class="italic text-[#16a34a]">Ihren Gewinn</span>{' '}
+          sprechen.
+        </h2>
+        <p class="mt-6 max-w-[560px] text-[16px] leading-[1.6] text-white/65">
+          Zwanzig Minuten reichen, um die wichtigsten Hebel in Ihrer
+          Pricing- und Margenstruktur zu identifizieren. Unverbindlich,
+          vertraulich, konkret.
+        </p>
+
+        <div class="mt-10 flex flex-wrap gap-3">
+          <a href="mailto:karl@gewinnarchitekt.ch" class="inline-flex items-center gap-3 bg-[#16a34a] text-white text-[14px] font-medium px-6 py-4 hover:bg-[#15803d] transition-colors">
+            Potenzial-Check buchen
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+          <a href="mailto:karl@gewinnarchitekt.ch" class="inline-flex items-center gap-3 border border-white/30 text-white text-[14px] font-medium px-6 py-4 hover:bg-white hover:text-[#1f2937] transition-colors">
+            karl@gewinnarchitekt.ch
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-12 gap-6 lg:gap-10 pt-10 border-t border-white/10">
+      <div class="col-span-12 lg:col-span-4">
+        <div class="bg-white inline-block p-3">
+          <Logo width={140} height={32} />
+        </div>
+        <p class="mt-5 text-[13px] text-white/55 max-w-[320px] leading-[1.6]">
+          Gewinnarchitektur. Pricing, Produktstrategie und
+          Finanzmodellierung an der Schnittstelle, an der Marge entsteht.
+        </p>
+      </div>
+
+      <div class="col-span-6 lg:col-span-3">
+        <div class="label-eyebrow text-white/50 mb-4">Kontakt</div>
+        <ul class="space-y-2 text-[14px] text-white/80">
+          <li>Karl Aschwanden</li>
+          <li>Zürich, CH</li>
+          <li>+41 44 000 00 00</li>
+        </ul>
+      </div>
+
+      <div class="col-span-6 lg:col-span-3">
+        <div class="label-eyebrow text-white/50 mb-4">Navigation</div>
+        <ul class="space-y-2 text-[14px] text-white/80">
+          <li><a href="#herausforderungen" class="hover:text-[#16a34a]">Herausforderungen</a></li>
+          <li><a href="#architektur" class="hover:text-[#16a34a]">Architektur</a></li>
+          <li><a href="#leistungen" class="hover:text-[#16a34a]">Leistungen</a></li>
+          <li><a href="#methodik" class="hover:text-[#16a34a]">Methodik</a></li>
+          <li><a href="#ueber-mich" class="hover:text-[#16a34a]">Über mich</a></li>
+        </ul>
+      </div>
+
+      <div class="col-span-12 lg:col-span-2">
+        <div class="label-eyebrow text-white/50 mb-4">Rechtliches</div>
+        <ul class="space-y-2 text-[14px] text-white/80">
+          <li><a href="#" class="hover:text-[#16a34a]">Impressum</a></li>
+          <li><a href="#" class="hover:text-[#16a34a]">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-14 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-[12px] text-white/50">
+      <span>
+        © {new Date().getFullYear()} Gewinnarchitekt · Karl Aschwanden
+      </span>
+      <span class="tracking-[0.2em] uppercase">
+        Statik des Gewinns · Fig. 00
+      </span>
+    </div>
+  </div>
+</footer>

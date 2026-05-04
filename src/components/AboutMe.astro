@@ -1,0 +1,85 @@
+---
+// src/components/AboutMe.astro
+const facts = [
+  { k: 'Jahre Erfahrung', v: '20+' },
+  { k: 'Spezialisierung', v: 'Financial Services, Telekommunikation, Subscription Businesses' },
+  { k: 'Sprachen', v: 'DE · EN' },
+  { k: 'Sitz', v: 'Zürich, CH' },
+  { k: 'Akkreditierung', v: 'Chartered Financial Modeler' },
+  { k: 'Aus- & Weiterbildung', v: ['MBA IE Business School', 'BBA FHNW', 'diverse Kurse in Applied Data Science & AI'] }
+];
+---
+
+<section id="ueber-mich" class="bg-white border-b border-[#e5e7eb]">
+  <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-20 lg:py-28">
+    <div class="grid grid-cols-12 gap-6 lg:gap-10 mb-16">
+      <div class="col-span-12 lg:col-span-2">
+        <span class="label-eyebrow">05 Über mich</span>
+      </div>
+      <div class="col-span-12 lg:col-span-10">
+        <p class="text-[#16a34a] font-display text-[18px] mb-2">
+          Guten Tag, ich bin Karl Aschwanden.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-12 gap-6 lg:gap-10 items-start">
+      <!-- Portrait -->
+      <div class="col-span-12 lg:col-span-5">
+        <div class="relative aspect-[4/5] w-full bg-[#f9fafb] overflow-hidden border border-[#e5e7eb]">
+          <img src="/karl.jpeg" alt="Karl Aschwanden, Founder · Zürich" class="absolute inset-0 w-full h-full object-cover" />
+        </div>
+        <p class="mt-3 text-[11px] tracking-[0.2em] uppercase text-[#6b7280]">
+          Karl Aschwanden · Founder · Zürich
+        </p>
+      </div>
+
+      <!-- Right copy -->
+      <div class="col-span-12 lg:col-span-7">
+        <div class="flex items-baseline justify-between border-b border-[#e5e7eb] pb-6 mb-8">
+          <h2 class="font-display text-[#1f2937] text-[42px] lg:text-[56px] leading-[1.05]">
+            Karl Aschwanden
+          </h2>
+          <span class="hidden sm:block text-[11px] tracking-[0.2em] uppercase text-[#6b7280]">
+            Founder · Principal
+          </span>
+        </div>
+
+        <blockquote class="font-display text-[26px] sm:text-[32px] lg:text-[38px] leading-[1.2] text-[#1f2937] mb-10 max-w-[760px]">
+          «<span class="text-[#16a34a]">Gewinnarchitektur</span> ist die Brücke zwischen Kundenverständnis, Wettbewerbsdynamik und der Margenstruktur Ihres Unternehmens.»
+        </blockquote>
+
+        <div class="text-[15px] lg:text-[16px] leading-[1.7] text-[#1f2937] max-w-[640px] mb-12 space-y-4">
+          <p>Viele Unternehmen entwickeln exzellente Produkte, verschenken aber bei der Monetarisierung massiv Marge. Mit Stationen bei Branchenführern wie Sunrise, Swisscard und Goldbach habe ich erfolgreiche Erlösmodelle von Grund auf konzipiert und operativ implementiert.</p>
+          <p>Ich unterstütze Sie dabei, den Werttreiber Ihres Angebots glasklar in eine skalierbare Umsatzlogik zu übersetzen — evidenzbasiert, marktorientiert und mit Fokus auf nachhaltiges Wachstum.</p>
+        </div>
+
+        <dl class="border-t border-[#1f2937]">
+          {facts.map((f) => (
+            <div class="grid grid-cols-12 py-4 border-b border-[#e5e7eb]">
+              <dt class="col-span-6 text-[14px] text-[#6b7280]">{f.k}</dt>
+              <dd class="col-span-6 text-[14px] text-[#1f2937] font-medium">
+                {Array.isArray(f.v) ? (
+                  <span class="flex flex-col gap-1">
+                    {f.v.map((line) => (
+                      <span>{line}</span>
+                    ))}
+                  </span>
+                ) : (
+                  f.v
+                )}
+              </dd>
+            </div>
+          ))}
+        </dl>
+
+        <div class="mt-10">
+          <a href="#kontakt" class="inline-flex items-center gap-3 bg-[#16a34a] text-white text-[14px] font-medium px-6 py-4 hover:bg-[#15803d] transition-colors">
+            Direkt mit Karl sprechen
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
