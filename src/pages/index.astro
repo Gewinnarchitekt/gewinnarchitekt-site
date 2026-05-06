@@ -2,11 +2,11 @@
 // This is the "Frontmatter" - it runs on the server at build time.
 import Nav from "../components/Nav.astro";
 import Hero from "../components/Hero.astro";
-import Problems from "../components/Problems.astro";
-import Architektur from "../components/Architektur.astro";
-import Zielgruppen from "../components/Zielgruppen.astro";
-import Services from "../components/Services.astro";
-import AboutMe from "../components/AboutMe.astro";
+import Diagnose from "../components/Diagnose.astro";
+import Methodik from "../components/Methodik.astro";
+import Zielpublikum from "../components/Zielpublikum.astro";
+import Leistungen from "../components/Leistungen.astro";
+import Profil from "../components/Profil.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 import "@fontsource/inter/300.css";
@@ -47,11 +47,11 @@ const PH_HOST = import.meta.env.PUBLIC_POSTHOG_HOST;
 	<body class="bg-white text-slate-900 antialiased">
 		<Nav />
 		<Hero />
-		<Problems />
-		<Architektur />
-		<Zielgruppen />
-		<Services />
-		<AboutMe />
+		<Diagnose />
+		<Methodik />
+		<Zielpublikum />
+		<Leistungen />
+		<Profil />
 		<Footer />
 	</body>
 </html>
