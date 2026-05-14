@@ -6,6 +6,8 @@ const stats = [
   { k: "MBA", v: "IE Business School" },
   { k: "Zürich", v: "Sitz · Schweiz" },
 ];
+
+const stationen = ["Goldbach", "TX Group", "Swisscard", "Sunrise"];
 ---
 
 <!-- Dark hero with architectural background + upward-panning facade -->
@@ -128,6 +130,35 @@ const stats = [
             </div>
           ))
         }
+      </div>
+    </div>
+  </div>
+
+  <!-- Stationen strip — directly below trustbar / credentials row -->
+  <div class="relative border-t border-white/10 bg-white/10 backdrop-blur-sm">
+    <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-3.5 lg:py-4">
+      <div
+        class="grid w-full grid-cols-[1fr_3fr] items-center font-sans text-[12px] md:text-[13px] font-normal tracking-[0.1em]"
+      >
+        <span
+          class="inline-flex items-center gap-2 justify-self-start whitespace-nowrap"
+        >
+          <span class="text-[#16a34a]/80" aria-hidden="true">■</span>
+          <span class="uppercase text-white/50">STATIONEN</span>
+        </span>
+        <div
+          class="flex w-full min-w-0 flex-wrap items-center justify-between gap-x-2 gap-y-2 sm:flex-nowrap"
+        >
+          {
+            stationen.map((name) => (
+              <span
+                class="cursor-pointer text-white/75 decoration-1 underline-offset-[0.2em] transition-colors duration-200 ease-in-out hover:text-white hover:underline"
+              >
+                {name}
+              </span>
+            ))
+          }
+        </div>
       </div>
     </div>
   </div>

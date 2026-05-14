@@ -1,0 +1,2327 @@
+﻿<!DOCTYPE html><html lang="de"> <head><meta charset="utf-8"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="icon" href="/favicon.ico"><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v6.1.9"><title>Gewinnarchitekt | Preis & Profitarchitektur fÃ¼r Startups und KMU</title><script>(function(){const PH_KEY = "phc_mybAcSer67kBjAqBJ9CMbGtQeQr9sZnXG34v6kTqCvxD";
+const PH_HOST = "https://eu.i.posthog.com";
+
+				!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+				posthog.init(PH_KEY, { api_host: PH_HOST, defaults: '2025-05-24' });
+			})();</script>
+			<script>
+				document.addEventListener('click', function (e) {
+					var el = e.target.closest('[data-ph-event]');
+					if (!el || !window.posthog) return;
+					var event = el.getAttribute('data-ph-event');
+					var location = el.getAttribute('data-ph-location');
+					window.posthog.capture(event, location ? { location: location } : {});
+				});
+			</script><style data-vite-dev-id="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro?astro&#38;type=style&#38;index=0&#38;lang.css">@keyframes panUp {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-23%);
+    }
+  }
+
+  .hero-bg-img {
+    will-change: transform;
+    animation: panUp 30s ease-in-out infinite alternate;
+  }
+
+  /* Respect reduced-motion preference for accessibility & perf */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-bg-img {
+      animation: none;
+      transform: translateY(-10%);
+    }
+  }</style>
+<style data-vite-dev-id="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/styles/global.css">/*! tailwindcss v4.2.4 | MIT License | https://tailwindcss.com */
+@layer properties;
+@layer theme, base, components, utilities;
+@layer theme {
+  :root, :host {
+    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+      "Courier New", monospace;
+    --color-slate-400: oklch(70.4% 0.04 256.788);
+    --color-slate-500: oklch(55.4% 0.046 257.417);
+    --color-slate-600: oklch(44.6% 0.043 257.281);
+    --color-slate-800: oklch(27.9% 0.041 260.031);
+    --color-slate-900: oklch(20.8% 0.042 265.755);
+    --color-gray-100: oklch(96.7% 0.003 264.542);
+    --color-gray-800: oklch(27.8% 0.033 256.848);
+    --color-white: #fff;
+    --spacing: 0.25rem;
+    --container-3xl: 48rem;
+    --container-4xl: 56rem;
+    --container-7xl: 80rem;
+    --text-xs: 0.75rem;
+    --text-xs--line-height: calc(1 / 0.75);
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
+    --text-3xl: 1.875rem;
+    --text-3xl--line-height: calc(2.25 / 1.875);
+    --text-4xl: 2.25rem;
+    --text-4xl--line-height: calc(2.5 / 2.25);
+    --text-5xl: 3rem;
+    --text-5xl--line-height: 1;
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    --tracking-tight: -0.025em;
+    --tracking-wide: 0.025em;
+    --tracking-wider: 0.05em;
+    --leading-tight: 1.25;
+    --leading-snug: 1.375;
+    --leading-relaxed: 1.625;
+    --radius-sm: 0.25rem;
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --blur-sm: 8px;
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --default-font-family: var(--font-sans);
+    --default-mono-font-family: var(--font-mono);
+  }
+}
+@layer base {
+  *, ::after, ::before, ::backdrop, ::file-selector-button {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+  }
+  html, :host {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
+    font-feature-settings: var(--default-font-feature-settings, normal);
+    font-variation-settings: var(--default-font-variation-settings, normal);
+    -webkit-tap-highlight-color: transparent;
+  }
+  hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+  }
+  abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  a {
+    color: inherit;
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit;
+  }
+  b, strong {
+    font-weight: bolder;
+  }
+  code, kbd, samp, pre {
+    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);
+    font-feature-settings: var(--default-mono-font-feature-settings, normal);
+    font-variation-settings: var(--default-mono-font-variation-settings, normal);
+    font-size: 1em;
+  }
+  small {
+    font-size: 80%;
+  }
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  sup {
+    top: -0.5em;
+  }
+  table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+  }
+  :-moz-focusring {
+    outline: auto;
+  }
+  progress {
+    vertical-align: baseline;
+  }
+  summary {
+    display: list-item;
+  }
+  ol, ul, menu {
+    list-style: none;
+  }
+  img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
+  }
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  button, input, select, optgroup, textarea, ::file-selector-button {
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    border-radius: 0;
+    background-color: transparent;
+    opacity: 1;
+  }
+  :where(select:is([multiple], [size])) optgroup {
+    font-weight: bolder;
+  }
+  :where(select:is([multiple], [size])) optgroup option {
+    padding-inline-start: 20px;
+  }
+  ::file-selector-button {
+    margin-inline-end: 4px;
+  }
+  ::placeholder {
+    opacity: 1;
+  }
+  @supports (not (-webkit-appearance: -apple-pay-button))  or (contain-intrinsic-size: 1px) {
+    ::placeholder {
+      color: currentcolor;
+      @supports (color: color-mix(in lab, red, red)) {
+        color: color-mix(in oklab, currentcolor 50%, transparent);
+      }
+    }
+  }
+  textarea {
+    resize: vertical;
+  }
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  ::-webkit-date-and-time-value {
+    min-height: 1lh;
+    text-align: inherit;
+  }
+  ::-webkit-datetime-edit {
+    display: inline-flex;
+  }
+  ::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
+    padding-block: 0;
+  }
+  ::-webkit-calendar-picker-indicator {
+    line-height: 1;
+  }
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+  button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-selector-button {
+    appearance: button;
+  }
+  ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+    height: auto;
+  }
+  [hidden]:where(:not([hidden="until-found"])) {
+    display: none !important;
+  }
+}
+@layer utilities {
+  .absolute {
+    position: absolute;
+  }
+  .relative {
+    position: relative;
+  }
+  .static {
+    position: static;
+  }
+  .sticky {
+    position: sticky;
+  }
+  .inset-0 {
+    inset: calc(var(--spacing) * 0);
+  }
+  .start {
+    inset-inline-start: var(--spacing);
+  }
+  .end {
+    inset-inline-end: var(--spacing);
+  }
+  .top-0 {
+    top: calc(var(--spacing) * 0);
+  }
+  .top-4 {
+    top: calc(var(--spacing) * 4);
+  }
+  .right-4 {
+    right: calc(var(--spacing) * 4);
+  }
+  .left-4 {
+    left: calc(var(--spacing) * 4);
+  }
+  .z-50 {
+    z-index: 50;
+  }
+  .col-span-6 {
+    grid-column: span 6 / span 6;
+  }
+  .col-span-12 {
+    grid-column: span 12 / span 12;
+  }
+  .mx-auto {
+    margin-inline: auto;
+  }
+  .mt-0\.5 {
+    margin-top: calc(var(--spacing) * 0.5);
+  }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
+  .mt-3 {
+    margin-top: calc(var(--spacing) * 3);
+  }
+  .mt-4 {
+    margin-top: calc(var(--spacing) * 4);
+  }
+  .mt-5 {
+    margin-top: calc(var(--spacing) * 5);
+  }
+  .mt-6 {
+    margin-top: calc(var(--spacing) * 6);
+  }
+  .mt-10 {
+    margin-top: calc(var(--spacing) * 10);
+  }
+  .mt-14 {
+    margin-top: calc(var(--spacing) * 14);
+  }
+  .mt-16 {
+    margin-top: calc(var(--spacing) * 16);
+  }
+  .mt-\[7px\] {
+    margin-top: 7px;
+  }
+  .mt-auto {
+    margin-top: auto;
+  }
+  .mb-1 {
+    margin-bottom: calc(var(--spacing) * 1);
+  }
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
+  .mb-4 {
+    margin-bottom: calc(var(--spacing) * 4);
+  }
+  .mb-5 {
+    margin-bottom: calc(var(--spacing) * 5);
+  }
+  .mb-6 {
+    margin-bottom: calc(var(--spacing) * 6);
+  }
+  .mb-8 {
+    margin-bottom: calc(var(--spacing) * 8);
+  }
+  .mb-10 {
+    margin-bottom: calc(var(--spacing) * 10);
+  }
+  .mb-12 {
+    margin-bottom: calc(var(--spacing) * 12);
+  }
+  .mb-14 {
+    margin-bottom: calc(var(--spacing) * 14);
+  }
+  .mb-16 {
+    margin-bottom: calc(var(--spacing) * 16);
+  }
+  .block {
+    display: block;
+  }
+  .flex {
+    display: flex;
+  }
+  .grid {
+    display: grid;
+  }
+  .hidden {
+    display: none;
+  }
+  .inline-block {
+    display: inline-block;
+  }
+  .inline-flex {
+    display: inline-flex;
+  }
+  .aspect-\[4\/5\] {
+    aspect-ratio: 4/5;
+  }
+  .aspect-\[5\/4\] {
+    aspect-ratio: 5/4;
+  }
+  .h-1\.5 {
+    height: calc(var(--spacing) * 1.5);
+  }
+  .h-3\.5 {
+    height: calc(var(--spacing) * 3.5);
+  }
+  .h-4 {
+    height: calc(var(--spacing) * 4);
+  }
+  .h-5 {
+    height: calc(var(--spacing) * 5);
+  }
+  .h-8 {
+    height: calc(var(--spacing) * 8);
+  }
+  .h-10 {
+    height: calc(var(--spacing) * 10);
+  }
+  .h-12 {
+    height: calc(var(--spacing) * 12);
+  }
+  .h-16 {
+    height: calc(var(--spacing) * 16);
+  }
+  .h-\[130\%\] {
+    height: 130%;
+  }
+  .h-full {
+    height: 100%;
+  }
+  .min-h-\[4\.5rem\] {
+    min-height: 4.5rem;
+  }
+  .min-h-\[36px\] {
+    min-height: 36px;
+  }
+  .min-h-\[48px\] {
+    min-height: 48px;
+  }
+  .w-1\.5 {
+    width: calc(var(--spacing) * 1.5);
+  }
+  .w-3\.5 {
+    width: calc(var(--spacing) * 3.5);
+  }
+  .w-4 {
+    width: calc(var(--spacing) * 4);
+  }
+  .w-5 {
+    width: calc(var(--spacing) * 5);
+  }
+  .w-8 {
+    width: calc(var(--spacing) * 8);
+  }
+  .w-10 {
+    width: calc(var(--spacing) * 10);
+  }
+  .w-auto {
+    width: auto;
+  }
+  .w-full {
+    width: 100%;
+  }
+  .max-w-3xl {
+    max-width: var(--container-3xl);
+  }
+  .max-w-4xl {
+    max-width: var(--container-4xl);
+  }
+  .max-w-7xl {
+    max-width: var(--container-7xl);
+  }
+  .max-w-\[180px\] {
+    max-width: 180px;
+  }
+  .max-w-\[320px\] {
+    max-width: 320px;
+  }
+  .max-w-\[560px\] {
+    max-width: 560px;
+  }
+  .max-w-\[640px\] {
+    max-width: 640px;
+  }
+  .max-w-\[700px\] {
+    max-width: 700px;
+  }
+  .max-w-\[760px\] {
+    max-width: 760px;
+  }
+  .max-w-\[900px\] {
+    max-width: 900px;
+  }
+  .max-w-\[920px\] {
+    max-width: 920px;
+  }
+  .max-w-\[1280px\] {
+    max-width: 1280px;
+  }
+  .flex-shrink-0 {
+    flex-shrink: 0;
+  }
+  .shrink-0 {
+    flex-shrink: 0;
+  }
+  .flex-grow {
+    flex-grow: 1;
+  }
+  .-translate-y-0 {
+    --tw-translate-y: calc(var(--spacing) * -0);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .transform {
+    transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+  }
+  .grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .grid-cols-12 {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+  .grid-cols-\[40px_1fr\] {
+    grid-template-columns: 40px 1fr;
+  }
+  .flex-col {
+    flex-direction: column;
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  .items-baseline {
+    align-items: baseline;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .items-start {
+    align-items: flex-start;
+  }
+  .items-stretch {
+    align-items: stretch;
+  }
+  .justify-between {
+    justify-content: space-between;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .justify-end {
+    justify-content: flex-end;
+  }
+  .gap-1 {
+    gap: calc(var(--spacing) * 1);
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
+  .gap-2\.5 {
+    gap: calc(var(--spacing) * 2.5);
+  }
+  .gap-3 {
+    gap: calc(var(--spacing) * 3);
+  }
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
+  }
+  .gap-6 {
+    gap: calc(var(--spacing) * 6);
+  }
+  .gap-8 {
+    gap: calc(var(--spacing) * 8);
+  }
+  .gap-10 {
+    gap: calc(var(--spacing) * 10);
+  }
+  .space-y-2 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-3 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 3) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-4 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .overflow-hidden {
+    overflow: hidden;
+  }
+  .rounded-full {
+    border-radius: calc(infinity * 1px);
+  }
+  .rounded-none {
+    border-radius: 0;
+  }
+  .rounded-sm {
+    border-radius: var(--radius-sm);
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .border-t {
+    border-top-style: var(--tw-border-style);
+    border-top-width: 1px;
+  }
+  .border-t-4 {
+    border-top-style: var(--tw-border-style);
+    border-top-width: 4px;
+  }
+  .border-b {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 1px;
+  }
+  .border-l {
+    border-left-style: var(--tw-border-style);
+    border-left-width: 1px;
+  }
+  .border-l-2 {
+    border-left-style: var(--tw-border-style);
+    border-left-width: 2px;
+  }
+  .border-\[\#1f2937\] {
+    border-color: #1f2937;
+  }
+  .border-\[\#16a34a\] {
+    border-color: #16a34a;
+  }
+  .border-\[\#e5e7eb\] {
+    border-color: #e5e7eb;
+  }
+  .border-\[\#f1f5f9\] {
+    border-color: #f1f5f9;
+  }
+  .border-gray-100 {
+    border-color: var(--color-gray-100);
+  }
+  .border-white\/10 {
+    border-color: color-mix(in srgb, #fff 10%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklab, var(--color-white) 10%, transparent);
+    }
+  }
+  .border-white\/15 {
+    border-color: color-mix(in srgb, #fff 15%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklab, var(--color-white) 15%, transparent);
+    }
+  }
+  .border-white\/20 {
+    border-color: color-mix(in srgb, #fff 20%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklab, var(--color-white) 20%, transparent);
+    }
+  }
+  .border-white\/30 {
+    border-color: color-mix(in srgb, #fff 30%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklab, var(--color-white) 30%, transparent);
+    }
+  }
+  .border-white\/40 {
+    border-color: color-mix(in srgb, #fff 40%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklab, var(--color-white) 40%, transparent);
+    }
+  }
+  .border-t-\[\#6db254\] {
+    border-top-color: #6db254;
+  }
+  .border-t-\[\#295b58\] {
+    border-top-color: #295b58;
+  }
+  .border-t-\[\#de61b7\] {
+    border-top-color: #de61b7;
+  }
+  .bg-\[\#1f2937\] {
+    background-color: #1f2937;
+  }
+  .bg-\[\#1f2937\]\/80 {
+    background-color: color-mix(in oklab, #1f2937 80%, transparent);
+  }
+  .bg-\[\#6db254\] {
+    background-color: #6db254;
+  }
+  .bg-\[\#16a34a\] {
+    background-color: #16a34a;
+  }
+  .bg-\[\#295b58\] {
+    background-color: #295b58;
+  }
+  .bg-\[\#de61b7\] {
+    background-color: #de61b7;
+  }
+  .bg-\[\#f9fafb\] {
+    background-color: #f9fafb;
+  }
+  .bg-white {
+    background-color: var(--color-white);
+  }
+  .bg-white\/10 {
+    background-color: color-mix(in srgb, #fff 10%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-white) 10%, transparent);
+    }
+  }
+  .bg-white\/90 {
+    background-color: color-mix(in srgb, #fff 90%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-white) 90%, transparent);
+    }
+  }
+  .bg-gradient-to-r {
+    --tw-gradient-position: to right in oklab;
+    background-image: linear-gradient(var(--tw-gradient-stops));
+  }
+  .from-\[\#1f2937\]\/75 {
+    --tw-gradient-from: color-mix(in oklab, #1f2937 75%, transparent);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .via-\[\#1f2937\]\/50 {
+    --tw-gradient-via: color-mix(in oklab, #1f2937 50%, transparent);
+    --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-via-stops);
+  }
+  .to-\[\#1f2937\]\/30 {
+    --tw-gradient-to: color-mix(in oklab, #1f2937 30%, transparent);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .object-cover {
+    object-fit: cover;
+  }
+  .p-6 {
+    padding: calc(var(--spacing) * 6);
+  }
+  .p-8 {
+    padding: calc(var(--spacing) * 8);
+  }
+  .px-4 {
+    padding-inline: calc(var(--spacing) * 4);
+  }
+  .px-6 {
+    padding-inline: calc(var(--spacing) * 6);
+  }
+  .py-2\.5 {
+    padding-block: calc(var(--spacing) * 2.5);
+  }
+  .py-3 {
+    padding-block: calc(var(--spacing) * 3);
+  }
+  .py-4 {
+    padding-block: calc(var(--spacing) * 4);
+  }
+  .py-7 {
+    padding-block: calc(var(--spacing) * 7);
+  }
+  .py-10 {
+    padding-block: calc(var(--spacing) * 10);
+  }
+  .py-20 {
+    padding-block: calc(var(--spacing) * 20);
+  }
+  .py-24 {
+    padding-block: calc(var(--spacing) * 24);
+  }
+  .py-28 {
+    padding-block: calc(var(--spacing) * 28);
+  }
+  .py-32 {
+    padding-block: calc(var(--spacing) * 32);
+  }
+  .pt-0 {
+    padding-top: calc(var(--spacing) * 0);
+  }
+  .pt-4 {
+    padding-top: calc(var(--spacing) * 4);
+  }
+  .pt-6 {
+    padding-top: calc(var(--spacing) * 6);
+  }
+  .pt-10 {
+    padding-top: calc(var(--spacing) * 10);
+  }
+  .pt-24 {
+    padding-top: calc(var(--spacing) * 24);
+  }
+  .pb-6 {
+    padding-bottom: calc(var(--spacing) * 6);
+  }
+  .pb-28 {
+    padding-bottom: calc(var(--spacing) * 28);
+  }
+  .pl-4 {
+    padding-left: calc(var(--spacing) * 4);
+  }
+  .text-center {
+    text-align: center;
+  }
+  .text-right {
+    text-align: right;
+  }
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-3xl {
+    font-size: var(--text-3xl);
+    line-height: var(--tw-leading, var(--text-3xl--line-height));
+  }
+  .text-4xl {
+    font-size: var(--text-4xl);
+    line-height: var(--tw-leading, var(--text-4xl--line-height));
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
+  .text-\[10px\] {
+    font-size: 10px;
+  }
+  .text-\[11px\] {
+    font-size: 11px;
+  }
+  .text-\[12px\] {
+    font-size: 12px;
+  }
+  .text-\[13px\] {
+    font-size: 13px;
+  }
+  .text-\[14px\] {
+    font-size: 14px;
+  }
+  .text-\[15px\] {
+    font-size: 15px;
+  }
+  .text-\[16px\] {
+    font-size: 16px;
+  }
+  .text-\[18px\] {
+    font-size: 18px;
+  }
+  .text-\[20px\] {
+    font-size: 20px;
+  }
+  .text-\[22px\] {
+    font-size: 22px;
+  }
+  .text-\[24px\] {
+    font-size: 24px;
+  }
+  .text-\[26px\] {
+    font-size: 26px;
+  }
+  .text-\[28px\] {
+    font-size: 28px;
+  }
+  .text-\[32px\] {
+    font-size: 32px;
+  }
+  .text-\[36px\] {
+    font-size: 36px;
+  }
+  .text-\[40px\] {
+    font-size: 40px;
+  }
+  .text-\[42px\] {
+    font-size: 42px;
+  }
+  .leading-\[1\.1\] {
+    --tw-leading: 1.1;
+    line-height: 1.1;
+  }
+  .leading-\[1\.2\] {
+    --tw-leading: 1.2;
+    line-height: 1.2;
+  }
+  .leading-\[1\.3\] {
+    --tw-leading: 1.3;
+    line-height: 1.3;
+  }
+  .leading-\[1\.05\] {
+    --tw-leading: 1.05;
+    line-height: 1.05;
+  }
+  .leading-\[1\.5\] {
+    --tw-leading: 1.5;
+    line-height: 1.5;
+  }
+  .leading-\[1\.6\] {
+    --tw-leading: 1.6;
+    line-height: 1.6;
+  }
+  .leading-\[1\.7\] {
+    --tw-leading: 1.7;
+    line-height: 1.7;
+  }
+  .leading-\[1\.15\] {
+    --tw-leading: 1.15;
+    line-height: 1.15;
+  }
+  .leading-\[1\.55\] {
+    --tw-leading: 1.55;
+    line-height: 1.55;
+  }
+  .leading-\[1\.65\] {
+    --tw-leading: 1.65;
+    line-height: 1.65;
+  }
+  .leading-none {
+    --tw-leading: 1;
+    line-height: 1;
+  }
+  .leading-relaxed {
+    --tw-leading: var(--leading-relaxed);
+    line-height: var(--leading-relaxed);
+  }
+  .leading-snug {
+    --tw-leading: var(--leading-snug);
+    line-height: var(--leading-snug);
+  }
+  .leading-tight {
+    --tw-leading: var(--leading-tight);
+    line-height: var(--leading-tight);
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+  .font-extrabold {
+    --tw-font-weight: var(--font-weight-extrabold);
+    font-weight: var(--font-weight-extrabold);
+  }
+  .font-light {
+    --tw-font-weight: var(--font-weight-light);
+    font-weight: var(--font-weight-light);
+  }
+  .font-medium {
+    --tw-font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-medium);
+  }
+  .font-normal {
+    --tw-font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-normal);
+  }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+  }
+  .tracking-\[0\.2em\] {
+    --tw-tracking: 0.2em;
+    letter-spacing: 0.2em;
+  }
+  .tracking-\[0\.15em\] {
+    --tw-tracking: 0.15em;
+    letter-spacing: 0.15em;
+  }
+  .tracking-\[0\.18em\] {
+    --tw-tracking: 0.18em;
+    letter-spacing: 0.18em;
+  }
+  .tracking-\[0\.25em\] {
+    --tw-tracking: 0.25em;
+    letter-spacing: 0.25em;
+  }
+  .tracking-tight {
+    --tw-tracking: var(--tracking-tight);
+    letter-spacing: var(--tracking-tight);
+  }
+  .tracking-wide {
+    --tw-tracking: var(--tracking-wide);
+    letter-spacing: var(--tracking-wide);
+  }
+  .tracking-wider {
+    --tw-tracking: var(--tracking-wider);
+    letter-spacing: var(--tracking-wider);
+  }
+  .text-\[\#1f2937\] {
+    color: #1f2937;
+  }
+  .text-\[\#6b7280\] {
+    color: #6b7280;
+  }
+  .text-\[\#6db254\] {
+    color: #6db254;
+  }
+  .text-\[\#16a34a\] {
+    color: #16a34a;
+  }
+  .text-\[\#295b58\] {
+    color: #295b58;
+  }
+  .text-\[\#de61b7\] {
+    color: #de61b7;
+  }
+  .text-gray-800 {
+    color: var(--color-gray-800);
+  }
+  .text-slate-400 {
+    color: var(--color-slate-400);
+  }
+  .text-slate-500 {
+    color: var(--color-slate-500);
+  }
+  .text-slate-600 {
+    color: var(--color-slate-600);
+  }
+  .text-slate-800 {
+    color: var(--color-slate-800);
+  }
+  .text-slate-900 {
+    color: var(--color-slate-900);
+  }
+  .text-transparent {
+    color: transparent;
+  }
+  .text-white {
+    color: var(--color-white);
+  }
+  .text-white\/40 {
+    color: color-mix(in srgb, #fff 40%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-white) 40%, transparent);
+    }
+  }
+  .text-white\/50 {
+    color: color-mix(in srgb, #fff 50%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-white) 50%, transparent);
+    }
+  }
+  .text-white\/55 {
+    color: color-mix(in srgb, #fff 55%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-white) 55%, transparent);
+    }
+  }
+  .text-white\/60 {
+    color: color-mix(in srgb, #fff 60%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-white) 60%, transparent);
+    }
+  }
+  .text-white\/65 {
+    color: color-mix(in srgb, #fff 65%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-white) 65%, transparent);
+    }
+  }
+  .text-white\/70 {
+    color: color-mix(in srgb, #fff 70%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-white) 70%, transparent);
+    }
+  }
+  .text-white\/80 {
+    color: color-mix(in srgb, #fff 80%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-white) 80%, transparent);
+    }
+  }
+  .text-white\/90 {
+    color: color-mix(in srgb, #fff 90%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-white) 90%, transparent);
+    }
+  }
+  .uppercase {
+    text-transform: uppercase;
+  }
+  .italic {
+    font-style: italic;
+  }
+  .not-italic {
+    font-style: normal;
+  }
+  .antialiased {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .shadow-sm {
+    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .grayscale {
+    --tw-grayscale: grayscale(100%);
+    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+  }
+  .invert {
+    --tw-invert: invert(100%);
+    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+  }
+  .backdrop-blur {
+    --tw-backdrop-blur: blur(8px);
+    -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+    backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+  }
+  .backdrop-blur-sm {
+    --tw-backdrop-blur: blur(var(--blur-sm));
+    -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+    backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+  }
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .transition-colors {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .transition-transform {
+    transition-property: transform, translate, scale, rotate;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .duration-300 {
+    --tw-duration: 300ms;
+    transition-duration: 300ms;
+  }
+  .ease-in-out {
+    --tw-ease: var(--ease-in-out);
+    transition-timing-function: var(--ease-in-out);
+  }
+  .select-none {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  .group-hover\:translate-x-0\.5 {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        --tw-translate-x: calc(var(--spacing) * 0.5);
+        translate: var(--tw-translate-x) var(--tw-translate-y);
+      }
+    }
+  }
+  .group-hover\:-translate-y-0\.5 {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        --tw-translate-y: calc(var(--spacing) * -0.5);
+        translate: var(--tw-translate-x) var(--tw-translate-y);
+      }
+    }
+  }
+  .last\:border-b-0 {
+    &:last-child {
+      border-bottom-style: var(--tw-border-style);
+      border-bottom-width: 0px;
+    }
+  }
+  .last\:pb-0 {
+    &:last-child {
+      padding-bottom: calc(var(--spacing) * 0);
+    }
+  }
+  .hover\:-translate-y-1 {
+    &:hover {
+      @media (hover: hover) {
+        --tw-translate-y: calc(var(--spacing) * -1);
+        translate: var(--tw-translate-x) var(--tw-translate-y);
+      }
+    }
+  }
+  .hover\:bg-\[\#1f4542\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #1f4542;
+      }
+    }
+  }
+  .hover\:bg-\[\#5da045\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #5da045;
+      }
+    }
+  }
+  .hover\:bg-\[\#15803d\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #15803d;
+      }
+    }
+  }
+  .hover\:bg-\[\#c951a3\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #c951a3;
+      }
+    }
+  }
+  .hover\:bg-white {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-white);
+      }
+    }
+  }
+  .hover\:text-\[\#1f2937\] {
+    &:hover {
+      @media (hover: hover) {
+        color: #1f2937;
+      }
+    }
+  }
+  .hover\:text-\[\#16a34a\] {
+    &:hover {
+      @media (hover: hover) {
+        color: #16a34a;
+      }
+    }
+  }
+  .hover\:shadow-xl {
+    &:hover {
+      @media (hover: hover) {
+        --tw-shadow: 0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+        box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+      }
+    }
+  }
+  .sm\:block {
+    @media (width >= 40rem) {
+      display: block;
+    }
+  }
+  .sm\:flex-row {
+    @media (width >= 40rem) {
+      flex-direction: row;
+    }
+  }
+  .sm\:items-center {
+    @media (width >= 40rem) {
+      align-items: center;
+    }
+  }
+  .sm\:px-6 {
+    @media (width >= 40rem) {
+      padding-inline: calc(var(--spacing) * 6);
+    }
+  }
+  .sm\:text-\[28px\] {
+    @media (width >= 40rem) {
+      font-size: 28px;
+    }
+  }
+  .sm\:text-\[32px\] {
+    @media (width >= 40rem) {
+      font-size: 32px;
+    }
+  }
+  .sm\:text-\[42px\] {
+    @media (width >= 40rem) {
+      font-size: 42px;
+    }
+  }
+  .sm\:text-\[48px\] {
+    @media (width >= 40rem) {
+      font-size: 48px;
+    }
+  }
+  .md\:inline-flex {
+    @media (width >= 48rem) {
+      display: inline-flex;
+    }
+  }
+  .md\:grid-cols-3 {
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  .md\:text-5xl {
+    @media (width >= 48rem) {
+      font-size: var(--text-5xl);
+      line-height: var(--tw-leading, var(--text-5xl--line-height));
+    }
+  }
+  .lg\:col-span-1 {
+    @media (width >= 64rem) {
+      grid-column: span 1 / span 1;
+    }
+  }
+  .lg\:col-span-2 {
+    @media (width >= 64rem) {
+      grid-column: span 2 / span 2;
+    }
+  }
+  .lg\:col-span-3 {
+    @media (width >= 64rem) {
+      grid-column: span 3 / span 3;
+    }
+  }
+  .lg\:col-span-4 {
+    @media (width >= 64rem) {
+      grid-column: span 4 / span 4;
+    }
+  }
+  .lg\:col-span-5 {
+    @media (width >= 64rem) {
+      grid-column: span 5 / span 5;
+    }
+  }
+  .lg\:col-span-6 {
+    @media (width >= 64rem) {
+      grid-column: span 6 / span 6;
+    }
+  }
+  .lg\:col-span-7 {
+    @media (width >= 64rem) {
+      grid-column: span 7 / span 7;
+    }
+  }
+  .lg\:col-span-10 {
+    @media (width >= 64rem) {
+      grid-column: span 10 / span 10;
+    }
+  }
+  .lg\:col-start-7 {
+    @media (width >= 64rem) {
+      grid-column-start: 7;
+    }
+  }
+  .lg\:col-start-8 {
+    @media (width >= 64rem) {
+      grid-column-start: 8;
+    }
+  }
+  .lg\:mt-24 {
+    @media (width >= 64rem) {
+      margin-top: calc(var(--spacing) * 24);
+    }
+  }
+  .lg\:mb-20 {
+    @media (width >= 64rem) {
+      margin-bottom: calc(var(--spacing) * 20);
+    }
+  }
+  .lg\:mb-24 {
+    @media (width >= 64rem) {
+      margin-bottom: calc(var(--spacing) * 24);
+    }
+  }
+  .lg\:flex {
+    @media (width >= 64rem) {
+      display: flex;
+    }
+  }
+  .lg\:hidden {
+    @media (width >= 64rem) {
+      display: none;
+    }
+  }
+  .lg\:grid-cols-3 {
+    @media (width >= 64rem) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  .lg\:grid-cols-4 {
+    @media (width >= 64rem) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  .lg\:gap-10 {
+    @media (width >= 64rem) {
+      gap: calc(var(--spacing) * 10);
+    }
+  }
+  .lg\:border-t-0 {
+    @media (width >= 64rem) {
+      border-top-style: var(--tw-border-style);
+      border-top-width: 0px;
+    }
+  }
+  .lg\:border-r {
+    @media (width >= 64rem) {
+      border-right-style: var(--tw-border-style);
+      border-right-width: 1px;
+    }
+  }
+  .lg\:border-b-0 {
+    @media (width >= 64rem) {
+      border-bottom-style: var(--tw-border-style);
+      border-bottom-width: 0px;
+    }
+  }
+  .lg\:border-l {
+    @media (width >= 64rem) {
+      border-left-style: var(--tw-border-style);
+      border-left-width: 1px;
+    }
+  }
+  .lg\:p-10 {
+    @media (width >= 64rem) {
+      padding: calc(var(--spacing) * 10);
+    }
+  }
+  .lg\:px-6 {
+    @media (width >= 64rem) {
+      padding-inline: calc(var(--spacing) * 6);
+    }
+  }
+  .lg\:px-8 {
+    @media (width >= 64rem) {
+      padding-inline: calc(var(--spacing) * 8);
+    }
+  }
+  .lg\:px-10 {
+    @media (width >= 64rem) {
+      padding-inline: calc(var(--spacing) * 10);
+    }
+  }
+  .lg\:py-8 {
+    @media (width >= 64rem) {
+      padding-block: calc(var(--spacing) * 8);
+    }
+  }
+  .lg\:py-12 {
+    @media (width >= 64rem) {
+      padding-block: calc(var(--spacing) * 12);
+    }
+  }
+  .lg\:py-24 {
+    @media (width >= 64rem) {
+      padding-block: calc(var(--spacing) * 24);
+    }
+  }
+  .lg\:py-28 {
+    @media (width >= 64rem) {
+      padding-block: calc(var(--spacing) * 28);
+    }
+  }
+  .lg\:py-32 {
+    @media (width >= 64rem) {
+      padding-block: calc(var(--spacing) * 32);
+    }
+  }
+  .lg\:pt-36 {
+    @media (width >= 64rem) {
+      padding-top: calc(var(--spacing) * 36);
+    }
+  }
+  .lg\:pb-40 {
+    @media (width >= 64rem) {
+      padding-bottom: calc(var(--spacing) * 40);
+    }
+  }
+  .lg\:text-5xl {
+    @media (width >= 64rem) {
+      font-size: var(--text-5xl);
+      line-height: var(--tw-leading, var(--text-5xl--line-height));
+    }
+  }
+  .lg\:text-\[16px\] {
+    @media (width >= 64rem) {
+      font-size: 16px;
+    }
+  }
+  .lg\:text-\[18px\] {
+    @media (width >= 64rem) {
+      font-size: 18px;
+    }
+  }
+  .lg\:text-\[30px\] {
+    @media (width >= 64rem) {
+      font-size: 30px;
+    }
+  }
+  .lg\:text-\[32px\] {
+    @media (width >= 64rem) {
+      font-size: 32px;
+    }
+  }
+  .lg\:text-\[34px\] {
+    @media (width >= 64rem) {
+      font-size: 34px;
+    }
+  }
+  .lg\:text-\[38px\] {
+    @media (width >= 64rem) {
+      font-size: 38px;
+    }
+  }
+  .lg\:text-\[54px\] {
+    @media (width >= 64rem) {
+      font-size: 54px;
+    }
+  }
+  .lg\:text-\[56px\] {
+    @media (width >= 64rem) {
+      font-size: 56px;
+    }
+  }
+  .lg\:text-\[60px\] {
+    @media (width >= 64rem) {
+      font-size: 60px;
+    }
+  }
+  .lg\:text-\[64px\] {
+    @media (width >= 64rem) {
+      font-size: 64px;
+    }
+  }
+}
+:root {
+  --ga-green: #16a34a;
+  --ga-anthracite: #1f2937;
+  --ga-mid: #6b7280;
+  --ga-light: #f9fafb;
+  --ga-line: #e5e7eb;
+}
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #1f2937;
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.font-display {
+  font-family: 'Inter', system-ui, sans-serif;
+  letter-spacing: -0.035em;
+  font-weight: 400;
+}
+.font-serif-display {
+  font-family: 'Inter', system-ui, sans-serif;
+  letter-spacing: -0.035em;
+  font-weight: 400;
+  font-style: normal;
+}
+.font-display.italic, .font-serif-display.italic, h1.italic, h2.italic, h3.italic {
+  font-style: normal;
+}
+.label-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #6b7280;
+}
+button, a.btn {
+  border-radius: 0;
+}
+::selection {
+  background: #16a34a;
+  color: #ffffff;
+}
+@property --tw-translate-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-rotate-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-rotate-y {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-rotate-z {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-skew-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-skew-y {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-gradient-position {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-from {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-via {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-to {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-stops {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-via-stops {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-from-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+@property --tw-gradient-via-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 50%;
+}
+@property --tw-gradient-to-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-tracking {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-inset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-ring-inset {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-offset-width {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --tw-ring-offset-color {
+  syntax: "*";
+  inherits: false;
+  initial-value: #fff;
+}
+@property --tw-ring-offset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-blur {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-brightness {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-contrast {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-grayscale {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-hue-rotate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-invert {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-opacity {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-saturate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-sepia {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-drop-shadow {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-drop-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-drop-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-drop-shadow-size {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-blur {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-brightness {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-contrast {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-grayscale {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-hue-rotate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-invert {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-opacity {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-saturate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-sepia {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-duration {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ease {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-translate-z: 0;
+      --tw-rotate-x: initial;
+      --tw-rotate-y: initial;
+      --tw-rotate-z: initial;
+      --tw-skew-x: initial;
+      --tw-skew-y: initial;
+      --tw-space-y-reverse: 0;
+      --tw-border-style: solid;
+      --tw-gradient-position: initial;
+      --tw-gradient-from: #0000;
+      --tw-gradient-via: #0000;
+      --tw-gradient-to: #0000;
+      --tw-gradient-stops: initial;
+      --tw-gradient-via-stops: initial;
+      --tw-gradient-from-position: 0%;
+      --tw-gradient-via-position: 50%;
+      --tw-gradient-to-position: 100%;
+      --tw-leading: initial;
+      --tw-font-weight: initial;
+      --tw-tracking: initial;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-color: initial;
+      --tw-shadow-alpha: 100%;
+      --tw-inset-shadow: 0 0 #0000;
+      --tw-inset-shadow-color: initial;
+      --tw-inset-shadow-alpha: 100%;
+      --tw-ring-color: initial;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-inset-ring-color: initial;
+      --tw-inset-ring-shadow: 0 0 #0000;
+      --tw-ring-inset: initial;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-blur: initial;
+      --tw-brightness: initial;
+      --tw-contrast: initial;
+      --tw-grayscale: initial;
+      --tw-hue-rotate: initial;
+      --tw-invert: initial;
+      --tw-opacity: initial;
+      --tw-saturate: initial;
+      --tw-sepia: initial;
+      --tw-drop-shadow: initial;
+      --tw-drop-shadow-color: initial;
+      --tw-drop-shadow-alpha: 100%;
+      --tw-drop-shadow-size: initial;
+      --tw-backdrop-blur: initial;
+      --tw-backdrop-brightness: initial;
+      --tw-backdrop-contrast: initial;
+      --tw-backdrop-grayscale: initial;
+      --tw-backdrop-hue-rotate: initial;
+      --tw-backdrop-invert: initial;
+      --tw-backdrop-opacity: initial;
+      --tw-backdrop-saturate: initial;
+      --tw-backdrop-sepia: initial;
+      --tw-duration: initial;
+      --tw-ease: initial;
+    }
+  }
+}
+</style>
+<style data-vite-dev-id="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/300.css">/* inter-cyrillic-ext-300-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-cyrillic-ext-300-normal.woff2) format('woff2'), url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-cyrillic-ext-300-normal.woff) format('woff');
+  unicode-range: U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
+}
+
+/* inter-cyrillic-300-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-cyrillic-300-normal.woff2) format('woff2'), url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-cyrillic-300-normal.woff) format('woff');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+
+/* inter-greek-ext-300-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-greek-ext-300-normal.woff2) format('woff2'), url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-greek-ext-300-normal.woff) format('woff');
+  unicode-range: U+1F00-1FFF;
+}
+
+/* inter-greek-300-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-greek-300-normal.woff2) format('woff2'), url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-greek-300-normal.woff) format('woff');
+  unicode-range: U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;
+}
+
+/* inter-vietnamese-300-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-vietnamese-300-normal.woff2) format('woff2'), url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-vietnamese-300-normal.woff) format('woff');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;
+}
+
+/* inter-latin-ext-300-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-latin-ext-300-normal.woff2) format('woff2'), url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-latin-ext-300-normal.woff) format('woff');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+/* inter-latin-300-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-latin-300-normal.woff2) format('woff2'), url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-latin-300-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}</style>
+<style data-vite-dev-id="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/400.css">/* inter-cyrillic-ext-400-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-cyrillic-ext-400-normal.woff2) format('woff2'), url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-cyrillic-ext-400-normal.woff) format('woff');
+  unicode-range: U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
+}
+
+/* inter-cyrillic-400-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-cyrillic-400-normal.woff2) format('woff2'), url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-cyrillic-400-normal.woff) format('woff');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+
+/* inter-greek-ext-400-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-greek-ext-400-normal.woff2) format('woff2'), url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-greek-ext-400-normal.woff) format('woff');
+  unicode-range: U+1F00-1FFF;
+}
+
+/* inter-greek-400-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-greek-400-normal.woff2) format('woff2'), url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-greek-400-normal.woff) format('woff');
+  unicode-range: U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;
+}
+
+/* inter-vietnamese-400-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-vietnamese-400-normal.woff2) format('woff2'), url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-vietnamese-400-normal.woff) format('woff');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;
+}
+
+/* inter-latin-ext-400-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-latin-ext-400-normal.woff2) format('woff2'), url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-latin-ext-400-normal.woff) format('woff');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+/* inter-latin-400-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-latin-400-normal.woff2) format('woff2'), url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-latin-400-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}</style>
+<style data-vite-dev-id="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/500.css">/* inter-cyrillic-ext-500-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-cyrillic-ext-500-normal.woff2) format('woff2'), url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-cyrillic-ext-500-normal.woff) format('woff');
+  unicode-range: U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
+}
+
+/* inter-cyrillic-500-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-cyrillic-500-normal.woff2) format('woff2'), url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-cyrillic-500-normal.woff) format('woff');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+
+/* inter-greek-ext-500-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-greek-ext-500-normal.woff2) format('woff2'), url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-greek-ext-500-normal.woff) format('woff');
+  unicode-range: U+1F00-1FFF;
+}
+
+/* inter-greek-500-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-greek-500-normal.woff2) format('woff2'), url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-greek-500-normal.woff) format('woff');
+  unicode-range: U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;
+}
+
+/* inter-vietnamese-500-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-vietnamese-500-normal.woff2) format('woff2'), url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-vietnamese-500-normal.woff) format('woff');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;
+}
+
+/* inter-latin-ext-500-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-latin-ext-500-normal.woff2) format('woff2'), url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-latin-ext-500-normal.woff) format('woff');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+/* inter-latin-500-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-latin-500-normal.woff2) format('woff2'), url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-latin-500-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}</style>
+<style data-vite-dev-id="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/600.css">/* inter-cyrillic-ext-600-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-cyrillic-ext-600-normal.woff2) format('woff2'), url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-cyrillic-ext-600-normal.woff) format('woff');
+  unicode-range: U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
+}
+
+/* inter-cyrillic-600-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-cyrillic-600-normal.woff2) format('woff2'), url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-cyrillic-600-normal.woff) format('woff');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+
+/* inter-greek-ext-600-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-greek-ext-600-normal.woff2) format('woff2'), url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-greek-ext-600-normal.woff) format('woff');
+  unicode-range: U+1F00-1FFF;
+}
+
+/* inter-greek-600-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-greek-600-normal.woff2) format('woff2'), url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-greek-600-normal.woff) format('woff');
+  unicode-range: U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;
+}
+
+/* inter-vietnamese-600-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-vietnamese-600-normal.woff2) format('woff2'), url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-vietnamese-600-normal.woff) format('woff');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;
+}
+
+/* inter-latin-ext-600-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-latin-ext-600-normal.woff2) format('woff2'), url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-latin-ext-600-normal.woff) format('woff');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+/* inter-latin-600-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-latin-600-normal.woff2) format('woff2'), url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-latin-600-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}</style>
+<style data-vite-dev-id="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/700.css">/* inter-cyrillic-ext-700-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-cyrillic-ext-700-normal.woff2) format('woff2'), url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-cyrillic-ext-700-normal.woff) format('woff');
+  unicode-range: U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
+}
+
+/* inter-cyrillic-700-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-cyrillic-700-normal.woff2) format('woff2'), url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-cyrillic-700-normal.woff) format('woff');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+
+/* inter-greek-ext-700-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-greek-ext-700-normal.woff2) format('woff2'), url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-greek-ext-700-normal.woff) format('woff');
+  unicode-range: U+1F00-1FFF;
+}
+
+/* inter-greek-700-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-greek-700-normal.woff2) format('woff2'), url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-greek-700-normal.woff) format('woff');
+  unicode-range: U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;
+}
+
+/* inter-vietnamese-700-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-vietnamese-700-normal.woff2) format('woff2'), url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-vietnamese-700-normal.woff) format('woff');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;
+}
+
+/* inter-latin-ext-700-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-latin-ext-700-normal.woff2) format('woff2'), url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-latin-ext-700-normal.woff) format('woff');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+/* inter-latin-700-normal */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-latin-700-normal.woff2) format('woff2'), url(/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/files/inter-latin-700-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}</style><script type="module" src="/@vite/client"></script>
+<script type="module" src="/@id/astro/runtime/client/dev-toolbar/entrypoint.js"></script>
+<script>window.__astro_dev_toolbar__ = {"root":"C:\\Users\\Gewinnarchitekt\\repos\\gewinnarchitekt-site\\","version":"6.1.9","debugInfo":"Astro                    v6.1.9\nNode                     v24.15.0\nSystem                   Windows (x64)\nPackage Manager          npm\nOutput                   static\nAdapter                  none\nIntegrations             none"}</script>
+<script type="module" src="/src/components/Hero.astro?astro&type=style&index=0&lang.css"></script>
+<script type="module" src="/src/styles/global.css"></script>
+<script type="module" src="/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/300.css"></script>
+<script type="module" src="/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/400.css"></script>
+<script type="module" src="/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/500.css"></script>
+<script type="module" src="/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/600.css"></script>
+<script type="module" src="/node_modules/.pnpm/@fontsource+inter@5.2.8/node_modules/@fontsource/inter/700.css"></script></head> <body class="bg-white text-slate-900 antialiased" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/pages/index.astro" data-astro-source-loc="47:52"> <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-[#e5e7eb]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Nav.astro" data-astro-source-loc="14:87"> <div class="max-w-[1280px] mx-auto px-6 lg:px-10 h-16 flex items-center justify-between" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Nav.astro" data-astro-source-loc="15:92"> <a href="#top" aria-label="Gewinnarchitekt â zur Startseite" class="flex items-center" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Nav.astro" data-astro-source-loc="16:92"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 50" class="h-10 w-auto text-[#1f2937]" role="img" aria-label="Gewinnarchitekt Logo" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Logo.astro" data-astro-source-loc="18:2"> <text x="10" y="35" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="-0.5" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Logo.astro" data-astro-source-loc="26:4"> <tspan fill="#16a34a" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Logo.astro" data-astro-source-loc="27:27">Gewinn</tspan><tspan fill="currentColor" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Logo.astro" data-astro-source-loc="27:68">architekt</tspan> </text> </svg> </a> <nav aria-label="Hauptnavigation" class="hidden lg:flex items-center gap-8" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Nav.astro" data-astro-source-loc="20:81"> <a href="#Diagnose" class="text-[13px] text-[#1f2937] hover:text-[#16a34a] transition-colors" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Nav.astro" data-astro-source-loc="22:100"> Diagnose </a><a href="#Methodik" class="text-[13px] text-[#1f2937] hover:text-[#16a34a] transition-colors" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Nav.astro" data-astro-source-loc="22:100"> Methodik </a><a href="#Zielpublikum" class="text-[13px] text-[#1f2937] hover:text-[#16a34a] transition-colors" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Nav.astro" data-astro-source-loc="22:100"> Zielpublikum </a><a href="#Leistungen" class="text-[13px] text-[#1f2937] hover:text-[#16a34a] transition-colors" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Nav.astro" data-astro-source-loc="22:100"> Leistungen </a><a href="#Profil" class="text-[13px] text-[#1f2937] hover:text-[#16a34a] transition-colors" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Nav.astro" data-astro-source-loc="22:100"> Profil </a> </nav> <div class="flex items-center gap-3" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Nav.astro" data-astro-source-loc="28:42"> <a href="https://tidycal.com/gewinnarchitekt/potenzialcheck" target="_blank" rel="noopener" data-ph-event="cta_clicked" data-ph-location="nav" class="hidden md:inline-flex items-center gap-2 bg-[#16a34a] text-white text-[13px] font-medium px-4 py-2.5 hover:bg-[#15803d] transition-colors" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Nav.astro" data-astro-source-loc="29:296">
+Potenzial-Check
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Nav.astro" data-astro-source-loc="31:214"><path d="M7 7h10v10" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Nav.astro" data-astro-source-loc="31:214"></path><path d="M7 17 17 7" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Nav.astro" data-astro-source-loc="31:236"></path></svg> </a> <button id="mobile-menu-btn" class="lg:hidden inline-flex items-center justify-center w-10 h-10 border border-[#e5e7eb] text-[#1f2937]" aria-label="MenÃ¼ Ã¶ffnen" aria-expanded="false" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Nav.astro" data-astro-source-loc="33:190"> <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 block" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Nav.astro" data-astro-source-loc="34:233"><line x1="4" x2="20" y1="12" y2="12" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Nav.astro" data-astro-source-loc="34:233"></line><line x1="4" x2="20" y1="6" y2="6" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Nav.astro" data-astro-source-loc="34:271"></line><line x1="4" x2="20" y1="18" y2="18" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Nav.astro" data-astro-source-loc="34:307"></line></svg> <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 hidden" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Nav.astro" data-astro-source-loc="35:235"><path d="M18 6 6 18" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Nav.astro" data-astro-source-loc="35:235"></path><path d="m6 6 12 12" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Nav.astro" data-astro-source-loc="35:257"></path></svg> </button> </div> </div> <div id="mobile-menu" class="hidden lg:hidden border-t border-[#e5e7eb] bg-white" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Nav.astro" data-astro-source-loc="40:85"> <nav class="max-w-[1280px] mx-auto px-6 py-4 flex flex-col" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Nav.astro" data-astro-source-loc="41:65"> <a href="#Diagnose" class="mobile-menu-link flex items-baseline py-3 border-b border-[#f1f5f9] text-[14px] text-[#1f2937]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Nav.astro" data-astro-source-loc="43:129"> Diagnose </a><a href="#Methodik" class="mobile-menu-link flex items-baseline py-3 border-b border-[#f1f5f9] text-[14px] text-[#1f2937]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Nav.astro" data-astro-source-loc="43:129"> Methodik </a><a href="#Zielpublikum" class="mobile-menu-link flex items-baseline py-3 border-b border-[#f1f5f9] text-[14px] text-[#1f2937]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Nav.astro" data-astro-source-loc="43:129"> Zielpublikum </a><a href="#Leistungen" class="mobile-menu-link flex items-baseline py-3 border-b border-[#f1f5f9] text-[14px] text-[#1f2937]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Nav.astro" data-astro-source-loc="43:129"> Leistungen </a><a href="#Profil" class="mobile-menu-link flex items-baseline py-3 border-b border-[#f1f5f9] text-[14px] text-[#1f2937]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Nav.astro" data-astro-source-loc="43:129"> Profil </a> <a href="https://tidycal.com/gewinnarchitekt/potenzialcheck" target="_blank" rel="noopener" data-ph-event="cta_clicked" data-ph-location="nav_mobile" class="mobile-menu-link mt-4 inline-flex items-center justify-between bg-[#16a34a] text-white text-[13px] font-medium px-4 py-3" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Nav.astro" data-astro-source-loc="47:286">
+Potenzial-Check buchen
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Nav.astro" data-astro-source-loc="49:211"><path d="M7 7h10v10" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Nav.astro" data-astro-source-loc="49:211"></path><path d="M7 17 17 7" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Nav.astro" data-astro-source-loc="49:233"></path></svg> </a> </nav> </div> </header> <script type="module" src="/src/components/Nav.astro?astro&type=script&index=0&lang.ts"></script> <!-- Dark hero with architectural background + upward-panning facade --><section id="top" class="relative bg-[#1f2937] text-white overflow-hidden" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="12:76"> <!-- Full-bleed architectural background image with upward scroll animation --> <div class="absolute inset-0" aria-hidden="true" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="14:52"> <div class="hero-bg-img absolute inset-0 grayscale" style="background-image: url('https://images.unsplash.com/photo-1494522855154-9297ac14b55f?auto=format&fit=crop&w=2000&q=85'); background-size: cover; background-position: center bottom;" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="15:6"></div> <!-- Layered overlays for legibility --> <div class="absolute inset-0 bg-[#1f2937]/80" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="21:6"></div> <div class="absolute inset-0 bg-gradient-to-r from-[#1f2937]/75 via-[#1f2937]/50 to-[#1f2937]/30" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="24:6"></div> </div> <div class="relative max-w-[1280px] mx-auto px-6 lg:px-10 pt-24 lg:pt-36 pb-28 lg:pb-40" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="30:4"> <!-- Eyebrow row --> <div class="flex items-center mb-14 lg:mb-20" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="32:51"> <div class="flex items-center gap-2.5" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="33:46"> <span class="inline-block w-1.5 h-1.5 bg-[#16a34a]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="34:10"></span> <span class="text-[13px] font-medium text-white" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="35:58">
+Pricing &amp; Profitarchitektur
+<span class="text-white/65 font-normal" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="37:51"> Â· ZÃ¼rich</span> </span> </div> </div> <!-- Headline --> <h1 class="font-display font-light text-white leading-[1.1] text-[32px] sm:text-[42px] lg:text-[54px] max-w-[920px]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="45:6"> <span class="text-[#16a34a]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="46:36">Gewinn</span> ist eine Frage der Methodik, nicht
+      des Zufalls.
+</h1> <!-- Sub-copy + CTA row --> <div class="grid grid-cols-12 gap-6 lg:gap-10 mt-16 lg:mt-24 pt-10 border-t border-white/20" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="53:6"> <div class="col-span-12 lg:col-span-6" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="54:46"> <div class="flex items-center gap-2.5 mb-4" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="55:53"> <span class="inline-block w-1.5 h-1.5 bg-[#16a34a]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="56:12"></span> <span class="text-[11px] tracking-[0.18em] uppercase font-semibold text-white" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="59:12">
+Ansatz
+</span> </div> <p class="text-[16px] lg:text-[18px] leading-[1.6] text-white/90 max-w-[560px]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="65:10">
+Wenn Produktstrategie und Finanzdaten perfekt synchronisiert sind,
+          entsteht eine Ã¼berlegene Ertragslogik. Ich ersetze Meinungen durch
+          prÃ¤zise Finanzmodelle und schaffe so die Basis fÃ¼r nachhaltiges
+          Wachstum und messbar hÃ¶heren Profit.
+</p> </div> <div class="col-span-12 lg:col-span-5 lg:col-start-8 flex flex-col justify-end" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="75:8"> <div class="flex flex-wrap gap-3" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="76:43"> <a href="https://tidycal.com/gewinnarchitekt/potenzialcheck" target="_blank" rel="noopener" data-ph-event="cta_clicked" data-ph-location="hero" class="inline-flex items-center gap-3 bg-[#16a34a] text-white text-[14px] font-medium px-6 py-4 hover:bg-[#15803d] transition-colors" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="84:12">
+20-Minuten-Potenzial-Check
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="97:17"><path d="M7 7h10v10" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="97:17"></path><path d="M7 17 17 7" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="97:45"></path></svg> </a> </div> <p class="mt-4 text-[12px] text-white/65" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="101:51">
+Unverbindlich Â· PersÃ¶nlich Â· Direkt
+</p> </div> </div> </div> <!-- Trustbar â integrated into hero, white text on semi-transparent background --> <div class="relative bg-white/10 backdrop-blur-sm border-t border-white/15" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="109:79"> <div class="max-w-[1280px] mx-auto px-6 lg:px-10" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="110:55"> <div class="grid grid-cols-2 lg:grid-cols-4" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="111:52"> <div class="py-7 lg:py-8 px-4 lg:px-6
+              
+              
+              
+              
+            " data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="121:14"> <div class="font-display font-light text-white text-3xl lg:text-5xl leading-none" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="122:97"> 20+ </div> <div class="text-[11px] tracking-[0.15em] uppercase text-white/60 mt-3" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="125:87"> Jahre Erfahrung </div> </div><div class="py-7 lg:py-8 px-4 lg:px-6
+              lg:border-l border-white/15
+              border-l border-white/15
+              
+              
+            " data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="121:14"> <div class="font-display font-light text-white text-3xl lg:text-5xl leading-none" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="122:97"> CFM </div> <div class="text-[11px] tracking-[0.15em] uppercase text-white/60 mt-3" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="125:87"> Chartered Financial Modeler </div> </div><div class="py-7 lg:py-8 px-4 lg:px-6
+              lg:border-l border-white/15
+              
+              border-t lg:border-t-0 border-white/15
+              
+            " data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="121:14"> <div class="font-display font-light text-white text-3xl lg:text-5xl leading-none" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="122:97"> MBA </div> <div class="text-[11px] tracking-[0.15em] uppercase text-white/60 mt-3" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="125:87"> IE Business School </div> </div><div class="py-7 lg:py-8 px-4 lg:px-6
+              lg:border-l border-white/15
+              
+              border-t lg:border-t-0 border-white/15
+              border-l border-white/15
+            " data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="121:14"> <div class="font-display font-light text-white text-3xl lg:text-5xl leading-none" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="122:97"> ZÃ¼rich </div> <div class="text-[11px] tracking-[0.15em] uppercase text-white/60 mt-3" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Hero.astro" data-astro-source-loc="125:87"> Sitz Â· Schweiz </div> </div> </div> </div> </div> </section> <!-- Upward-panning facade animation â GPU-accelerated --> <section id="Diagnose" class="bg-white border-b border-[#e5e7eb]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="47:67"> <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-20 lg:py-28" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="48:68"> <div class="grid grid-cols-12 gap-6 lg:gap-10 mb-16" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="49:58"> <div class="col-span-12 lg:col-span-2" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="50:46"> <span class="label-eyebrow" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="51:37">01 Diagnose</span> </div> <div class="col-span-12 lg:col-span-10" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="53:47"> <h2 class="font-serif-display text-[#1f2937] font-light leading-[1.05] text-[36px] sm:text-[48px] lg:text-[60px]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="54:123">
+Gewinne optimieren heisst Schwachstellen <span class="text-[#16a34a]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="55:81">eliminieren</span>.
+</h2> <p class="mt-6 max-w-[700px] text-[16px] leading-[1.6] text-[#6b7280]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="57:80">
+Oft versickert Marge dort, wo Produktstrategie, Finanzdaten und
+          KundenverstÃ¤ndnis nicht optimal aufeinander abgestimmt sind. Die
+          Konsequenzen lassen sich in den folgenden drei Bereichen
+          beobachten.
+</p> </div> </div> <div class="grid grid-cols-1 lg:grid-cols-3 border-t border-[#1f2937]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="66:76"> <div class="p-8 lg:p-10 border-b border-[#e5e7eb] lg:border-r lg:border-b-0 border-b" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="68:149"> <div class="flex items-baseline justify-between mb-8" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="69:65"> <span class="font-serif-display text-[#16a34a] text-[28px]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="70:73">A</span> <span class="text-[10px] tracking-[0.2em] uppercase text-[#6b7280]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="71:81">Quelle: Simon-Kucher</span> </div> <h3 class="font-serif-display text-[#1f2937] text-[26px] leading-tight mb-6" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="74:88"> Fehlkonstruktion in der Preislogik </h3> <div class="border-l-2 border-[#16a34a] pl-4 mb-8" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="78:62"> <div class="font-serif-display text-[#1f2937] text-[40px] leading-none" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="79:85"> &gt; 20% </div> <p class="text-[13px] text-[#6b7280] mt-2 leading-snug" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="82:69"> des mÃ¶glichen Umsatzes entgehen ohne optimiertes Angebot. </p> </div> <ul class="space-y-3" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="87:33"> <li class="flex gap-3 text-[14px] text-[#1f2937] leading-[1.55]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="89:80"> <span class="inline-block w-1.5 h-1.5 bg-[#16a34a] rounded-full mt-[7px] shrink-0" aria-hidden="true" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="90:18"></span> <span data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="91:23">Einheitsangebote ignorieren unterschiedliche Kundensegmente.</span> </li><li class="flex gap-3 text-[14px] text-[#1f2937] leading-[1.55]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="89:80"> <span class="inline-block w-1.5 h-1.5 bg-[#16a34a] rounded-full mt-[7px] shrink-0" aria-hidden="true" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="90:18"></span> <span data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="91:23">Die Preislogik ist nicht auf das Kundenverhalten abgestimmt.</span> </li><li class="flex gap-3 text-[14px] text-[#1f2937] leading-[1.55]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="89:80"> <span class="inline-block w-1.5 h-1.5 bg-[#16a34a] rounded-full mt-[7px] shrink-0" aria-hidden="true" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="90:18"></span> <span data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="91:23">Intern kalkulierte Angebote spiegeln nicht den Kundenwert.</span> </li><li class="flex gap-3 text-[14px] text-[#1f2937] leading-[1.55]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="89:80"> <span class="inline-block w-1.5 h-1.5 bg-[#16a34a] rounded-full mt-[7px] shrink-0" aria-hidden="true" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="90:18"></span> <span data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="91:23">Der Mehrwert fÃ¼r den Kunden wird nicht klar kommuniziert.</span> </li> </ul> </div><div class="p-8 lg:p-10 border-b border-[#e5e7eb] lg:border-r lg:border-b-0 border-b" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="68:149"> <div class="flex items-baseline justify-between mb-8" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="69:65"> <span class="font-serif-display text-[#16a34a] text-[28px]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="70:73">B</span> <span class="text-[10px] tracking-[0.2em] uppercase text-[#6b7280]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="71:81">Quelle: McKinsey</span> </div> <h3 class="font-serif-display text-[#1f2937] text-[26px] leading-tight mb-6" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="74:88"> Reibungsverluste in der Umsetzung </h3> <div class="border-l-2 border-[#16a34a] pl-4 mb-8" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="78:62"> <div class="font-serif-display text-[#1f2937] text-[40px] leading-none" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="79:85"> 66% </div> <p class="text-[13px] text-[#6b7280] mt-2 leading-snug" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="82:69"> des Potenzials von Preisanpassungen geht durch falsche Prozesse verloren. </p> </div> <ul class="space-y-3" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="87:33"> <li class="flex gap-3 text-[14px] text-[#1f2937] leading-[1.55]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="89:80"> <span class="inline-block w-1.5 h-1.5 bg-[#16a34a] rounded-full mt-[7px] shrink-0" aria-hidden="true" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="90:18"></span> <span data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="91:23">Daten zum Kundenverhalten werden nicht ausreichend genutzt.</span> </li><li class="flex gap-3 text-[14px] text-[#1f2937] leading-[1.55]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="89:80"> <span class="inline-block w-1.5 h-1.5 bg-[#16a34a] rounded-full mt-[7px] shrink-0" aria-hidden="true" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="90:18"></span> <span data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="91:23">Es fehlen Ressourcen fÃ¼r die Identifikation von Umsatzpotenzial.</span> </li><li class="flex gap-3 text-[14px] text-[#1f2937] leading-[1.55]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="89:80"> <span class="inline-block w-1.5 h-1.5 bg-[#16a34a] rounded-full mt-[7px] shrink-0" aria-hidden="true" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="90:18"></span> <span data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="91:23">Mangelnde Expertise im Bereich Pricing &amp; Monetarisierung.</span> </li><li class="flex gap-3 text-[14px] text-[#1f2937] leading-[1.55]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="89:80"> <span class="inline-block w-1.5 h-1.5 bg-[#16a34a] rounded-full mt-[7px] shrink-0" aria-hidden="true" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="90:18"></span> <span data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="91:23">Datensilos behindern den Informationsfluss.</span> </li> </ul> </div><div class="p-8 lg:p-10 border-b border-[#e5e7eb]  lg:border-b-0 " data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="68:149"> <div class="flex items-baseline justify-between mb-8" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="69:65"> <span class="font-serif-display text-[#16a34a] text-[28px]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="70:73">C</span> <span class="text-[10px] tracking-[0.2em] uppercase text-[#6b7280]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="71:81">Quelle: McKinsey</span> </div> <h3 class="font-serif-display text-[#1f2937] text-[26px] leading-tight mb-6" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="74:88"> Strukturelle LÃ¼cken in der Planung </h3> <div class="border-l-2 border-[#16a34a] pl-4 mb-8" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="78:62"> <div class="font-serif-display text-[#1f2937] text-[40px] leading-none" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="79:85"> 30% </div> <p class="text-[13px] text-[#6b7280] mt-2 leading-snug" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="82:69"> der wichtigen Entscheidungen verfehlen den besten Preis. </p> </div> <ul class="space-y-3" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="87:33"> <li class="flex gap-3 text-[14px] text-[#1f2937] leading-[1.55]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="89:80"> <span class="inline-block w-1.5 h-1.5 bg-[#16a34a] rounded-full mt-[7px] shrink-0" aria-hidden="true" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="90:18"></span> <span data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="91:23">KundenbedÃ¼rfnisse werden zu spÃ¤t berÃ¼cksichtigt.</span> </li><li class="flex gap-3 text-[14px] text-[#1f2937] leading-[1.55]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="89:80"> <span class="inline-block w-1.5 h-1.5 bg-[#16a34a] rounded-full mt-[7px] shrink-0" aria-hidden="true" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="90:18"></span> <span data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="91:23">Innovationen werden am Markt vorbei entwickelt.</span> </li><li class="flex gap-3 text-[14px] text-[#1f2937] leading-[1.55]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="89:80"> <span class="inline-block w-1.5 h-1.5 bg-[#16a34a] rounded-full mt-[7px] shrink-0" aria-hidden="true" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="90:18"></span> <span data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="91:23">Priorisierung ist nicht auf monetÃ¤res Wachstum ausgerichtet.</span> </li><li class="flex gap-3 text-[14px] text-[#1f2937] leading-[1.55]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="89:80"> <span class="inline-block w-1.5 h-1.5 bg-[#16a34a] rounded-full mt-[7px] shrink-0" aria-hidden="true" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="90:18"></span> <span data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Diagnose.astro" data-astro-source-loc="91:23">Es fehlt eine langfristige Perspektive.</span> </li> </ul> </div> </div> </div> </section> <section id="Methodik" class="bg-[#1f2937] text-white border-b border-[#1f2937] relative overflow-hidden" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="28:107"> <div class="relative max-w-[1280px] mx-auto px-6 lg:px-10 py-20 lg:py-32" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="29:77"> <div class="grid grid-cols-12 gap-6 lg:gap-10 mb-16 lg:mb-24" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="30:67"> <div class="col-span-12 lg:col-span-2" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="31:46"> <span class="label-eyebrow text-white/60" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="32:51">02 Methodik</span> </div> <div class="col-span-12 lg:col-span-10" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="34:47"> <h2 class="font-serif-display font-light leading-[1.05] text-[36px] sm:text-[48px] lg:text-[64px]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="35:108">
+Die Statik des Gewinns.
+<br data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="37:12"> <span class="italic text-[#16a34a]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="38:47">jedes Element trÃ¤gt.</span> </h2> <p class="mt-6 max-w-[640px] text-[16px] leading-[1.65] text-white/70" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="40:80">
+Wie bei einem GebÃ¤ude mÃ¼ssen auch im Ertragsmodell alle Elemente
+          prÃ¤zise aufeinander abgestimmt sein. VerÃ¤ndert man eine tragende
+          Wand, bewegt sich das gesamte Dach. Preis, Volumen, Marge und
+          Fixkosten sind untrennbar verzahnt.
+</p> </div> </div> <!-- Architectural diagram --> <div class="grid grid-cols-12 gap-6 lg:gap-10 items-stretch" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="50:66"> <!-- Diagram --> <div class="col-span-12 lg:col-span-7" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="52:46"> <div class="relative border border-white/15 aspect-[5/4] p-6 lg:p-10" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="53:79"> <div class="absolute top-4 left-4 right-4 flex items-center justify-between text-[10px] tracking-[0.25em] uppercase text-white/40" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="54:142"> <span data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="55:19">Fig. 02 â Tragwerk</span> <span data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="56:19">M 1:50</span> </div> <svg viewBox="0 0 600 490" class="w-full h-full" aria-hidden="true" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="59:79"> <!-- Roof - Gewinn --> <polygon points="120,140 480,140 300,60" fill="none" stroke="#16a34a" stroke-width="2" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="61:14"></polygon> <text x="270" y="115" fill="#16a34a" font-family="Fraunces" font-size="22" font-style="italic" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="62:108">Gewinn</text> <!-- Top plate --> <line x1="100" y1="150" x2="500" y2="150" stroke="#16a34a" stroke-width="3" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="65:14"></line> <!-- Two columns â green --> <g stroke="#16a34a" stroke-width="2" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="68:50"> <line x1="180" y1="150" x2="180" y2="415" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="69:16"></line> <line x1="420" y1="283" x2="420" y2="415" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="70:16"></line> </g> <!-- Column caps â green --> <g fill="#16a34a" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="74:31"> <rect x="170" y="148" width="20" height="6" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="75:16"></rect> <rect x="410" y="148" width="20" height="6" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="76:16"></rect> <rect x="170" y="411" width="20" height="6" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="77:16"></rect> <rect x="410" y="411" width="20" height="6" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="78:16"></rect> </g> <!-- Variable Kosten --> <g data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="82:16"> <rect x="395" y="152" width="50" height="131" fill="#1f2937" stroke="#9ca3af" stroke-width="1" stroke-dasharray="3 2" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="83:16"></rect> <g stroke="#9ca3af" stroke-width="0.5" opacity="0.45" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="84:69"> <line x1="395" y1="158" x2="445" y2="158" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="86:20"></line><line x1="395" y1="168" x2="445" y2="168" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="86:20"></line><line x1="395" y1="178" x2="445" y2="178" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="86:20"></line><line x1="395" y1="188" x2="445" y2="188" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="86:20"></line><line x1="395" y1="198" x2="445" y2="198" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="86:20"></line><line x1="395" y1="208" x2="445" y2="208" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="86:20"></line><line x1="395" y1="218" x2="445" y2="218" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="86:20"></line><line x1="395" y1="228" x2="445" y2="228" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="86:20"></line><line x1="395" y1="238" x2="445" y2="238" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="86:20"></line><line x1="395" y1="248" x2="445" y2="248" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="86:20"></line><line x1="395" y1="258" x2="445" y2="258" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="86:20"></line><line x1="395" y1="268" x2="445" y2="268" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="86:20"></line><line x1="395" y1="278" x2="445" y2="278" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="86:20"></line> </g> <text x="420" y="212" fill="#ffffff" font-family="Inter" font-size="10" letter-spacing="2" text-anchor="middle" font-weight="600" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="89:145">VARIABLE</text> <text x="420" y="227" fill="#ffffff" font-family="Inter" font-size="10" letter-spacing="2" text-anchor="middle" font-weight="600" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="90:145">KOSTEN</text> </g> <!-- Column labels --> <text x="168" y="335" fill="#16a34a" font-family="Inter" font-size="12" letter-spacing="2" text-anchor="end" font-weight="700" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="94:140">VOLUMEN</text> <text x="432" y="335" fill="#16a34a" font-family="Inter" font-size="12" letter-spacing="2" text-anchor="start" font-weight="700" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="95:142">MARGE</text> <!-- PREIS â interaction element --> <g data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="98:16"> <defs data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="99:21"> <marker id="arrL" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="100:120"> <path d="M10,0 L0,5 L10,10 z" fill="#16a34a" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="101:20"></path> </marker> <marker id="arrR" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="103:120"> <path d="M0,0 L10,5 L0,10 z" fill="#16a34a" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="104:20"></path> </marker> </defs> <rect x="265" y="315" width="70" height="40" fill="#1f2937" stroke="#16a34a" stroke-width="1.5" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="107:16"></rect> <text x="300" y="340" fill="#16a34a" font-family="Inter" font-size="12" letter-spacing="2" text-anchor="middle" font-weight="700" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="108:145">PREIS</text> <line x1="265" y1="335" x2="195" y2="335" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arrR)" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="109:16"></line> <line x1="335" y1="335" x2="415" y2="335" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arrR)" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="110:16"></line> </g> <!-- Foundation --> <rect x="80" y="380" width="440" height="35" fill="#1f2937" stroke="#9ca3af" stroke-width="1" stroke-dasharray="3 2" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="114:14"></rect> <g stroke="#9ca3af" stroke-width="0.5" opacity="0.45" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="115:67"> <line x1="80" y1="386" x2="520" y2="386" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="117:18"></line><line x1="80" y1="394" x2="520" y2="394" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="117:18"></line><line x1="80" y1="402" x2="520" y2="402" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="117:18"></line><line x1="80" y1="410" x2="520" y2="410" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="117:18"></line> </g> <text x="300" y="402" fill="#ffffff" font-family="Inter" font-size="12" letter-spacing="2" text-anchor="middle" font-weight="700" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="120:143">FIXKOSTEN</text> <!-- Profit equation --> <g data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="123:16"> <line x1="80" y1="445" x2="520" y2="445" stroke="#ffffff" stroke-width="0.5" opacity="0.2" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="124:16"></line> <text x="300" y="470" fill="#ffffff" font-family="Inter" font-size="11" letter-spacing="1.5" text-anchor="middle" font-weight="600" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="125:147"> <tspan data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="126:24">VOLUMEN</tspan> <tspan fill="#16a34a" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="127:39"> Ã </tspan> <tspan data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="128:24">MARGE</tspan> <tspan fill="#16a34a" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="129:39"> = </tspan> <tspan data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="130:24">DECKUNGSBEITRAG</tspan> <tspan fill="#16a34a" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="131:39"> â </tspan> <tspan data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="132:24">FIXKOSTEN</tspan> <tspan fill="#16a34a" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="133:39"> = </tspan> <tspan fill="#16a34a" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="134:39">BETRIEBSGEWINN</tspan> </text> </g> <!-- Side measurement --> <line x1="40" y1="60" x2="40" y2="390" stroke="#9ca3af" stroke-width="0.5" opacity="0.5" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="139:14"></line> <line x1="35" y1="60" x2="45" y2="60" stroke="#9ca3af" stroke-width="0.5" opacity="0.5" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="140:14"></line> <line x1="35" y1="150" x2="45" y2="150" stroke="#9ca3af" stroke-width="0.5" opacity="0.5" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="141:14"></line> <line x1="35" y1="390" x2="45" y2="390" stroke="#9ca3af" stroke-width="0.5" opacity="0.5" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="142:14"></line> </svg> </div> </div> <!-- Explanation --> <div class="col-span-12 lg:col-span-5" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="148:46"> <div class="h-full flex flex-col justify-between gap-8" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="149:65"> <div class="grid grid-cols-[40px_1fr] gap-4 pb-6 border-b border-white/10 last:border-b-0 last:pb-0" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="151:114"> <div class="font-serif-display text-2xl text-[#16a34a]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="152:109"> A </div> <div data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="155:20"> <div class="font-serif-display text-[20px] mb-1 text-[#16a34a]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="156:116"> Der Preis </div> <p class="text-[14px] leading-[1.6] text-white/65" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="159:68"> Der stÃ¤rkste Hebel mit direkter Auswirkung auf weitere Grundpfeiler. Die Kalibrierung steuert das Gleichgewicht zwischen Volumen und Marge. </p> </div> </div><div class="grid grid-cols-[40px_1fr] gap-4 pb-6 border-b border-white/10 last:border-b-0 last:pb-0" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="151:114"> <div class="font-serif-display text-2xl text-white/70" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="152:109"> B </div> <div data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="155:20"> <div class="font-serif-display text-[20px] mb-1 text-white" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="156:116"> Das Volumen </div> <p class="text-[14px] leading-[1.6] text-white/65" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="159:68"> Entspricht 50% des Deckungsbeitrags. Skalierung fÃ¼hrt zu stÃ¤rkerer Markenbekanntheit und hÃ¶herer Marktdurchdringung. </p> </div> </div><div class="grid grid-cols-[40px_1fr] gap-4 pb-6 border-b border-white/10 last:border-b-0 last:pb-0" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="151:114"> <div class="font-serif-display text-2xl text-white/70" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="152:109"> C </div> <div data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="155:20"> <div class="font-serif-display text-[20px] mb-1 text-white" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="156:116"> Die Marge </div> <p class="text-[14px] leading-[1.6] text-white/65" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="159:68"> Entspricht 50% des Deckungsbeitrags. Sie definiert den Gewinnbeitrag pro StÃ¼ck nach Abzug der variablen Kosten. </p> </div> </div><div class="grid grid-cols-[40px_1fr] gap-4 pb-6 border-b border-white/10 last:border-b-0 last:pb-0" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="151:114"> <div class="font-serif-display text-2xl text-white/70" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="152:109"> D </div> <div data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="155:20"> <div class="font-serif-display text-[20px] mb-1 text-white" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="156:116"> Die Fixkosten </div> <p class="text-[14px] leading-[1.6] text-white/65" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="159:68"> Die statische Grundlast des Systems. Muss vollstÃ¤ndig gedeckt sein, bevor die Gewinnzone erreicht werden kann. </p> </div> </div> </div> </div> </div> <!-- Closing note --> <div class="mt-16 lg:mt-24 pt-10 border-t border-white/10 grid grid-cols-12 gap-10" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="170:89"> <div class="col-span-12 lg:col-span-2" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="171:46"> <span class="label-eyebrow text-white/40" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="172:51">Prinzip</span> </div> <div class="col-span-12 lg:col-span-10" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="174:47"> <p class="font-serif-display italic font-light text-[22px] sm:text-[28px] lg:text-[34px] leading-[1.3] text-white max-w-[900px]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="175:138">
+Ein hoher Preis nÃ¼tzt nichts, wenn das Volumen wegbricht, und hohe
+          Volumen dank tiefer Preise garantieren keinen Gewinn. Ich justiere
+          das VerhÃ¤ltnis von Preis, Menge und Kosten so, dass am Ende ein  <span class="text-[#16a34a] not-italic" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Methodik.astro" data-astro-source-loc="179:51">
+maximaler Ãberschuss
+</span> 
+bleibt: sicher, planbar, nachhaltig.
+</p> </div> </div> </div> </section> <section id="Zielpublikum" class="bg-white border-b border-[#e5e7eb]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="43:71"> <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-20 lg:py-28" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="44:68"> <div class="grid grid-cols-12 gap-6 lg:gap-10 mb-16" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="45:58"> <div class="col-span-12 lg:col-span-2" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="46:46"> <span class="label-eyebrow" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="47:37">03 Zielpublikum</span> </div> <div class="col-span-12 lg:col-span-10" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="49:47"> <h2 class="font-serif-display text-[#1f2937] font-light leading-[1.05] text-[36px] sm:text-[48px] lg:text-[60px]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="50:123">
+Drei Profile.
+<br data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="52:12">
+Eine Logik der <span class="text-[#16a34a]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="53:55">ProfitabilitÃ¤t</span>.
+</h2> <p class="mt-6 max-w-[640px] text-[16px] leading-[1.6] text-[#6b7280]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="55:80">
+Ich adaptiere keine StandardlÃ¶sungen, sondern konstruiere die
+          Ertragslogik passend zu Ihrer Organisationsform. WÃ¤hlen Sie Ihren
+          bevorzugten Fokus.
+</p> </div> </div> <div class="grid grid-cols-1 lg:grid-cols-3 border-t border-[#1f2937]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="63:76"> <div class="flex flex-col p-8 lg:p-10 lg:border-r border-[#e5e7eb] border-b lg:border-b-0 border-[#e5e7eb]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="65:171"> <div class="flex items-start justify-between mb-10 min-h-[36px]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="66:76"> <span class="font-serif-display text-[#1f2937] text-[24px] leading-none" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="67:86"> 01 </span> <span class="text-[10px] tracking-[0.2em] uppercase text-[#6b7280] text-right max-w-[180px] leading-[1.5]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="70:120"> KMU </span> </div> <h3 class="font-serif-display text-[#1f2937] text-[28px] lg:text-[32px] leading-[1.1] mb-5" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="75:103"> ProfitabilitÃ¤ts- <br data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="77:14"> modellierung </h3> <div class="border-l-2 border-[#16a34a] pl-4 mb-8" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="81:62"> <p class="font-serif-display italic text-[15px] text-[#1f2937] leading-[1.5]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="82:91"> Nachhaltige Absicherung der ProfitabilitÃ¤t und planbarer Cashflow. </p> </div> <div class="mb-6" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="87:29"> <div class="label-eyebrow mb-2" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="88:45">Profil</div> <p class="text-[14px] leading-[1.6] text-[#1f2937]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="89:65"> InhabergefÃ¼hrte Unternehmen und etablierte KMU mit stabilem Umsatz, aber inkonsistenten Margenstrukturen, bei denen Preisentscheidungen noch auf Tradition, BauchgefÃ¼hl oder Wettbewerbsorientierung beruhen. </p> </div> <div class="mb-8" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="94:29"> <div class="label-eyebrow mb-2" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="95:45">Kernherausforderung</div> <p class="text-[14px] leading-[1.6] text-[#1f2937]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="96:65"> Die ProfitabilitÃ¤t entspricht nicht den Erwartungen. Rabatte werden reaktiv gewÃ¤hrt, Produkte unter Wert verkauft und die tatsÃ¤chliche Zahlungsbereitschaft der SchlÃ¼sselsegmente bleibt ungetestet. </p> </div> <a href="https://tidycal.com/gewinnarchitekt/potenzialcheck" target="_blank" rel="noopener" data-ph-event="cta_clicked" data-ph-location="profile_kmu" class="mt-auto inline-flex items-center justify-between border-t border-[#1f2937] pt-4 text-[13px] font-medium text-[#1f2937] hover:text-[#16a34a] transition-colors group" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="103:185"> <span data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="104:19">20-Minuten-Potenzial-Check buchen</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="105:292"><path d="M7 7h10v10" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="105:292"></path><path d="M7 17 17 7" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="105:314"></path></svg> </a> </div><div class="flex flex-col p-8 lg:p-10 lg:border-r border-[#e5e7eb] border-b lg:border-b-0 border-[#e5e7eb]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="65:171"> <div class="flex items-start justify-between mb-10 min-h-[36px]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="66:76"> <span class="font-serif-display text-[#1f2937] text-[24px] leading-none" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="67:86"> 02 </span> <span class="text-[10px] tracking-[0.2em] uppercase text-[#6b7280] text-right max-w-[180px] leading-[1.5]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="70:120"> Tech-GrÃ¼nder &amp; Scale-ups </span> </div> <h3 class="font-serif-display text-[#1f2937] text-[28px] lg:text-[32px] leading-[1.1] mb-5" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="75:103"> Monetarisierungs- <br data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="77:14"> architektur </h3> <div class="border-l-2 border-[#16a34a] pl-4 mb-8" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="81:62"> <p class="font-serif-display italic text-[15px] text-[#1f2937] leading-[1.5]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="82:91"> Ein robustes ErlÃ¶smodell fÃ¼r exponentielles Wachstum und anstehende Finanzierungsrunden. </p> </div> <div class="mb-6" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="87:29"> <div class="label-eyebrow mb-2" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="88:45">Profil</div> <p class="text-[14px] leading-[1.6] text-[#1f2937]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="89:65"> Startups und Scale-ups vor der nÃ¤chsten Finanzierungsrunde, bei internationaler Expansion oder beim Ãbergang zu einem neuen Pricing. </p> </div> <div class="mb-8" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="94:29"> <div class="label-eyebrow mb-2" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="95:45">Kernherausforderung</div> <p class="text-[14px] leading-[1.6] text-[#1f2937]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="96:65"> Die Conversion ist stark, aber der ARPU stagniert. Das Packaging ist improvisiert, Expansion Revenue versickert, und Investoren fragen, wie das Monetarisierungsmodell bei Skalierung greift. </p> </div> <a href="https://tidycal.com/gewinnarchitekt/potenzialcheck" target="_blank" rel="noopener" data-ph-event="cta_clicked" data-ph-location="profile_scaleup" class="mt-auto inline-flex items-center justify-between border-t border-[#1f2937] pt-4 text-[13px] font-medium text-[#1f2937] hover:text-[#16a34a] transition-colors group" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="103:185"> <span data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="104:19">20-Minuten-Potenzial-Check buchen</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="105:292"><path d="M7 7h10v10" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="105:292"></path><path d="M7 17 17 7" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="105:314"></path></svg> </a> </div><div class="flex flex-col p-8 lg:p-10  " data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="65:171"> <div class="flex items-start justify-between mb-10 min-h-[36px]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="66:76"> <span class="font-serif-display text-[#1f2937] text-[24px] leading-none" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="67:86"> 03 </span> <span class="text-[10px] tracking-[0.2em] uppercase text-[#6b7280] text-right max-w-[180px] leading-[1.5]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="70:120"> Partner Netzwerk </span> </div> <h3 class="font-serif-display text-[#1f2937] text-[28px] lg:text-[32px] leading-[1.1] mb-5" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="75:103"> Pricing- <br data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="77:14"> expertise </h3> <div class="border-l-2 border-[#16a34a] pl-4 mb-8" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="81:62"> <p class="font-serif-display italic text-[15px] text-[#1f2937] leading-[1.5]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="82:91"> Validierte Entscheidungsgrundlagen und ein geschÃ¤rftes Profil des Beratungsangebots. </p> </div> <div class="mb-6" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="87:29"> <div class="label-eyebrow mb-2" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="88:45">Profil</div> <p class="text-[14px] leading-[1.6] text-[#1f2937]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="89:65"> Product Leaders, fractional CFOs und Beratungsfirmen, die ein Portfolio von Wachstumskunden betreuen und Senior-Pricing-Kompetenz benÃ¶tigen, ohne sie intern aufzubauen. </p> </div> <div class="mb-8" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="94:29"> <div class="label-eyebrow mb-2" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="95:45">Kernherausforderung</div> <p class="text-[14px] leading-[1.6] text-[#1f2937]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="96:65"> Kunden verlangen Pricing-Strategie, die Ã¼ber die reine P&amp;L-Sicht hinausgeht. Sie brauchen einen vertrauenswÃ¼rdigen Spezialisten-Partner, der sich nahtlos in Ihre Mandate integriert und Ihr Angebot aufwertet. </p> </div> <a href="https://tidycal.com/gewinnarchitekt/potenzialcheck" target="_blank" rel="noopener" data-ph-event="cta_clicked" data-ph-location="profile_partner" class="mt-auto inline-flex items-center justify-between border-t border-[#1f2937] pt-4 text-[13px] font-medium text-[#1f2937] hover:text-[#16a34a] transition-colors group" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="103:185"> <span data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="104:19">20-Minuten-Potenzial-Check buchen</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="105:292"><path d="M7 7h10v10" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="105:292"></path><path d="M7 17 17 7" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Zielpublikum.astro" data-astro-source-loc="105:314"></path></svg> </a> </div> </div> </div> </section> <section id="Leistungen" class="bg-[#f9fafb] border-b border-[#e5e7eb]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="37:73"> <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-20 lg:py-28" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="38:68"> <div class="grid grid-cols-12 gap-6 lg:gap-10 mb-16" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="39:58"> <div class="col-span-12 lg:col-span-2" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="40:46"> <span class="label-eyebrow" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="41:37">04 Leistungen</span> </div> <div class="col-span-12 lg:col-span-10" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="43:47"> <h2 class="font-serif-display text-[#1f2937] font-light leading-[1.05] text-[36px] sm:text-[48px] lg:text-[60px]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="44:123">
+FÃ¼nf Dimensionen der  <span class="text-[#16a34a]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="46:40">Gewinnmaximierung</span>.
+</h2> <p class="mt-6 max-w-[640px] text-[16px] leading-[1.6] text-[#6b7280]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="48:80">
+WÃ¤hlen Sie den Einstiegspunkt, der zu Ihrer Phase passt; von dort
+          aus kalibriere ich die Arbeit.
+</p> </div> </div> <!-- Services list â editorial rows --> <div class="border-t border-[#1f2937]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="56:44"> <article class="group grid grid-cols-12 gap-6 lg:gap-10 py-10 lg:py-12 border-b border-[#e5e7eb] hover:bg-white transition-colors" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="58:140"> <div class="col-span-12 lg:col-span-1" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="59:50"> <span class="font-serif-display text-[#16a34a] text-[28px]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="60:73"> 01 </span> </div> <div class="col-span-12 lg:col-span-4" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="64:50"> <h3 class="font-serif-display text-[#1f2937] text-[26px] lg:text-[30px] leading-[1.15]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="65:101"> Strategische Planung </h3> <p class="mt-3 text-[14px] text-[#6b7280] italic font-serif-display" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="68:82"> Wachstumsziele in eine klare Finanz- und GeschÃ¤ftsstrategie Ã¼bersetzen. </p> </div> <div class="col-span-12 lg:col-span-6 lg:col-start-7" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="72:65"> <p class="text-[15px] lg:text-[16px] leading-[1.65] text-[#1f2937]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="73:81"> Gemeinsam entwickeln wir eine skalierbare Gewinnarchitektur, die GeschÃ¤ftsmodell, Preislogik und Ressourcenplanung auf profitables Wachstum ausrichtet, damit Investitionen, KapazitÃ¤ten und Angebote bewusst gesteuert werden. </p> </div> </article><article class="group grid grid-cols-12 gap-6 lg:gap-10 py-10 lg:py-12 border-b border-[#e5e7eb] hover:bg-white transition-colors" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="58:140"> <div class="col-span-12 lg:col-span-1" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="59:50"> <span class="font-serif-display text-[#16a34a] text-[28px]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="60:73"> 02 </span> </div> <div class="col-span-12 lg:col-span-4" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="64:50"> <h3 class="font-serif-display text-[#1f2937] text-[26px] lg:text-[30px] leading-[1.15]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="65:101"> Finanzmodellierung </h3> <p class="mt-3 text-[14px] text-[#6b7280] italic font-serif-display" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="68:82"> Annahmen, Szenarien und Risiken sichtbar machen. </p> </div> <div class="col-span-12 lg:col-span-6 lg:col-start-7" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="72:65"> <p class="text-[15px] lg:text-[16px] leading-[1.65] text-[#1f2937]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="73:81"> Mit praxistauglichen Finanzmodellen, von der Angebots-Unit bis zum Gesamtunternehmen, schaffe ich belastbare Entscheidungsgrundlagen. Neue Preismodelle, Produkte oder MÃ¤rkte simuliere ich, bevor Sie investieren. </p> </div> </article><article class="group grid grid-cols-12 gap-6 lg:gap-10 py-10 lg:py-12 border-b border-[#e5e7eb] hover:bg-white transition-colors" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="58:140"> <div class="col-span-12 lg:col-span-1" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="59:50"> <span class="font-serif-display text-[#16a34a] text-[28px]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="60:73"> 03 </span> </div> <div class="col-span-12 lg:col-span-4" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="64:50"> <h3 class="font-serif-display text-[#1f2937] text-[26px] lg:text-[30px] leading-[1.15]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="65:101"> Angebotsgestaltung </h3> <p class="mt-3 text-[14px] text-[#6b7280] italic font-serif-display" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="68:82"> Kundennutzen, Preislogik und Marge in einer Linie. </p> </div> <div class="col-span-12 lg:col-span-6 lg:col-start-7" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="72:65"> <p class="text-[15px] lg:text-[16px] leading-[1.65] text-[#1f2937]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="73:81"> Ich schÃ¤rfe Ihr Angebot von der Value Proposition bis zur Paket- und Preisstruktur. Klar strukturierte Angebote machen Mehrwerte greifbar und erhÃ¶hen Abschluss- und Upselling-Quoten. </p> </div> </article><article class="group grid grid-cols-12 gap-6 lg:gap-10 py-10 lg:py-12 border-b border-[#e5e7eb] hover:bg-white transition-colors" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="58:140"> <div class="col-span-12 lg:col-span-1" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="59:50"> <span class="font-serif-display text-[#16a34a] text-[28px]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="60:73"> 04 </span> </div> <div class="col-span-12 lg:col-span-4" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="64:50"> <h3 class="font-serif-display text-[#1f2937] text-[26px] lg:text-[30px] leading-[1.15]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="65:101"> Controlling </h3> <p class="mt-3 text-[14px] text-[#6b7280] italic font-serif-display" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="68:82"> Statt Vergangenheit zu erklÃ¤ren, Gewinn aktiv steuern. </p> </div> <div class="col-span-12 lg:col-span-6 lg:col-start-7" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="72:65"> <p class="text-[15px] lg:text-[16px] leading-[1.65] text-[#1f2937]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="73:81"> Ich baue ein schlankes Controlling-System mit klaren Kennzahlen, Routinen und Verantwortlichkeiten. Statt Excel-Wildwuchs entsteht Fokus auf die wirklich ergebnisrelevanten Hebel. </p> </div> </article><article class="group grid grid-cols-12 gap-6 lg:gap-10 py-10 lg:py-12 border-b border-[#e5e7eb] hover:bg-white transition-colors" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="58:140"> <div class="col-span-12 lg:col-span-1" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="59:50"> <span class="font-serif-display text-[#16a34a] text-[28px]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="60:73"> 05 </span> </div> <div class="col-span-12 lg:col-span-4" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="64:50"> <h3 class="font-serif-display text-[#1f2937] text-[26px] lg:text-[30px] leading-[1.15]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="65:101"> Dashboards &amp; Reporting </h3> <p class="mt-3 text-[14px] text-[#6b7280] italic font-serif-display" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="68:82"> Vom Pflichtreport zum FÃ¼hrungsinstrument. </p> </div> <div class="col-span-12 lg:col-span-6 lg:col-start-7" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="72:65"> <p class="text-[15px] lg:text-[16px] leading-[1.65] text-[#1f2937]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Leistungen.astro" data-astro-source-loc="73:81"> Management-Dashboards, die die wichtigsten Kennzahlen auf einen Blick sichtbar machen. Reportings werden klar strukturiert, visuell verstÃ¤ndlich und konsequent auf Gewinn- und Wachstumsziele ausgerichtet. </p> </div> </article> </div> </div> </section> <section id="Profil" class="bg-white border-b border-[#e5e7eb]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="16:65"> <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-20 lg:py-28" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="17:68"> <div class="grid grid-cols-12 gap-6 lg:gap-10 mb-16" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="18:58"> <div class="col-span-12 lg:col-span-2" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="19:46"> <span class="label-eyebrow" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="20:37">05 Profil</span> </div> <div class="col-span-12 lg:col-span-10" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="22:47"> <p class="text-[#16a34a] font-display text-[18px] mb-2" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="23:65">
+Guten Tag, ich bin Karl Aschwanden.
+</p> </div> </div> <div class="grid grid-cols-12 gap-6 lg:gap-10 items-start" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="29:64"> <!-- Portrait --> <div class="col-span-12 lg:col-span-5" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="31:46"> <div class="relative aspect-[4/5] w-full bg-[#f9fafb] overflow-hidden border border-[#e5e7eb]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="32:104"> <img src="/_image?href=%2F%40fs%2FC%3A%2FUsers%2FGewinnarchitekt%2Frepos%2Fgewinnarchitekt-site%2Fsrc%2Fassets%2Fkarl.jpeg%3ForigWidth%3D3688%26origHeight%3D4608%26origFormat%3Djpg&#38;w=3688&#38;h=4608&#38;f=webp" srcset="/_image?href=%2F%40fs%2FC%3A%2FUsers%2FGewinnarchitekt%2Frepos%2Fgewinnarchitekt-site%2Fsrc%2Fassets%2Fkarl.jpeg%3ForigWidth%3D3688%26origHeight%3D4608%26origFormat%3Djpg&#38;w=400&#38;h=500&#38;f=webp 400w, /_image?href=%2F%40fs%2FC%3A%2FUsers%2FGewinnarchitekt%2Frepos%2Fgewinnarchitekt-site%2Fsrc%2Fassets%2Fkarl.jpeg%3ForigWidth%3D3688%26origHeight%3D4608%26origFormat%3Djpg&#38;w=600&#38;h=750&#38;f=webp 600w, /_image?href=%2F%40fs%2FC%3A%2FUsers%2FGewinnarchitekt%2Frepos%2Fgewinnarchitekt-site%2Fsrc%2Fassets%2Fkarl.jpeg%3ForigWidth%3D3688%26origHeight%3D4608%26origFormat%3Djpg&#38;w=800&#38;h=1000&#38;f=webp 800w, /_image?href=%2F%40fs%2FC%3A%2FUsers%2FGewinnarchitekt%2Frepos%2Fgewinnarchitekt-site%2Fsrc%2Fassets%2Fkarl.jpeg%3ForigWidth%3D3688%26origHeight%3D4608%26origFormat%3Djpg&#38;w=1200&#38;h=1499&#38;f=webp 1200w" data-image-component="true" alt="Karl Aschwanden, Founder Â· ZÃ¼rich" sizes="(max-width: 1024px) 90vw, 40vw" loading="lazy" decoding="async" width="3688" height="4608" class="absolute inset-0 w-full h-full object-cover" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/node_modules/.pnpm/astro@6.1.9_jiti@2.6.1_lightningcss@1.32.0_rollup@4.60.2/node_modules/astro/components/Image.astro" data-astro-source-loc="53:2"> </div> <p class="mt-3 text-[11px] tracking-[0.2em] uppercase text-[#6b7280]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="41:79">
+Karl Aschwanden Â· Founder Â· ZÃ¼rich
+</p> </div> <!-- Right copy --> <div class="col-span-12 lg:col-span-7" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="47:46"> <div class="flex items-baseline justify-between border-b border-[#e5e7eb] pb-6 mb-8" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="48:94"> <h2 class="font-display text-[#1f2937] text-[42px] lg:text-[56px] leading-[1.05]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="49:93">
+Karl Aschwanden
+</h2> <span class="hidden sm:block text-[11px] tracking-[0.2em] uppercase text-[#6b7280]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="52:95">
+Founder Â· Principal
+</span> </div> <blockquote class="font-display text-[26px] sm:text-[32px] lg:text-[38px] leading-[1.2] text-[#1f2937] mb-10 max-w-[760px]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="57:133">
+Â«<span class="text-[#16a34a]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="58:41">Gewinnarchitektur</span> ist die BrÃ¼cke zwischen KundenverstÃ¤ndnis, Wettbewerbsdynamik und der Margenstruktur Ihres Unternehmens.Â»
+</blockquote> <div class="text-[15px] lg:text-[16px] leading-[1.7] text-[#1f2937] max-w-[640px] mb-12 space-y-4" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="61:108"> <p data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="62:14">Viele Unternehmen entwickeln exzellente Produkte, verschenken aber bei der Monetarisierung massiv Marge. Mit Stationen bei BranchenfÃ¼hrern wie Sunrise, Swisscard und Goldbach habe ich erfolgreiche ErlÃ¶smodelle von Grund auf konzipiert und operativ implementiert.</p> <p data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="63:14">Ich unterstÃ¼tze Sie dabei, den Werttreiber Ihres Angebots glasklar in eine skalierbare Umsatzlogik zu Ã¼bersetzen â evidenzbasiert, marktorientiert und mit Fokus auf nachhaltiges Wachstum.</p> </div> <dl class="border-t border-[#1f2937]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="66:47"> <div class="grid grid-cols-12 py-4 border-b border-[#e5e7eb]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="68:75"> <dt class="col-span-6 text-[14px] text-[#6b7280]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="69:65">Jahre Erfahrung</dt> <dd class="col-span-6 text-[14px] text-[#1f2937] font-medium" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="70:77"> 20+ </dd> </div><div class="grid grid-cols-12 py-4 border-b border-[#e5e7eb]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="68:75"> <dt class="col-span-6 text-[14px] text-[#6b7280]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="69:65">Spezialisierung</dt> <dd class="col-span-6 text-[14px] text-[#1f2937] font-medium" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="70:77"> Financial Services, Telekommunikation, Subscription Businesses </dd> </div><div class="grid grid-cols-12 py-4 border-b border-[#e5e7eb]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="68:75"> <dt class="col-span-6 text-[14px] text-[#6b7280]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="69:65">Sprachen</dt> <dd class="col-span-6 text-[14px] text-[#1f2937] font-medium" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="70:77"> DE Â· EN </dd> </div><div class="grid grid-cols-12 py-4 border-b border-[#e5e7eb]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="68:75"> <dt class="col-span-6 text-[14px] text-[#6b7280]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="69:65">Sitz</dt> <dd class="col-span-6 text-[14px] text-[#1f2937] font-medium" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="70:77"> ZÃ¼rich, CH </dd> </div><div class="grid grid-cols-12 py-4 border-b border-[#e5e7eb]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="68:75"> <dt class="col-span-6 text-[14px] text-[#6b7280]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="69:65">Akkreditierung</dt> <dd class="col-span-6 text-[14px] text-[#1f2937] font-medium" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="70:77"> Chartered Financial Modeler </dd> </div><div class="grid grid-cols-12 py-4 border-b border-[#e5e7eb]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="68:75"> <dt class="col-span-6 text-[14px] text-[#6b7280]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="69:65">Aus- &amp; Weiterbildung</dt> <dd class="col-span-6 text-[14px] text-[#1f2937] font-medium" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="70:77"> <span class="flex flex-col gap-1" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="72:53"> <span data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="74:29">MBA IE Business School</span><span data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="74:29">BBA FHNW</span><span data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="74:29">diverse Kurse in Applied Data Science &amp; AI</span> </span> </dd> </div> </dl> <div class="mt-10" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="85:28"> <a href="https://tidycal.com/gewinnarchitekt/potenzialcheck" target="_blank" rel="noopener" data-ph-event="cta_clicked" data-ph-location="about" class="inline-flex items-center gap-3 bg-[#16a34a] text-white text-[14px] font-medium px-6 py-4 hover:bg-[#15803d] transition-colors" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="86:290">
+Direkt mit Karl sprechen
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="88:214"><path d="M7 7h10v10" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="88:214"></path><path d="M7 17 17 7" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Profil.astro" data-astro-source-loc="88:236"></path></svg> </a> </div> </div> </div> </div> </section> <footer id="kontakt" class="bg-[#1f2937] text-white" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="6:54"> <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-20 lg:py-24" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="7:68"> <div class="grid grid-cols-12 gap-6 lg:gap-10 mb-16" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="8:58"> <div class="col-span-12 lg:col-span-2" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="9:46"> <span class="label-eyebrow text-white/50" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="10:51">Kontakt</span> </div> <div class="col-span-12 lg:col-span-10" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="12:47"> <h2 class="font-serif-display font-light leading-[1.05] text-[36px] sm:text-[48px] lg:text-[60px]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="13:108">
+Lassen Sie uns Ã¼ber
+<br data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="15:12"> <span class="italic text-[#16a34a]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="16:47">Ihren Gewinn</span> 
+sprechen.
+</h2> <p class="mt-6 max-w-[560px] text-[16px] leading-[1.6] text-white/65" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="19:79">
+Zwanzig Minuten reichen, um die wichtigsten Hebel in Ihrer
+          Pricing- und Margenstruktur zu identifizieren. Unverbindlich,
+          vertraulich, konkret.
+</p> <div class="mt-10 flex flex-wrap gap-3" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="25:49"> <a href="https://tidycal.com/gewinnarchitekt/potenzialcheck" target="_blank" rel="noopener" data-ph-event="cta_clicked" data-ph-location="footer" class="inline-flex items-center gap-3 bg-[#16a34a] text-white text-[14px] font-medium px-6 py-4 hover:bg-[#15803d] transition-colors" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="28:147">
+Potenzial-Check buchen
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="30:214"><path d="M7 7h10v10" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="30:214"></path><path d="M7 17 17 7" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="30:236"></path></svg> </a> <a href="mailto:info@gewinnarchitekt.ch" data-ph-event="email_clicked" class="inline-flex items-center gap-3 border border-white/30 text-white text-[14px] font-medium px-6 py-4 hover:bg-white hover:text-[#1f2937] transition-colors" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="34:174">
+info@gewinnarchitekt.ch
+</a> </div> </div> </div> <div class="grid grid-cols-12 gap-6 lg:gap-10 pt-10 border-t border-white/10" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="41:83"> <div class="col-span-12 lg:col-span-4" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="42:46"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 50" class="h-12 w-auto text-white" role="img" aria-label="Gewinnarchitekt Logo" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Logo.astro" data-astro-source-loc="18:2"> <text x="10" y="35" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="-0.5" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Logo.astro" data-astro-source-loc="26:4"> <tspan fill="#16a34a" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Logo.astro" data-astro-source-loc="27:27">Gewinn</tspan><tspan fill="currentColor" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Logo.astro" data-astro-source-loc="27:68">architekt</tspan> </text> </svg> <p class="mt-5 text-[13px] text-white/55 max-w-[320px] leading-[1.6]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="44:79">
+Gewinnarchitektur. Pricing, Produktstrategie und
+          Finanzmodellierung an der Schnittstelle, an der Marge entsteht.
+</p> </div> <div class="col-span-6 lg:col-span-3" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="50:45"> <div class="label-eyebrow text-white/50 mb-4" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="51:55">Kontakt</div> <ul class="space-y-2 text-[14px] text-white/80" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="52:57"> <li data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="53:15">Gewinnarchitekt Aschwanden</li> <li data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="54:15">CHE-233.099.319</li> <li data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="55:15">8055 ZÃ¼rich</li> <li data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="56:15">+41 76 535 26 04</li> </ul> </div> <div class="col-span-6 lg:col-span-3" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="60:45"> <div class="label-eyebrow text-white/50 mb-4" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="61:55">Navigation</div> <ul class="space-y-2 text-[14px] text-white/80" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="62:57"> <li data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="63:16"><a href="#herausforderungen" class="hover:text-[#16a34a]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="63:73">Diagnose</a></li> <li data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="64:16"><a href="#architektur" class="hover:text-[#16a34a]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="64:67">Methodik</a></li> <li data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="65:16"><a href="#leistungen" class="hover:text-[#16a34a]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="65:66">Zielpublikum</a></li> <li data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="66:16"><a href="#methodik" class="hover:text-[#16a34a]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="66:64">Leistungen</a></li> <li data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="67:16"><a href="#ueber-mich" class="hover:text-[#16a34a]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="67:66">Profil</a></li> </ul> </div> <div class="col-span-12 lg:col-span-2" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="71:46"> <div class="label-eyebrow text-white/50 mb-4" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="72:55">Rechtliches</div> <ul class="space-y-2 text-[14px] text-white/80" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="73:57"> <li data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="74:16"><a href="#" class="hover:text-[#16a34a]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="74:56">Impressum</a></li> <li data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="75:16"><a href="#" class="hover:text-[#16a34a]" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="75:56">Datenschutz</a></li> </ul> </div> </div> <div class="mt-14 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-[12px] text-white/50" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="80:156"> <span data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="81:13">
+Â© 2026 Gewinnarchitekt Â· Karl Aschwanden
+</span> <span class="tracking-[0.2em] uppercase" data-astro-source-file="C:/Users/Gewinnarchitekt/repos/gewinnarchitekt-site/src/components/Footer.astro" data-astro-source-loc="84:48">
+Statik des Gewinns Â· Fig. 00
+</span> </div> </div> </footer> </body></html>
