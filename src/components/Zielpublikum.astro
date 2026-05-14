@@ -1,42 +1,39 @@
 ---
 // src/components/Zielpublikum.astro
-const groups = [
+import AudienceCard from "./AudienceCard.astro";
+
+const audiences = [
   {
-    num: '01',
-    label: 'KMU',
-    key: 'profile_kmu',
-    titleA: 'Profitabilitäts-',
-    titleB: 'modellierung',
-    lead: 'Nachhaltige Absicherung der Profitabilität und planbarer Cashflow.',
-    profile:
-      'Inhabergeführte Unternehmen und etablierte KMU mit stabilem Umsatz, aber inkonsistenten Margenstrukturen, bei denen Preisentscheidungen noch auf Tradition, Bauchgefühl oder Wettbewerbsorientierung beruhen.',
-    challenge:
-      'Die Profitabilität entspricht nicht den Erwartungen. Rabatte werden reaktiv gewährt, Produkte unter Wert verkauft und die tatsächliche Zahlungsbereitschaft der Schlüsselsegmente bleibt ungetestet.'
+    num: "01",
+    audience: "KMU",
+    subtitle: "Transparenz & Stabilität",
+    kern: "Profitabilität sichern und Cashflow planbar machen – Komplexität reduzieren.",
+    fokus:
+      "Inhabergeführte Unternehmen (5–50 Mio. CHF Umsatz) mit historisch gewachsenen Portfolios. Sie verfügen über ein Reporting, benötigen aber Klarheit über die echte Produkteprofitabilität.",
+    ausschluss:
+      "Startups ohne Marktreife oder Konzerne mit eigenen FP&A-Abteilungen.",
   },
   {
-    num: '02',
-    label: 'Tech-Gründer & Scale-ups',
-    key: 'profile_scaleup',
-    titleA: 'Monetarisierungs-',
-    titleB: 'architektur',
-    lead: 'Ein robustes Erlösmodell für exponentielles Wachstum und anstehende Finanzierungsrunden.',
-    profile:
-      'Startups und Scale-ups vor der nächsten Finanzierungsrunde, bei internationaler Expansion oder beim Übergang zu einem neuen Pricing.',
-    challenge:
-      'Die Conversion ist stark, aber der ARPU stagniert. Das Packaging ist improvisiert, Expansion Revenue versickert, und Investoren fragen, wie das Monetarisierungsmodell bei Skalierung greift.'
+    num: "02",
+    audience: "Scale-up",
+    subtitle: "Skalierbare Erlöslogik",
+    kern: "Skalierbare Preisstrukturen als Argument für anstehende Finanzierungsrunden.",
+    fokus:
+      "Wachstumsunternehmen mit validiertem Produkt. Founder, die ein systematisches Erlösmodell statt ad-hoc Pricing benötigen.",
+    ausschluss:
+      "Pre-Revenue-Setups oder punktuelle Optimierungen ohne strategisches Fundament.",
   },
   {
-    num: '03',
-    label: 'Partner Netzwerk',
-    key: 'profile_partner',
-    titleA: 'Pricing-',
-    titleB: 'expertise',
-    lead: 'Validierte Entscheidungsgrundlagen und ein geschärftes Profil des Beratungsangebots.',
-    profile:
-      'Product Leaders, fractional CFOs und Beratungsfirmen, die ein Portfolio von Wachstumskunden betreuen und Senior-Pricing-Kompetenz benötigen, ohne sie intern aufzubauen.',
-    challenge:
-      'Kunden verlangen Pricing-Strategie, die über die reine P&L-Sicht hinausgeht. Sie brauchen einen vertrauenswürdigen Spezialisten-Partner, der sich nahtlos in Ihre Mandate integriert und Ihr Angebot aufwertet.'
-  }
+    num: "03",
+    audience: "P&L-Verantwortliche & Partner",
+    subtitle:
+      "Validierte Entscheidungsgrundlagen",
+    kern: "Externe Fachinstanz für belastbare Finanz- und Preismodelle.",
+    fokus:
+      "Management-Mitglieder (GL) und externe Partner (Fractional CFOs, Product Leader), die für kritische Weichenstellungen eine konsistente Herleitung benötigen",
+    ausschluss:
+      "Projekte ohne direkten Einfluss auf die Gewinn- und Verlustrechnung.",
+  },
 ];
 ---
 
@@ -47,65 +44,31 @@ const groups = [
         <span class="label-eyebrow">03 Zielpublikum</span>
       </div>
       <div class="col-span-12 lg:col-span-10">
-        <h2 class="font-serif-display text-[#1f2937] font-light leading-[1.05] text-[36px] sm:text-[48px] lg:text-[60px]">
+        <h2
+          class="font-serif-display text-[#1f2937] font-light leading-[1.05] text-[36px] sm:text-[48px] lg:text-[60px]"
+        >
           Drei Profile.
           <br />
           Eine Logik der <span class="text-[#16a34a]">Profitabilität</span>.
         </h2>
-        <p class="mt-6 max-w-[640px] text-[16px] leading-[1.6] text-[#6b7280]">
-          Ich adaptiere keine Standardlösungen, sondern konstruiere die
-          Ertragslogik passend zu Ihrer Organisationsform. Wählen Sie Ihren
-          bevorzugten Fokus.
-        </p>
       </div>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 border-t border-[#1f2937]">
-      {groups.map((g, i) => (
-        <div class={`flex flex-col p-8 lg:p-10 ${i < 2 ? 'lg:border-r border-[#e5e7eb]' : ''} ${i < groups.length - 1 ? 'border-b lg:border-b-0 border-[#e5e7eb]' : ''}`}>
-          <div class="flex items-start justify-between mb-10 min-h-[36px]">
-            <span class="font-serif-display text-[#1f2937] text-[24px] leading-none">
-              {g.num}
-            </span>
-            <span class="text-[10px] tracking-[0.2em] uppercase text-[#6b7280] text-right max-w-[180px] leading-[1.5]">
-              {g.label}
-            </span>
-          </div>
-
-          <h3 class="font-serif-display text-[#1f2937] text-[28px] lg:text-[32px] leading-[1.1] mb-5">
-            {g.titleA}
-            <br />
-            {g.titleB}
-          </h3>
-
-          <div class="border-l-2 border-[#16a34a] pl-4 mb-8">
-            <p class="font-serif-display italic text-[15px] text-[#1f2937] leading-[1.5]">
-              {g.lead}
-            </p>
-          </div>
-
-          <div class="mb-6">
-            <div class="label-eyebrow mb-2">Profil</div>
-            <p class="text-[14px] leading-[1.6] text-[#1f2937]">
-              {g.profile}
-            </p>
-          </div>
-
-          <div class="mb-8">
-            <div class="label-eyebrow mb-2">Kernherausforderung</div>
-            <p class="text-[14px] leading-[1.6] text-[#1f2937]">
-              {g.challenge}
-            </p>
-          </div>
-
-          <a href="https://tidycal.com/gewinnarchitekt/potenzialcheck" target="_blank" rel="noopener"
-            data-ph-event="cta_clicked" data-ph-location={g.key}
-            class="mt-auto inline-flex items-center justify-between border-t border-[#1f2937] pt-4 text-[13px] font-medium text-[#1f2937] hover:text-[#16a34a] transition-colors group">
-            <span>20-Minuten-Potenzial-Check buchen</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
-          </a>
-        </div>
-      ))}
+    <div
+      class="grid max-lg:snap-y max-lg:snap-proximity grid-cols-1 divide-y divide-[#e5e7eb] border-t border-[#e5e7eb] lg:grid-cols-3 lg:divide-x lg:divide-y-0"
+    >
+      {
+        audiences.map((a) => (
+          <AudienceCard
+            num={a.num}
+            audience={a.audience}
+            subtitle={a.subtitle}
+            kern={a.kern}
+            fokus={a.fokus}
+            ausschluss={a.ausschluss}
+          />
+        ))
+      }
     </div>
   </div>
 </section>

@@ -1,0 +1,44 @@
+---
+/**
+ * Audience profile card — Zielpublikum section.
+ * Header (H3) = number (accent) + audience name; subtitle + three labelled bullets.
+ */
+interface Props {
+  num: string;
+  audience: string;
+  subtitle: string;
+  kern: string;
+  fokus: string;
+  ausschluss: string;
+}
+
+const { num, audience, subtitle, kern, fokus, ausschluss } = Astro.props;
+---
+
+<article
+  class="snap-start scroll-mt-24 flex flex-col border-[#e5e7eb] p-8 lg:p-10"
+>
+  <h3
+    class="font-sans text-[17px] font-semibold leading-snug text-[#1f2937] sm:text-[18px]"
+  >
+    <span class="text-[#16a34a]">{num}</span><span> · {audience}</span>
+  </h3>
+  <p class="mt-2 font-sans text-[14px] leading-relaxed text-[#6b7280]">
+    {subtitle}
+  </p>
+
+  <ul class="mt-6 list-none space-y-4 p-0 font-serif-display text-[15px] leading-[1.6] text-[#1f2937]">
+    <li>
+      <strong class="font-sans font-semibold text-[#1f2937]">Der Kern:</strong>
+      {" "}{kern}
+    </li>
+    <li>
+      <strong class="font-sans font-semibold text-[#1f2937]">Im Fokus:</strong>
+      {" "}{fokus}
+    </li>
+    <li>
+      <strong class="font-sans font-semibold text-[#1f2937]">Ausschluss:</strong>
+      {" "}{ausschluss}
+    </li>
+  </ul>
+</article>

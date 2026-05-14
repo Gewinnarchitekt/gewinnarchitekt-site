@@ -1,78 +1,86 @@
 # Gewinnarchitekt — progress.md
 
-**Stand:** 14. Mai 2026, Session-Ende
-**Nächster Schritt:** Antigravity-Session zur Umsetzung der Hero-v2-Anpassungen
+**Stand:** 14. Mai 2026, Session-Ende (Abend)
+**Status:** Alles committed und gepusht. Live-Site aktuell.
+**Nächste Session:** Repo-Cleanup → Editorial-Foto → Italic-Serif-Pass
 
 ---
 
-## Aktivitäten dieser Session
+## Aktivitäten heute
 
-- Konkurrenzanalyse: cfotogrow.ch (Astro+Strapi), nexova.ch (WordPress), fspartners.ch (WordPress+Elementor)
-- Magic-Patterns-Brief für Hero v2 erstellt und iteriert
-- Iterations-Outputs ausgewertet — Layout-Variante "Bild 2" (Schraffur-Background ohne Tragwerk) als finale Wahl
-- Strategische Pivots: Tragwerk im Hero verworfen; Detail-SVGs für Methodik verworfen; "zu textlastig"-Kritik aufgegriffen und Lösung definiert
-- Übergabe an Antigravity-Session für finale Umsetzung
-
----
-
-## Locked Decisions (nicht mehr aufmachen)
-
-### Hero v2
-- **Höhe:** ~95vh (aktuell ~60vh)
-- **Layout:** Schraffur-Background trägt die Bühne allein, **kein Tragwerk-Diagramm im Hero**
-- **Trust-Bar:** Als Overlay innerhalb des Hero, weisse Schrift auf teiltransparentem dunklen Hintergrund, ~80% Höhe positioniert
-- **Animation:** Optional Slow Drift auf Schraffur-Pattern (~60s pro Zyklus). Nur einbauen, wenn in einer Iteration sitzt — sonst weglassen
-- **Headline:** "Gewinn ist eine Frage der Methodik, nicht des Zufalls." (Placeholder; Revision in separater Session)
-- **Kein Foto von Karl im Hero** — Porträt bleibt auf Profil-Seite
-
-### Methodik-Sektion
-- **Keine Anpassung.** Bleibt wie aktuell, inkl. Tragwerk an seiner aktuellen Position
-- A/B/C/D-Texte bleiben unverändert
-- Detail-SVGs (Idee aus dieser Session) verworfen für v1 — siehe Backlog
-
-### Editorial-Architekturfoto
-- **Eine Stelle** als visueller Rhythmus-Bruch (zu textlastig-Kritik)
-- Position: Übergang Methodik → Zielpublikum
-- Stilvorgabe: abstrakte Architektur (Beton, Stahl, Fassaden-Geometrie), Schwarz-Weiss oder stark entsättigt
-- **Keine Menschen, keine Schreibtische, keine Händedrücke**
-- Quelle: Unsplash "Architecture", kuratiert auf abstrakt-strukturell
+- Konkurrenzanalyse: cfotogrow.ch, nexova.ch, fspartners.ch, outside-cfo.com (Tech-Stacks identifiziert, Inspirations-Punkte extrahiert)
+- Magic-Patterns-Iterationen für Hero v2 — finale Wahl: Schraffur-Background mit Slow-Drift-Animation, ohne Tragwerk im Hero
+- Hero-Fassaden-Animation implementiert (30s drift bottom-to-top)
+- Stationen-Strip ergänzt unter Credentials-Bar (Sunrise, Goldbach, Swisscard, TX Group) — Layout: Grid 1fr 3fr
+- Tool-Migration: Antigravity → Cursor (Antigravity-Agent war stundenlang nicht responsiv, dann auch mit Opus 4.6 nicht zielführend)
 
 ---
 
-## TODO — Antigravity-Session
+## Locked Decisions (heute)
 
-In dieser Reihenfolge angehen:
+### Hero v2 — gelaunched
+- Höhe ~95vh ✓
+- Schraffur-Background mit Slow-Drift-Animation (30s, bottom-to-top, infinite) ✓
+- Trust-Bar als Overlay innerhalb des Hero ✓
+- **Stationen-Strip** unter Credentials-Bar: Grid 1fr 3fr, Eyebrow "■ STATIONEN" links (entspricht "20+ / JAHRE ERFAHRUNG"-Spalte), 4 Firmennamen rechts mit justify-between, Hover-Effekt (volle Weiss-Opazität + Pointer-Cursor)
+- Stationen-Inhalt: **Sunrise · Goldbach · Swisscard · TX Group** (tatsächliche Arbeitgeber — Amex-Frage geklärt zugunsten Swisscard, Tagesanzeiger/20-Minuten konsolidiert zu TX Group)
 
-1. **Git-Commit vor Beginn** — Karl-Lesson aus früherer Session, nicht vergessen
-2. **Hero auf 95vh hochziehen** — vertikales Padding anpassen
-3. **Trust-Bar als Overlay einbauen** — weisse Schrift, teiltransparenter Hintergrund, ~80% Höhe im Hero
-4. **Optional: Slow Drift Animation** auf Schraffur (~60s Zyklus, CSS keyframes). Falls Antigravity loopt → weglassen
-5. **Editorial-Architekturfoto** zwischen Methodik und Zielpublikum einsetzen
-6. **Methodik-Sektion explizit nicht anfassen** — als Guard-Rail im Prompt setzen
-7. **Magic-Patterns-Output als Referenz** (Bild 2) in die Antigravity-Session reingeben
+### Tool-Stack-Update
+- **Cursor als primary Coding-Agent** (Pro-Account, Opus 4.7 als Default-Modell für Agent)
+- **Claude Code in Warp als Fallback** für stuck Cursor
+- **Antigravity deprecated** (nicht deinstalliert, aber nicht mehr in der aktiven Rotation)
+
+### Workflow-Lessons aus heute
+- Vercel-Rollback-False-Alarm: Browser-Cache vs. echtes Deploy-Problem unterscheiden lernen → erst Inkognito-Test, dann Rollback
+- Git-Commit VOR jeder Agent-Aktion, nicht danach
+- Bei stuck Agent: 2-3 Iterationen, dann eskalieren statt drauf-pushen
+- Scope-Constraint explizit im Prompt verankern (Cursor neigt sonst dazu, "passende" Sachen mitzufixen)
+
+---
+
+## TODO — nächste Session (in dieser Reihenfolge)
+
+1. **Repo-Cleanup** (~15 Min, leichter Einstieg)
+   - debug_output.html und ähnliche Antigravity-Debug-Artefakte löschen
+   - Tote @keyframes-Definitionen oder unbenutzte CSS-Blöcke aus früheren Animation-Versuchen entfernen
+   - Auskommentierte Code-Reste durchgehen
+2. **Editorial-Architekturfoto einbauen** (~30-45 Min)
+   - Position: Übergang Methodik → Zielpublikum
+   - Quelle: Unsplash "Architecture", kuratiert auf abstrakt-strukturell (Beton, Stahl, Fassaden-Geometrie)
+   - S/W oder stark entsättigt, keine Menschen
+3. **Italic-Serif-Emphase-Pass** (~30-45 Min, von outside-cfo.com inspiriert)
+   - Cormorant Garamond oder Crimson Pro als Italic-Begleiter zu Inter
+   - Einsatzkandidaten: "*Statik des Gewinns*", "Drei Profile. Eine *Logik der Profitabilität.*", "Wir bauen Profit, *mit Fundament und Rhythmus.*"
 
 ---
 
 ## Backlog / Future Sessions
 
-### Wir hatten besprochen und verschoben
-- **Hero-Headline-Revision** — "Gewinn ist eine Frage der Methodik..." ist Placeholder
-- **Detail-SVGs für Methodik** (A/B/C/D als architektonische Detail-Zeichnungen) — zu aufwendig für v1, gut für später
-- **Interaktive Tragwerk-Highlights** (Hero ↔ Methodik via IntersectionObserver) — Premium-Variante
-- **Hero-A/B-Variants** (Inverted Layout, Watermark-Variante) — falls Performance/Conversion-Test gewünscht
-- **Tragwerk-Animation** (Linie-für-Linie-Zeichnen beim Laden) — als realistische Option verworfen, könnte mit professionellem Designer später kommen
+### Konzeptionell, eigene dedizierte Session
+- **Hero-Headline-Revision** — "Gewinn ist eine Frage der Methodik..." ist Placeholder, zu generisch (Karl agreed)
+- **Service-Naming** — Move weg von "Fünf Dimensionen", Reconciliation mit "Statik des Gewinns"
+- **Reconciliation der konkurrierenden Frameworks** — "Statik des Gewinns" (4 Elemente) vs "Fünf Dimensionen"
+
+### Aus outside-cfo.com-Inspiration (nicht prioritär, alle bestätigt)
+- **Zahlen-als-Hintergrund-Pattern** — subtile Pricing-relevante Zahlenfragmente als Background in einer CTA-Sektion (potenziell stärker als aktuelles Schraffur-Pattern)
+- **Process-Timeline mit vertikaler Linie** — Layout für Methodik oder Leistungen
+- **"Ergebnis:"-Pattern in Leistungen** — Copywriting-Verbesserung
+- **"Was Gewinnarchitekt nicht macht / macht"-Doppelung** — Positionierungs-Block
+
+### Falls Substrat vorhanden
+- **Case-Study-Kartenstruktur** (Ausgangslage → Maßnahmen → Outcome-Tags) — sobald 1-2 Referenzkunden vorliegen
+- **Orbital-Tools-Diagramm** für Methodik-Stack (Python, Crystal Ball, Monte Carlo, Sensitivitätsanalyse, Power BI)
 
 ### Schon vorher offen
-- **Service-Naming** — Move weg von "Fünf Dimensionen", Reconciliation mit "Statik des Gewinns"
 - **Meta-Title** "Pricing & Analytics as a Service" → Update nötig
 - **PageSpeed-Review** auf pagespeed.web.dev
 - **EN-Version** der Seite
 
 ---
 
-## Übersicht über visuelle Sprache (Konsens dieser Session)
+## Visuelle Sprache (Konsens, weiterhin gültig)
 
-- **On-brand:** Architektur-Schraffur als Hintergrund, Tragwerk-Diagramm in Methodik, FIG.-Nummerierung, M-1:50-Notation, Inter-Typografie mit Letter-Spacing, abstrakte S/W-Architekturfotografie sparsam eingesetzt
-- **Off-brand:** Stockfotos von Menschen/Händen/Laptops, Verlaufs-Blobs, runde Bubble-Designs, Karussells, Logo-Walls, bunte Icon-Sets
+- **On-brand:** Architektur-Schraffur als Hintergrund (mit Slow-Drift-Animation), Tragwerk-Diagramm in Methodik, FIG.-Nummerierung, M-1:50-Notation, Inter-Typografie mit Letter-Spacing, abstrakte S/W-Architekturfotografie sparsam eingesetzt, Italic-Serif als Emphase-Layer (geplant)
+- **Off-brand:** Stockfotos von Menschen/Händen/Laptops, Verlaufs-Blobs, runde Bubble-Designs, Karussells, Logo-Walls von Kunden, bunte Icon-Sets
 
-Diese Sprache trägt das Premium-Editorial-Signal, das die Goldbach/Swisscard/Sunrise-Seniorität visuell stützt.
+Premium-Editorial-Signal, das die Goldbach/Swisscard/Sunrise-Seniorität visuell stützt.
