@@ -1,38 +1,16 @@
 ---
 // src/components/Zielpublikum.astro
-import AudienceCard from "./AudienceCard.astro";
 
-const audiences = [
+const cards = [
   {
-    num: "01",
-    audience: "KMU",
-    subtitle: "Transparenz & Stabilität",
-    kern: "Profitabilität sichern und Cashflow planbar machen – Komplexität reduzieren.",
-    fokus:
-      "Inhabergeführte Unternehmen (5–50 Mio. CHF Umsatz) mit historisch gewachsenen Portfolios. Sie verfügen über ein Reporting, benötigen aber Klarheit über die echte Produkteprofitabilität.",
-    ausschluss:
-      "Startups ohne Marktreife oder Konzerne mit eigenen FP&A-Abteilungen.",
+    title: "Marktorientiert",
+    body1: "Du führst kommerziell, in der Geschäftsleitung, mit P&L-Verantwortung oder als Fractional Product Leader. Den Markt liest du sicher. Was dir fehlt, ist die quantitative Herleitung, die deine Entscheidungen belastbar macht.",
+    body2: "Ich bringe die Rechnung dahinter: durchgerechnete Szenarien, saubere Unit Economics und die Sensitivitäten, die zeigen, ab wann eine Entscheidung kippt.",
   },
   {
-    num: "02",
-    audience: "Scale-up",
-    subtitle: "Skalierbare Erlöslogik",
-    kern: "Skalierbare Preisstrukturen als Argument für anstehende Finanzierungsrunden.",
-    fokus:
-      "Wachstumsunternehmen mit validiertem Produkt. Founder, die ein systematisches Erlösmodell statt ad-hoc Pricing benötigen.",
-    ausschluss:
-      "Pre-Revenue-Setups oder punktuelle Optimierungen ohne strategisches Fundament.",
-  },
-  {
-    num: "03",
-    audience: "P&L-Verantwortliche & Partner",
-    subtitle:
-      "Validierte Entscheidungsgrundlagen",
-    kern: "Externe Fachinstanz für belastbare Finanz- und Preismodelle.",
-    fokus:
-      "Management-Mitglieder (GL) und externe Partner (Fractional CFOs, Product Leader), die für kritische Weichenstellungen eine konsistente Herleitung benötigen",
-    ausschluss:
-      "Projekte ohne direkten Einfluss auf die Gewinn- und Verlustrechnung.",
+    title: "Finanzorientiert",
+    body1: "Du verantwortest die Zahlen, als CFO oder im CFO-as-a-Service-Mandat. Die Herleitung beherrschst du. Was du suchst, ist die marktseitige Datengrundlage, damit deine Modelle auf Evidenz stehen statt auf Annahmen.",
+    body2: "Ich bringe die Marktseite dazu: belegte Zahlungsbereitschaft, Preiselastizität und Wettbewerbsreferenzen, auf denen deine Annahmen wirklich tragen.",
   },
 ];
 ---
@@ -47,26 +25,25 @@ const audiences = [
         <h2
           class="font-serif-display text-[#1f2937] font-light leading-[1.05] text-[36px] sm:text-[48px] lg:text-[60px]"
         >
-          Drei Profile.
-          <br />
-          Eine Logik der <span class="text-[#16a34a]">Profitabilität</span>.
+          Zwei Seiten, eine <span class="text-[#16a34a]">Schnittstelle</span>.
         </h2>
+        <p class="mt-6 max-w-[700px] text-[16px] leading-[1.6] text-[#6b7280]">
+          Ich arbeite dort, wo Kundenverständnis, Marktbeobachtung und Finanzkompetenz zusammenkommen. Die meisten kommen von einer der beiden Seiten und brauchen die andere, um wirklich belastbar zu entscheiden.
+        </p>
       </div>
     </div>
 
-    <div
-      class="grid max-lg:snap-y max-lg:snap-proximity grid-cols-1 divide-y divide-[#e5e7eb] border-t border-[#e5e7eb] lg:grid-cols-3 lg:divide-x lg:divide-y-0"
-    >
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
       {
-        audiences.map((a) => (
-          <AudienceCard
-            num={a.num}
-            audience={a.audience}
-            subtitle={a.subtitle}
-            kern={a.kern}
-            fokus={a.fokus}
-            ausschluss={a.ausschluss}
-          />
+        cards.map((c) => (
+          <article class="bg-white border border-[#e5e7eb] rounded-[6px] p-8 lg:p-10 flex flex-col">
+            <h3 class="font-serif-display text-[#1f2937] text-[22px] lg:text-[24px] leading-tight mb-4">
+              {c.title}
+            </h3>
+            <p class="text-[15px] leading-[1.65] text-[#6b7280]">
+              {c.body1}<br />{c.body2}
+            </p>
+          </article>
         ))
       }
     </div>
