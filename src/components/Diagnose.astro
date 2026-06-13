@@ -1,50 +1,43 @@
 ---
 // src/components/Diagnose.astro
 
-const groups = [
+const row1 = [
   {
-    num: 'A',
-    title: 'Fehlkonstruktion in der Preislogik',
-    stat: '> 20%',
-    statLabel: 'des möglichen Umsatzes entgehen ohne optimiertes Angebot.',
-    source: 'Simon-Kucher',
-    points: [
-      'Einheitsangebote ignorieren unterschiedliche Kundensegmente.',
-      'Die Preislogik ist nicht auf das Kundenverhalten abgestimmt.',
-      'Intern kalkulierte Angebote spiegeln nicht den Kundenwert.',
-      'Der Mehrwert für den Kunden wird nicht klar kommuniziert.'
-    ]
+    title: 'Mehr Umsatz, kaum mehr Gewinn',
+    body: 'Der Umsatz ist deutlich gewachsen, aber du merkst davon erstaunlich wenig auf deinem Konto. Niemand kann dir genau sagen, wo die Marge unterwegs verloren geht.'
   },
   {
-    num: 'B',
-    title: 'Reibungsverluste in der Umsetzung',
-    stat: '66%',
-    statLabel: 'des Potenzials von Preisanpassungen geht durch falsche Prozesse verloren.',
-    source: 'McKinsey',
-    points: [
-      'Daten zum Kundenverhalten werden nicht ausreichend genutzt.',
-      'Es fehlen Ressourcen für die Identifikation von Umsatzpotenzial.',
-      'Mangelnde Expertise im Bereich Pricing & Monetarisierung.',
-      'Datensilos behindern den Informationsfluss.'
-    ]
+    title: 'Unklare Produkteprofitabilität',
+    body: 'Du hast ein breites Sortiment, aber kein klares Bild, welche Produkte den höchsten Gewinnbeitrag leisten. Wo du ansetzen müsstest, bleibt Vermutung.'
   },
   {
-    num: 'C',
-    title: 'Strukturelle Lücken in der Planung',
-    stat: '30%',
-    statLabel: 'der wichtigen Entscheidungen verfehlen den besten Preis.',
-    source: 'McKinsey',
-    points: [
-      'Kundenbedürfnisse werden zu spät berücksichtigt.',
-      'Innovationen werden am Markt vorbei entwickelt.',
-      'Priorisierung ist nicht auf monetäres Wachstum ausgerichtet.',
-      'Es fehlt eine langfristige Perspektive.'
-    ]
+    title: 'Vom Listenpreis bleibt wenig übrig',
+    body: 'Sonderkonditionen und Zugeständnisse wirken einzeln klein, kosten dich in Summe aber ein Vermögen.'
   }
+];
+
+const row2 = [
+  {
+    title: 'Angebote verkaufen sich nicht',
+    body: 'Dein Produkt ist stark, aber die Kunden verstehen den Mehrwert nicht. Sie entscheiden über den Preis und die Marge leidet.'
+  },
+  {
+    title: 'Entscheidungen ohne Datengrundlage',
+    body: 'Eine grössere Investition oder Einstellung steht an. Am Ende entscheidest du aus dem Bauch, weil eine durchgerechnete Grundlage fehlt.'
+  },
+  {
+    title: 'Das Modell stösst an Grenzen',
+    body: 'Das Geschäftsmodell, das dich hierher gebracht hat, trägt nicht automatisch weiter. Ein neues Preismodell oder ein zusätzliches Segment steht im Raum.'
+  }
+];
+
+const groups = [
+  { label: 'Vergangenheit', cards: row1 },
+  { label: 'Zukunft', cards: row2 }
 ];
 ---
 
-<section id="Diagnose" class="bg-white border-b border-[#e5e7eb]">
+<section id="Diagnose" class="bg-[#f9fafb] border-b border-[#e5e7eb]">
   <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-20 lg:py-28">
     <div class="grid grid-cols-12 gap-6 lg:gap-10 mb-16">
       <div class="col-span-12 lg:col-span-2">
@@ -55,45 +48,31 @@ const groups = [
           Gewinne optimieren heisst Schwachstellen <span class="text-[#16a34a]">eliminieren</span>.
         </h2>
         <p class="mt-6 max-w-[700px] text-[16px] leading-[1.6] text-[#6b7280]">
-          Oft versickert Marge dort, wo Produktstrategie, Finanzdaten und
-          Kundenverständnis nicht optimal aufeinander abgestimmt sind. Die
-          Konsequenzen lassen sich in den folgenden drei Bereichen
-          beobachten.
+          Ich helfe Firmen, die sich in einer der folgenden Situationen wiederfinden:
         </p>
       </div>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 border-t border-[#1f2937]">
-      {groups.map((g, i) => (
-        <div class={`p-8 lg:p-10 border-b border-[#e5e7eb] ${i < 2 ? 'lg:border-r' : ''} lg:border-b-0 ${i < groups.length - 1 ? 'border-b' : ''}`}>
-          <div class="flex items-baseline justify-between mb-8">
-            <span class="font-serif-display text-[#16a34a] text-[28px]">{g.num}</span>
-            <span class="text-[10px] tracking-[0.2em] uppercase text-[#6b7280]">Quelle: {g.source}</span>
-          </div>
-
-          <h3 class="font-serif-display text-[#1f2937] text-[26px] leading-tight mb-6">
-            {g.title}
-          </h3>
-
-          <div class="border-l-2 border-[#16a34a] pl-4 mb-8">
-            <div class="font-serif-display text-[#1f2937] text-[40px] leading-none">
-              {g.stat}
-            </div>
-            <p class="text-[13px] text-[#6b7280] mt-2 leading-snug">
-              {g.statLabel}
-            </p>
-          </div>
-
-          <ul class="space-y-3">
-            {g.points.map((p) => (
-              <li class="flex gap-3 text-[14px] text-[#1f2937] leading-[1.55]">
-                <span class="inline-block w-1.5 h-1.5 bg-[#16a34a] rounded-full mt-[7px] shrink-0" aria-hidden="true"></span>
-                <span>{p}</span>
-              </li>
-            ))}
-          </ul>
+    {groups.map((group, i) => (
+      <div class={`flex gap-0 ${i > 0 ? 'mt-8' : ''}`}>
+        <div class="hidden lg:flex items-center justify-center w-10 shrink-0">
+          <span class="text-[10px] tracking-[0.25em] uppercase text-[#9ca3af] whitespace-nowrap" style="writing-mode: vertical-lr; transform: rotate(180deg);">{group.label}</span>
         </div>
-      ))}
-    </div>
+        <div class="flex-1 grid grid-cols-1 lg:grid-cols-3 gap-5">
+          {group.cards.map((c) => (
+            <article class="bg-white border border-[#e5e7eb] rounded-[6px] p-8 lg:p-10 flex flex-col">
+              <h3 class="font-serif-display text-[#1f2937] text-[22px] lg:text-[24px] leading-tight mb-4">
+                {c.title}
+              </h3>
+              <p class="text-[15px] leading-[1.65] text-[#6b7280]">
+                {c.body}
+              </p>
+            </article>
+          ))}
+        </div>
+      </div>
+    ))}
   </div>
 </section>
+
+
