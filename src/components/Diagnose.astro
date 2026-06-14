@@ -37,7 +37,7 @@ const groups = [
 ];
 ---
 
-<section id="Diagnose" class="bg-[#f9fafb] border-b border-[#e5e7eb]">
+<section id="diagnose" class="bg-[#f9fafb] border-b border-[#e5e7eb]">
   <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-20 lg:py-28">
     <div class="grid grid-cols-12 gap-6 lg:gap-10 mb-16">
       <div class="col-span-12 lg:col-span-2">
@@ -48,28 +48,23 @@ const groups = [
           Gewinne optimieren heisst Schwachstellen <span class="text-[#16a34a]">eliminieren</span>.
         </h2>
         <p class="mt-6 max-w-[700px] text-[16px] leading-[1.6] text-[#6b7280]">
-          Ich helfe Firmen, die sich in einer der folgenden Situationen wiederfinden:
+          Für Firmen mit 5 bis 50 Millionen Umsatz, die sich in einer der folgenden Situationen wiederfinden:
         </p>
       </div>
     </div>
 
     {groups.map((group, i) => (
-      <div class={`flex gap-0 ${i > 0 ? 'mt-8' : ''}`}>
-        <div class="hidden lg:flex items-center justify-center w-10 shrink-0">
-          <span class="text-[10px] tracking-[0.25em] uppercase text-[#9ca3af] whitespace-nowrap" style="writing-mode: vertical-lr; transform: rotate(180deg);">{group.label}</span>
-        </div>
-        <div class="flex-1 grid grid-cols-1 lg:grid-cols-3 gap-5">
-          {group.cards.map((c) => (
-            <article class="bg-white border border-[#e5e7eb] rounded-[6px] p-8 lg:p-10 flex flex-col">
-              <h3 class="font-serif-display text-[#1f2937] text-[22px] lg:text-[24px] leading-tight mb-4">
-                {c.title}
-              </h3>
-              <p class="text-[15px] leading-[1.65] text-[#6b7280]">
-                {c.body}
-              </p>
-            </article>
-          ))}
-        </div>
+      <div class={`${i > 0 ? 'mt-8' : ''} grid grid-cols-1 lg:grid-cols-3 gap-5`}>
+        {group.cards.map((c) => (
+          <article class="bg-white border border-[#e5e7eb] rounded-[6px] p-8 lg:p-10 flex flex-col">
+            <h3 class="font-serif-display text-[#1f2937] text-[22px] lg:text-[24px] leading-tight mb-4">
+              {c.title}
+            </h3>
+            <p class="text-[15px] leading-[1.65] text-[#6b7280]">
+              {c.body}
+            </p>
+          </article>
+        ))}
       </div>
     ))}
   </div>

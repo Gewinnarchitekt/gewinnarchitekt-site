@@ -7,19 +7,19 @@ const tiers = [
     price: "CHF 3'400 / Monat",
     feature: "1 Arbeitspaket pro Monat",
     body: "Ein präzise abgegrenztes Profit-Thema, analysiert, durchgerechnet und umsetzbar.",
-    fit: "Für einen konkreten Hebel, den Sie sauber gelöst haben wollen.",
+    fit: "Für ein konkretes Thema, das Sie sauber gelöst haben wollen.",
   },
   {
     label: "Tragwerk",
     price: "CHF 4'900 / Monat",
-    feature: "2 Arbeitspakete pro Monat + laufende Kalibrierung",
-    body: "Mehrere Hebel gleichzeitig, während bestehende Modelle und Dashboards laufend aktuell bleiben.",
-    fit: "Für Unternehmen, die parallel an mehreren Stellen optimieren.",
+    feature: "2 Arbeitspakete pro Monat + kontinuierliche Aktualisierung",
+    body: "Parallele Bearbeitung zweier Arbeitspakete und kontinuierliche Adaption bestehender Modelle und Dashboards.",
+    fit: "Für eine kontinuierliche Zusammenarbeit.",
   },
   {
     label: "Bauleitung",
-    price: "CHF 7'300 / Monat",
-    feature: "Fortlaufende Arbeitspakete + durchgehende Kalibrierung",
+    price: "CHF 7'400 / Monat",
+    feature: "Unlimitierte Arbeitspakete + durchgehende Kalibrierung",
     body: "Profit-Steuerung als fester Bestandteil Ihrer Führung.",
     fit: "Für Phasen, in denen sich viel bewegt und die Zahlen jederzeit stehen müssen.",
   },
@@ -32,6 +32,11 @@ const fields = [
   "Controlling",
   "Strategische Planung",
 ];
+
+// `showFields` defaults to true so the homepage instance is unchanged.
+// The /leistungen page passes showFields={false} because the four service
+// segments above it already cover the same ground (redundant there).
+const { showFields = true } = Astro.props;
 ---
 
 <section id="Angebot" class="bg-white border-b border-[#e5e7eb]">
@@ -39,7 +44,7 @@ const fields = [
     <!-- Eyebrow + H2 + Intro -->
     <div class="grid grid-cols-12 gap-6 lg:gap-10 mb-16">
       <div class="col-span-12 lg:col-span-2">
-        <span class="label-eyebrow">05 Angebot</span>
+        <span class="label-eyebrow">Angebot</span>
       </div>
       <div class="col-span-12 lg:col-span-10">
         <h2
@@ -53,15 +58,17 @@ const fields = [
       </div>
     </div>
 
-    <!-- Fields strip -->
-    <div class="mb-12">
-      <p class="text-[14px] text-[#6b7280] mb-2">Jedes Arbeitspaket stammt aus einem dieser Felder:</p>
-      <p class="text-[15px] text-[#1f2937] font-medium">
-        {fields.map((f, i) => (
-          <>{i > 0 && <span class="text-[#9ca3af]">{" · "}</span>}{f}</>
-        ))}
-      </p>
-    </div>
+    <!-- Fields strip (hidden on /leistungen via showFields={false}) -->
+    {showFields && (
+      <div class="mb-12">
+        <p class="text-[14px] text-[#6b7280] mb-2">Jedes Arbeitspaket stammt aus einem dieser Felder:</p>
+        <p class="text-[15px] text-[#1f2937] font-medium">
+          {fields.map((f, i) => (
+            <>{i > 0 && <span class="text-[#9ca3af]">{" · "}</span>}{f}</>
+          ))}
+        </p>
+      </div>
+    )}
 
     <!-- Tier cards -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
@@ -88,9 +95,6 @@ const fields = [
       }
     </div>
 
-    <!-- Overage note -->
-    <p class="mt-6 text-[13px] text-[#9ca3af]">
-      Bedarf über die monatliche Kapazität hinaus: CHF 200/h oder Wechsel in die nächste Stufe.
-    </p>
+
   </div>
 </section>

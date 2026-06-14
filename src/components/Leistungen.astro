@@ -5,31 +5,29 @@ const services = [
     num: '01',
     title: 'Strategische Planung',
     lead: 'Wachstumsziele in eine klare Finanz- und Geschäftsstrategie übersetzen.',
-    body: 'Gemeinsam entwickeln wir eine skalierbare Gewinnarchitektur, die Geschäftsmodell, Preislogik und Ressourcenplanung auf profitables Wachstum ausrichtet, damit Investitionen, Kapazitäten und Angebote bewusst gesteuert werden.'
+    body: 'Gemeinsam entwickeln wir eine skalierbare Gewinnarchitektur, die Geschäftsmodell, Preislogik und Ressourcenplanung auf profitables Wachstum ausrichtet, damit Investitionen, Kapazitäten und Angebote bewusst gesteuert werden.',
+    link: '/leistungen#strategische-planung'
   },
   {
     num: '02',
     title: 'Finanzmodellierung',
     lead: 'Annahmen, Szenarien und Risiken sichtbar machen.',
-    body: 'Mit praxistauglichen Finanzmodellen, von der Angebots-Unit bis zum Gesamtunternehmen, schaffe ich belastbare Entscheidungsgrundlagen. Neue Preismodelle, Produkte oder Märkte simuliere ich, bevor Sie investieren.'
+    body: 'Mit praxistauglichen Finanzmodellen, von der Angebots-Unit bis zum Gesamtunternehmen, schaffe ich belastbare Entscheidungsgrundlagen. Neue Preismodelle, Produkte oder Märkte simuliere ich, bevor Sie investieren.',
+    link: '/leistungen#finanzmodellierung'
   },
   {
     num: '03',
     title: 'Angebotsgestaltung',
     lead: 'Kundennutzen, Preislogik und Marge in einer Linie.',
-    body: 'Ich schärfe Ihr Angebot von der Value Proposition bis zur Paket- und Preisstruktur. Klar strukturierte Angebote machen Mehrwerte greifbar und erhöhen Abschluss- und Upselling-Quoten.'
+    body: 'Ich schärfe Ihr Angebot von der Value Proposition bis zur Paket- und Preisstruktur. Klar strukturierte Angebote machen Mehrwerte greifbar und erhöhen Abschluss- und Upselling-Quoten.',
+    link: '/leistungen#angebotsgestaltung'
   },
   {
     num: '04',
-    title: 'Controlling',
+    title: 'Controlling & Reporting',
     lead: 'Statt Vergangenheit zu erklären, Gewinn aktiv steuern.',
-    body: 'Ich baue ein schlankes Controlling-System mit klaren Kennzahlen, Routinen und Verantwortlichkeiten. Statt Excel-Wildwuchs entsteht Fokus auf die wirklich ergebnisrelevanten Hebel.'
-  },
-  {
-    num: '05',
-    title: 'Dashboards & Reporting',
-    lead: 'Vom Pflichtreport zum Führungsinstrument.',
-    body: 'Management-Dashboards, die die wichtigsten Kennzahlen auf einen Blick sichtbar machen. Reportings werden klar strukturiert, visuell verständlich und konsequent auf Gewinn- und Wachstumsziele ausgerichtet.'
+    body: 'Ich baue ein schlankes Controlling-System mit klaren Kennzahlen, Routinen und Verantwortlichkeiten und mache es über Management-Dashboards sichtbar. Statt Excel-Wildwuchs entstehen Reportings, die die wirklich ergebnisrelevanten Hebel auf einen Blick zeigen und konsequent auf Gewinn- und Wachstumsziele ausgerichtet sind.',
+    link: '/leistungen#controlling-reporting'
   }
 ];
 ---
@@ -42,12 +40,12 @@ const services = [
       </div>
       <div class="col-span-12 lg:col-span-10">
         <h2 class="font-serif-display text-[#1f2937] font-light leading-[1.05] text-[36px] sm:text-[48px] lg:text-[60px]">
-          Fünf Dimensionen der{' '}
+          Vier Dimensionen der{' '}
           <span class="text-[#16a34a]">Gewinnmaximierung</span>.
         </h2>
         <p class="mt-6 max-w-[640px] text-[16px] leading-[1.6] text-[#6b7280]">
           Wählen Sie den Einstiegspunkt, der zu Ihrer Phase passt; von dort
-          aus kalibriere ich die Arbeit.
+          aus kalibrieren wir die Arbeit.
         </p>
       </div>
     </div>
@@ -73,6 +71,13 @@ const services = [
             <p class="text-[15px] lg:text-[16px] leading-[1.65] text-[#1f2937]">
               {s.body}
             </p>
+            <a
+              href={s.link}
+              class="mt-4 inline-flex items-center gap-1.5 text-[14px] font-medium text-[#16a34a] hover:text-[#15803d] transition-colors"
+            >
+              Mehr erfahren
+              <span aria-hidden="true">→</span>
+            </a>
           </div>
         </article>
       ))}

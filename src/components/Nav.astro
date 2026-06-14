@@ -3,17 +3,14 @@
 import Logo from './Logo.astro';
 
 const links = [
-  { href: '#Diagnose', label: 'Diagnose' },
-  { href: '#Methodik', label: 'Methodik' },
-  { href: '#Zielpublikum', label: 'Zielpublikum' },
-  { href: '#Leistungen', label: 'Leistungen' },
-  { href: '#Profil', label: 'Profil' }
+  { href: '/', label: 'Home' },
+  { href: '/leistungen', label: 'Leistungen' }
 ];
 ---
 
 <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-[#e5e7eb]">
   <div class="max-w-[1280px] mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
-    <a href="#top" aria-label="Gewinnarchitekt — zur Startseite" class="flex items-center">
+    <a href="/" aria-label="Gewinnarchitekt — zur Startseite" class="flex items-center">
       <Logo class="h-10 w-auto text-[#1f2937]" />
     </a>
 
