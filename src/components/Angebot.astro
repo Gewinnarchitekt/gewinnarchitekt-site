@@ -1,0 +1,96 @@
+---
+// src/components/Angebot.astro
+
+const tiers = [
+  {
+    label: "Fundament",
+    price: "CHF 3'400 / Monat",
+    feature: "1 Arbeitspaket pro Monat",
+    body: "Ein präzise abgegrenztes Profit-Thema, analysiert, durchgerechnet und umsetzbar.",
+    fit: "Für einen konkreten Hebel, den Sie sauber gelöst haben wollen.",
+  },
+  {
+    label: "Tragwerk",
+    price: "CHF 4'900 / Monat",
+    feature: "2 Arbeitspakete pro Monat + laufende Kalibrierung",
+    body: "Mehrere Hebel gleichzeitig, während bestehende Modelle und Dashboards laufend aktuell bleiben.",
+    fit: "Für Unternehmen, die parallel an mehreren Stellen optimieren.",
+  },
+  {
+    label: "Bauleitung",
+    price: "CHF 7'300 / Monat",
+    feature: "Fortlaufende Arbeitspakete + durchgehende Kalibrierung",
+    body: "Profit-Steuerung als fester Bestandteil Ihrer Führung.",
+    fit: "Für Phasen, in denen sich viel bewegt und die Zahlen jederzeit stehen müssen.",
+  },
+];
+
+const fields = [
+  "Dashboards",
+  "Angebotsgestaltung",
+  "Finanzmodellierung",
+  "Controlling",
+  "Strategische Planung",
+];
+---
+
+<section id="Angebot" class="bg-white border-b border-[#e5e7eb]">
+  <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-20 lg:py-28">
+    <!-- Eyebrow + H2 + Intro -->
+    <div class="grid grid-cols-12 gap-6 lg:gap-10 mb-16">
+      <div class="col-span-12 lg:col-span-2">
+        <span class="label-eyebrow">05 Angebot</span>
+      </div>
+      <div class="col-span-12 lg:col-span-10">
+        <h2
+          class="font-serif-display text-[#1f2937] font-light leading-[1.05] text-[36px] sm:text-[48px] lg:text-[60px]"
+        >
+          Zusammenarbeit, die <span class="text-[#16a34a]">mitwächst</span>.
+        </h2>
+        <p class="mt-6 max-w-[700px] text-[16px] leading-[1.6] text-[#6b7280]">
+          Ich arbeite in klar abgegrenzten Arbeitspaketen. Jedes ist ein eigenständiges, durchgerechnetes Ergebnis. Sie wählen die Stufe, die zu Ihrem aktuellen Bedarf passt, und wechseln, wenn er wächst.
+        </p>
+      </div>
+    </div>
+
+    <!-- Fields strip -->
+    <div class="mb-12">
+      <p class="text-[14px] text-[#6b7280] mb-2">Jedes Arbeitspaket stammt aus einem dieser Felder:</p>
+      <p class="text-[15px] text-[#1f2937] font-medium">
+        {fields.map((f, i) => (
+          <>{i > 0 && <span class="text-[#9ca3af]">{" · "}</span>}{f}</>
+        ))}
+      </p>
+    </div>
+
+    <!-- Tier cards -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+      {
+        tiers.map((t) => (
+          <article class="bg-white border border-[#e5e7eb] rounded-[6px] p-8 lg:p-10 flex flex-col">
+            <h3 class="font-serif-display text-[#1f2937] text-[22px] lg:text-[24px] leading-tight mb-2">
+              {t.label}
+            </h3>
+            <p class="text-[20px] lg:text-[22px] font-semibold text-[#1f2937] mb-6">
+              {t.price}
+            </p>
+            <p class="text-[14px] font-medium text-[#16a34a] mb-4">
+              {t.feature}
+            </p>
+            <p class="text-[15px] leading-[1.65] text-[#6b7280] mb-4">
+              {t.body}
+            </p>
+            <p class="text-[14px] leading-[1.6] text-[#9ca3af] mt-auto italic">
+              {t.fit}
+            </p>
+          </article>
+        ))
+      }
+    </div>
+
+    <!-- Overage note -->
+    <p class="mt-6 text-[13px] text-[#9ca3af]">
+      Bedarf über die monatliche Kapazität hinaus: CHF 200/h oder Wechsel in die nächste Stufe.
+    </p>
+  </div>
+</section>
