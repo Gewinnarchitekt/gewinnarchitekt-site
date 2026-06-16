@@ -1,0 +1,72 @@
+---
+// src/components/SiteSchema.astro
+// Sitewide Organization + Person JSON-LD structured data.
+// Include once in the <head> of every page.
+
+const siteSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://gewinnarchitekt.ch/#organization",
+      "name": "Gewinnarchitekt",
+      "url": "https://gewinnarchitekt.ch/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://gewinnarchitekt.ch/favicon.svg",
+      },
+      "description":
+        "Boutique-Beratung für Pricing und Profitarchitektur. Wertbasierte Preislogik, Finanzmodellierung und Controlling für Schweizer KMU und Scale-ups.",
+      "areaServed": { "@type": "Country", "name": "Schweiz" },
+      "founder": { "@id": "https://gewinnarchitekt.ch/#karl-aschwanden" },
+      "knowsAbout": [
+        "Pricing-Strategie",
+        "Wertbasierte Preisgestaltung",
+        "Profitarchitektur",
+        "Deckungsbeitragsrechnung",
+        "Finanzmodellierung",
+        "Unit Economics",
+        "Controlling und Reporting",
+      ],
+      "sameAs": ["https://www.linkedin.com/company/gewinnarchitekt"],
+    },
+    {
+      "@type": "Person",
+      "@id": "https://gewinnarchitekt.ch/#karl-aschwanden",
+      "name": "Karl Aschwanden",
+      "url": "https://gewinnarchitekt.ch/#kontakt",
+      "jobTitle": "Gründer",
+      "worksFor": { "@id": "https://gewinnarchitekt.ch/#organization" },
+      "description":
+        "Gründer von Gewinnarchitekt. Über 20 Jahre Erfahrung in Commercial und Finance, Chartered Financial Modeler (CFM).",
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "IE Business School" },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Fachhochschule Nordwestschweiz FHNW",
+        },
+      ],
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "Professional certification",
+        "name": "Chartered Financial Modeler (CFM)",
+        "recognizedBy": {
+          "@type": "Organization",
+          "name": "Financial Modeling Institute",
+        },
+      },
+      "knowsAbout": [
+        "Pricing-Strategie",
+        "Wertbasierte Preisgestaltung",
+        "Finanzmodellierung",
+        "Deckungsbeitrag",
+        "Unit Economics",
+        "Controlling",
+      ],
+      "sameAs": ["https://www.linkedin.com/in/karlaschwanden/"],
+    },
+  ],
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(siteSchema)} />

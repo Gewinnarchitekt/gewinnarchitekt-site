@@ -8,6 +8,7 @@ import Zielpublikum from "../components/Zielpublikum.astro";
 import Leistungen from "../components/Leistungen.astro";
 import Profil from "../components/Profil.astro";
 import Footer from "../components/Footer.astro";
+import SiteSchema from "../components/SiteSchema.astro";
 import "../styles/global.css";
 import "@fontsource/inter/300.css";
 import "@fontsource/inter/400.css";
@@ -27,6 +28,7 @@ const PH_HOST = import.meta.env.PUBLIC_POSTHOG_HOST;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Gewinnarchitekt | Preis & Profitarchitektur für Startups und KMU</title>
+		<SiteSchema />
 
 		{PH_KEY && (
 			<script is:inline define:vars={{ PH_KEY, PH_HOST }}>

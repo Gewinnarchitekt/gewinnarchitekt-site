@@ -8,6 +8,7 @@ import Nav from "../components/Nav.astro";
 import Angebot from "../components/Angebot.astro";
 import Profil from "../components/Profil.astro";
 import Footer from "../components/Footer.astro";
+import SiteSchema from "../components/SiteSchema.astro";
 import { Image } from "astro:assets";
 import imgTowerFacade from "../assets/tower-facade.png";
 import imgConcreteJunction from "../assets/concrete-junction.png";
@@ -25,7 +26,7 @@ const PH_HOST = import.meta.env.PUBLIC_POSTHOG_HOST;
 
 // --- Header copy -------------------------------------------------------------
 const intro =
-  "Ich arbeite in abgegrenzten Arbeitspaketen — jedes ein eigenständiges, durchgerechnetes Ergebnis mit klarem Umfang und festem Termin. Sie buchen eine monatliche Kapazität; daraus liefere ich die Pakete mit der grössten Wirkung.";
+  "Ich arbeite in abgegrenzten Arbeitspaketen — jedes ein eigenständiges, durchgerechnetes Ergebnis mit klarem Umfang und festem Termin.";
 
 // --- Four service segments ---------------------------------------------------
 // `imageSide` alternates so text and photo swap sides every segment.
@@ -137,6 +138,7 @@ const faqJsonLd = {
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Leistungen | Gewinnarchitekt</title>
+    <SiteSchema />
 
     <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} is:inline />
 
