@@ -1,86 +1,202 @@
 ---
 // src/components/Leistungen.astro
-const services = [
+// Single Source of Truth für alle Leistungs-Daten.
+// variant="index" → Darstellung auf der Startseite (num, title, lead, description, link)
+// variant="page"  → Darstellung auf der Leistungsseite (num, title, description, items, Bild)
+import { Image } from 'astro:assets';
+import imgTowerFacade from '../assets/tower-facade.png';
+import imgConcreteJunction from '../assets/concrete-junction.png';
+import imgModularBuilding from '../assets/modular-building.png';
+
+interface Props {
+  variant?: 'index' | 'page';
+}
+
+const { variant = 'index' } = Astro.props;
+
+const leistungen = [
   {
     num: '01',
-    title: 'Strategische Planung',
-    lead: 'Wachstumsziele in eine klare Finanz- und Geschäftsstrategie übersetzen.',
-    body: 'Gemeinsam entwickeln wir eine skalierbare Gewinnarchitektur, die Geschäftsmodell, Preislogik und Ressourcenplanung auf profitables Wachstum ausrichtet, damit Investitionen, Kapazitäten und Angebote bewusst gesteuert werden.',
-    link: '/leistungen#strategische-planung'
+    id: 'gewinntreiber-verstehen',
+    title: 'Gewinntreiber verstehen',
+    lead: 'Transparenz über die echten Gewinntreiber schaffen.',
+    description: 'Verstehen Sie, wo Ihr Gewinn entsteht und wo er unterwegs verloren geht — durchgerechnet auf Ihren eigenen Zahlen, nicht geschätzt.',
+    items: [
+      'Produkt- & Sortimentsprofitabilität',
+      'Kundenprofitabilität',
+      'Preiswasserfall Analyse',
+      'Werttreiberbaum',
+    ],
+    imageSide: 'right' as const,
+    alt: 'Architektonische Fassade mit klar aufsteigenden Linien',
+    image: imgTowerFacade,
   },
   {
     num: '02',
-    title: 'Finanzmodellierung',
-    lead: 'Annahmen, Szenarien und Risiken sichtbar machen.',
-    body: 'Mit praxistauglichen Finanzmodellen, von der Angebots-Unit bis zum Gesamtunternehmen, schaffe ich belastbare Entscheidungsgrundlagen. Neue Preismodelle, Produkte oder Märkte simuliere ich, bevor Sie investieren.',
-    link: '/leistungen#finanzmodellierung'
+    id: 'preis-angebot-schaerfen',
+    title: 'Preis & Angebot schärfen',
+    lead: 'Kundennutzen, Preislogik und Marge in einer Linie.',
+    description: 'Erkennen Sie, wie Sie Ihr Angebot von der Value Proposition bis zur Preislogik schärfen — damit der Mehrwert greifbar wird und Ihre Marge nicht im Rabatt verschwindet.',
+    items: [
+      'Wert- und Nutzenargumentation',
+      'Strategische Preisgestaltung',
+      'Konditionen- & Rabattlogik',
+      'Packaging & Angebotsstruktur',
+    ],
+    imageSide: 'left' as const,
+    alt: 'Detail eines Betontragwerks mit sichtbaren Lastpfaden',
+    image: imgConcreteJunction,
   },
   {
     num: '03',
-    title: 'Angebotsgestaltung',
-    lead: 'Kundennutzen, Preislogik und Marge in einer Linie.',
-    body: 'Ich schärfe Ihr Angebot von der Value Proposition bis zur Paket- und Preisstruktur. Klar strukturierte Angebote machen Mehrwerte greifbar und erhöhen Abschluss- und Upselling-Quoten.',
-    link: '/leistungen#angebotsgestaltung'
-  },
-  {
-    num: '04',
-    title: 'Controlling & Reporting',
+    id: 'planen-steuern',
+    title: 'Planen & steuern',
     lead: 'Statt Vergangenheit zu erklären, Gewinn aktiv steuern.',
-    body: 'Ich baue ein schlankes Controlling-System mit klaren Kennzahlen, Routinen und Verantwortlichkeiten und mache es über Management-Dashboards sichtbar. Statt Excel-Wildwuchs entstehen Reportings, die die wirklich ergebnisrelevanten Hebel auf einen Blick zeigen und konsequent auf Gewinn- und Wachstumsziele ausgerichtet sind.',
-    link: '/leistungen#controlling-reporting'
-  }
+    description: 'Erfahren Sie, ob die Richtung trägt, und erhalten Sie die Steuerung, die Ihren Gewinn planbar hält — vom Mehrjahres-Zielbild bis zum laufenden Forecast.',
+    items: [
+      'Mittel- und Langfristplanung',
+      'Kurzfrist- und Liquiuditätsplanung',
+      'Reporting und Abweichungsanalyse',
+      'Gewinn- und KPI Dashboards',
+    ],
+    imageSide: 'right' as const,
+    alt: 'Modulare Gebäudestruktur mit klar gegliederten Elementen',
+    image: imgModularBuilding,
+  },
 ];
 ---
 
-<section id="Leistungen" class="bg-[#f9fafb] border-b border-[#e5e7eb]">
-  <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-20 lg:py-28">
-    <div class="grid grid-cols-12 gap-6 lg:gap-10 mb-16">
-      <div class="col-span-12 lg:col-span-2">
-        <span class="label-eyebrow">04 Leistungen</span>
+{/* ── Index-Variante: Übersichtszeilen auf der Startseite ──────────── */}
+{variant === 'index' && (
+  <section id="Leistungen" class="bg-[#f9fafb] border-b border-[#e5e7eb]">
+    <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-20 lg:py-28">
+      <div class="grid grid-cols-12 gap-6 lg:gap-10 mb-16">
+        <div class="col-span-12 lg:col-span-2">
+          <span class="label-eyebrow">04 Leistungen</span>
+        </div>
+        <div class="col-span-12 lg:col-span-10">
+          <h2 class="font-serif-display text-[#1f2937] font-light leading-[1.05] text-[36px] sm:text-[48px] lg:text-[60px]">
+            Drei Dimensionen der{' '}
+            <span class="text-[#16a34a]">Gewinnmaximierung</span>.
+          </h2>
+          <p class="mt-6 max-w-[640px] text-[16px] leading-[1.6] text-[#6b7280]">
+            Wählen Sie den Einstiegspunkt, der zu Ihrer Phase passt; von dort
+            aus kalibrieren wir die Arbeit.
+          </p>
+        </div>
       </div>
-      <div class="col-span-12 lg:col-span-10">
-        <h2 class="font-serif-display text-[#1f2937] font-light leading-[1.05] text-[36px] sm:text-[48px] lg:text-[60px]">
-          Vier Dimensionen der{' '}
-          <span class="text-[#16a34a]">Gewinnmaximierung</span>.
-        </h2>
-        <p class="mt-6 max-w-[640px] text-[16px] leading-[1.6] text-[#6b7280]">
-          Wählen Sie den Einstiegspunkt, der zu Ihrer Phase passt; von dort
-          aus kalibrieren wir die Arbeit.
-        </p>
+
+      <div class="border-t border-[#1f2937]">
+        {leistungen.map((s) => (
+          <article class="group grid grid-cols-12 gap-6 lg:gap-10 py-10 lg:py-12 border-b border-[#e5e7eb] hover:bg-white transition-colors">
+            <div class="col-span-12 lg:col-span-1">
+              <span class="font-serif-display text-[#16a34a] text-[28px]">
+                {s.num}
+              </span>
+            </div>
+            <div class="col-span-12 lg:col-span-4">
+              <h3 class="font-serif-display text-[#1f2937] text-[26px] lg:text-[30px] leading-[1.15]">
+                {s.title}
+              </h3>
+              <p class="mt-3 text-[14px] text-[#6b7280] italic font-serif-display">
+                {s.lead}
+              </p>
+            </div>
+            <div class="col-span-12 lg:col-span-6 lg:col-start-7">
+              <p class="text-[15px] lg:text-[16px] leading-[1.65] text-[#1f2937]">
+                {s.description}
+              </p>
+              <a
+                href={`/leistungsseite#${s.id}`}
+                class="mt-4 inline-flex items-center gap-1.5 text-[14px] font-medium text-[#16a34a] hover:text-[#15803d] transition-colors"
+              >
+                Mehr erfahren
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+        ))}
       </div>
     </div>
+  </section>
+)}
 
-    <!-- Services list — editorial rows -->
-    <div class="border-t border-[#1f2937]">
-      {services.map((s) => (
-        <article class="group grid grid-cols-12 gap-6 lg:gap-10 py-10 lg:py-12 border-b border-[#e5e7eb] hover:bg-white transition-colors">
-          <div class="col-span-12 lg:col-span-1">
-            <span class="font-serif-display text-[#16a34a] text-[28px]">
-              {s.num}
-            </span>
-          </div>
-          <div class="col-span-12 lg:col-span-4">
-            <h3 class="font-serif-display text-[#1f2937] text-[26px] lg:text-[30px] leading-[1.15]">
-              {s.title}
-            </h3>
-            <p class="mt-3 text-[14px] text-[#6b7280] italic font-serif-display">
-              {s.lead}
+{/* ── Page-Variante: Alternating Text/Photo auf der Leistungsseite ── */}
+{variant === 'page' && (
+  <section class="bg-white">
+    <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+      {leistungen.map((s, i) => (
+        <article
+          id={s.id}
+          class={`grid grid-cols-12 gap-8 lg:gap-16 items-center py-16 lg:py-24 scroll-mt-24 ${i > 0 ? 'border-t border-[#e5e7eb]' : ''}`}
+        >
+          {/* Text column */}
+          <div class={`col-span-12 lg:col-span-7 lg:row-start-1 ${s.imageSide === 'left' ? 'lg:col-start-6' : 'lg:col-start-1'}`}>
+            <div class="flex items-baseline gap-3">
+              <span class="font-serif-display text-[#16a34a] text-[28px]">{s.num}</span>
+              <h2 class="font-serif-display text-[#1f2937] text-[26px] lg:text-[30px] leading-[1.15]">
+                {s.title}
+              </h2>
+            </div>
+            <p class="mt-3 text-[15px] text-[#6b7280] italic font-serif-display">
+              {s.description}
             </p>
+
+            <ul class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
+              {s.items.map((it) => (
+                <li class="flex items-start gap-3 text-[15px] leading-[1.5] text-[#1f2937]">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mt-0.5 text-[#16a34a] shrink-0"><path d="M20 6 9 17l-5-5"/></svg>
+                  <span>{it}</span>
+                </li>
+              ))}
+            </ul>
           </div>
-          <div class="col-span-12 lg:col-span-6 lg:col-start-7">
-            <p class="text-[15px] lg:text-[16px] leading-[1.65] text-[#1f2937]">
-              {s.body}
-            </p>
-            <a
-              href={s.link}
-              class="mt-4 inline-flex items-center gap-1.5 text-[14px] font-medium text-[#16a34a] hover:text-[#15803d] transition-colors"
-            >
-              Mehr erfahren
-              <span aria-hidden="true">→</span>
-            </a>
+
+          {/* Photo column */}
+          <div class={`col-span-12 lg:col-span-5 lg:row-start-1 ${s.imageSide === 'left' ? 'lg:col-start-1' : 'lg:col-start-8'}`}>
+            <div class="relative aspect-[4/5] w-full bg-[#f3f4f6] border border-[#e5e7eb] overflow-hidden grayscale leistung-media">
+              <Image
+                src={s.image}
+                alt={s.alt}
+                widths={[400, 600, 800, 1200]}
+                sizes="(max-width: 1024px) 90vw, 40vw"
+              />
+            </div>
           </div>
         </article>
       ))}
     </div>
-  </div>
-</section>
+  </section>
+)}
+
+<style is:global>
+  .leistung-media {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+    width: 100%;
+    max-width: 320px;
+    margin-inline: auto;
+  }
+  .leistung-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background: linear-gradient(to right, rgba(31, 41, 55, 0.75), rgba(31, 41, 55, 0.5) 50%, rgba(31, 41, 55, 0.3)), rgba(31, 41, 55, 0.8);
+    opacity: 0.40;
+  }
+  .leistung-media img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left top;
+    transform: scale(1.14);
+    transform-origin: left top;
+    display: block;
+    filter: grayscale(1) contrast(1.03);
+  }
+</style>

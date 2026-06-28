@@ -1,48 +1,14 @@
 ---
 // src/components/Angebot.astro
-
-const tiers = [
-  {
-    label: "Fundament",
-    price: "CHF 3'400 / Monat",
-    feature: "1 Arbeitspaket pro Monat",
-    body: "Ein präzise abgegrenztes Profit-Thema, analysiert, durchgerechnet und umsetzbar.",
-    fit: "Für ein konkretes Thema, das Sie sauber gelöst haben wollen.",
-  },
-  {
-    label: "Tragwerk",
-    price: "CHF 4'900 / Monat",
-    feature: "2 Arbeitspakete pro Monat + kontinuierliche Aktualisierung",
-    body: "Parallele Bearbeitung zweier Arbeitspakete und kontinuierliche Adaption bestehender Modelle und Dashboards.",
-    fit: "Für eine kontinuierliche Zusammenarbeit.",
-  },
-  {
-    label: "Bauleitung",
-    price: "CHF 7'400 / Monat",
-    feature: "Unlimitierte Arbeitspakete + durchgehende Kalibrierung",
-    body: "Profit-Steuerung als fester Bestandteil Ihrer Führung.",
-    fit: "Für Phasen, in denen sich viel bewegt und die Zahlen jederzeit stehen müssen.",
-  },
-];
-
-const fields = [
-  "Dashboards",
-  "Angebotsgestaltung",
-  "Finanzmodellierung",
-  "Controlling",
-  "Strategische Planung",
-];
-
-// `showFields` defaults to true so the homepage instance is unchanged.
-// The /leistungen page passes showFields={false} because the four service
-// segments above it already cover the same ground (redundant there).
-const { showFields = true } = Astro.props;
+// Angebots-Karten (Gewinn-Sprint, Gewinnoptimierung, Gewinnsteuerung).
+// Enthält Eyebrow, Headline, Subline und das Karten-Grid.
+// CTA wird bewusst NICHT mitgeliefert — die einbindende Seite setzt ihn selbst.
 ---
 
-<section id="Angebot" class="bg-white border-b border-[#e5e7eb]">
-  <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-20 lg:py-28">
-    <!-- Eyebrow + H2 + Intro -->
-    <div class="grid grid-cols-12 gap-6 lg:gap-10 mb-16">
+<section id="Angebot" class="bg-[#f9fafb] border-b border-[#e5e7eb]">
+  <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-16 lg:py-20">
+    <!-- Eyebrow + Headline + Subline -->
+    <div class="grid grid-cols-12 gap-6 lg:gap-10 mb-10">
       <div class="col-span-12 lg:col-span-2">
         <span class="label-eyebrow">Angebot</span>
       </div>
@@ -50,51 +16,99 @@ const { showFields = true } = Astro.props;
         <h2
           class="font-serif-display text-[#1f2937] font-light leading-[1.05] text-[36px] sm:text-[48px] lg:text-[60px]"
         >
-          Zusammenarbeit, die <span class="text-[#16a34a]">mitwächst</span>.
+          Eine Zusammenarbeit, die sich von selbst <span class="text-[#16a34a]">rechnet</span>.
         </h2>
-        <p class="mt-6 max-w-[700px] text-[16px] leading-[1.6] text-[#6b7280]">
-          Ich arbeite in klar abgegrenzten Arbeitspaketen. Jedes ist ein eigenständiges, durchgerechnetes Ergebnis. Sie wählen die Stufe, die zu Ihrem aktuellen Bedarf passt, und wechseln, wenn er wächst.
+        <p class="mt-4 max-w-[700px] text-[15px] leading-[1.6] text-[#6b7280]">
+          Eine vollständige Gewinndiagnose über Ihr ganzes Geschäft. Durchgerechnet mit benanntem Potenzial und einem Cockpit, das bleibt.
         </p>
       </div>
     </div>
 
-    <!-- Fields strip (hidden on /leistungen via showFields={false}) -->
-    {showFields && (
-      <div class="mb-12">
-        <p class="text-[14px] text-[#6b7280] mb-2">Jedes Arbeitspaket stammt aus einem dieser Felder:</p>
-        <p class="text-[15px] text-[#1f2937] font-medium">
-          {fields.map((f, i) => (
-            <>{i > 0 && <span class="text-[#9ca3af]">{" · "}</span>}{f}</>
-          ))}
+    <!-- Card grid: 1 full-width + 2 half-width -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+
+      <!-- Karte 1 — Gewinn-Sprint (full width, featured) -->
+      <article class="angebot-card angebot-card--featured lg:col-span-2 bg-[#f3f6f4] border border-[#e5e7eb] p-8 lg:p-10 flex flex-col">
+        <div class="flex items-center gap-3 mb-4">
+          <!-- Ebene 1 — Titel -->
+          <h3 class="angebot-card__title font-serif-display text-[#1f2937] text-[22px] lg:text-[24px] leading-tight">
+            Gewinn-Sprint
+          </h3>
+        </div>
+        <!-- Ebene 2 — Preis -->
+        <div class="flex items-baseline gap-3 mb-5">
+          <p class="angebot-card__price text-[20px] lg:text-[22px] font-semibold text-[#1f2937]">
+            CHF 30'000
+          </p>
+          <span class="angebot-card__freq text-[12px] text-[#9ca3af]">einmalig</span>
+        </div>
+        <!-- Ebene 3 — Kernzusage -->
+        <p class="angebot-card__promise text-[14px] font-medium text-[#16a34a] mb-4">
+          Garantie: CHF 150'000 oder Geld zurück
         </p>
-      </div>
-    )}
+        <!-- Ebene 4 — Detail -->
+        <p class="angebot-card__detail text-[14px] lg:text-[15px] leading-[1.6] text-[#1f2937] mb-4">
+          Treiberbaum · Deckungsbeitragsanalyse · Erlös-Leakage-Assessment · Preismodell-Überprüfung · Massnahmenplan · Business Cases · Steuerungscockpit
+        </p>
+        <!-- Ebene 5 — Für … -->
+        <p class="angebot-card__fit text-[13px] leading-[1.5] text-[#9ca3af] mt-auto">
+          Für schnelle Resultate.
+        </p>
+      </article>
 
-    <!-- Tier cards -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
-      {
-        tiers.map((t) => (
-          <article class="bg-white border border-[#e5e7eb] rounded-[6px] p-8 lg:p-10 flex flex-col">
-            <h3 class="font-serif-display text-[#1f2937] text-[22px] lg:text-[24px] leading-tight mb-2">
-              {t.label}
-            </h3>
-            <p class="text-[20px] lg:text-[22px] font-semibold text-[#1f2937] mb-6">
-              {t.price}
-            </p>
-            <p class="text-[14px] font-medium text-[#16a34a] mb-4">
-              {t.feature}
-            </p>
-            <p class="text-[15px] leading-[1.65] text-[#6b7280] mb-4">
-              {t.body}
-            </p>
-            <p class="text-[14px] leading-[1.6] text-[#9ca3af] mt-auto italic">
-              {t.fit}
-            </p>
-          </article>
-        ))
-      }
+      <!-- Karte 2 — Gewinnoptimierung -->
+      <article class="angebot-card bg-white border border-[#e5e7eb] p-8 lg:p-10 flex flex-col">
+        <!-- Ebene 1 — Titel -->
+        <h3 class="angebot-card__title font-serif-display text-[#1f2937] text-[22px] lg:text-[24px] leading-tight mb-4">
+          Gewinnoptimierung
+        </h3>
+        <!-- Ebene 2 — Preis -->
+        <div class="flex items-baseline gap-3 mb-5">
+          <p class="angebot-card__price text-[20px] lg:text-[22px] font-semibold text-[#1f2937]">
+            CHF 4'900 / Monat
+          </p>
+          <span class="angebot-card__freq text-[12px] text-[#9ca3af]">pro Monat</span>
+        </div>
+        <!-- Ebene 3 — Kernzusage -->
+        <p class="angebot-card__promise text-[14px] font-medium text-[#16a34a] mb-4">
+          2 Arbeitspakete pro Monat + kontinuierliche Aktualisierung
+        </p>
+        <!-- Ebene 4 — Detail -->
+        <p class="angebot-card__detail text-[14px] lg:text-[15px] leading-[1.6] text-[#1f2937] mb-4">
+          Parallele Bearbeitung zweier Arbeitspakete, laufende Adaption bestehender Modelle und Dashboards.
+        </p>
+        <!-- Ebene 5 — Für … -->
+        <p class="angebot-card__fit text-[13px] leading-[1.5] text-[#9ca3af] mt-auto">
+          Für eine kontinuierliche Zusammenarbeit.
+        </p>
+      </article>
+
+      <!-- Karte 3 — Gewinnsteuerung -->
+      <article class="angebot-card bg-white border border-[#e5e7eb] p-8 lg:p-10 flex flex-col">
+        <!-- Ebene 1 — Titel -->
+        <h3 class="angebot-card__title font-serif-display text-[#1f2937] text-[22px] lg:text-[24px] leading-tight mb-4">
+          Gewinnsteuerung
+        </h3>
+        <!-- Ebene 2 — Preis -->
+        <div class="flex items-baseline gap-3 mb-5">
+          <p class="angebot-card__price text-[20px] lg:text-[22px] font-semibold text-[#1f2937]">
+            CHF 7'400 / Monat
+          </p>
+          <span class="angebot-card__freq text-[12px] text-[#9ca3af]">pro Monat</span>
+        </div>
+        <!-- Ebene 3 — Kernzusage -->
+        <p class="angebot-card__promise text-[14px] font-medium text-[#16a34a] mb-4">
+          Unlimitierte Arbeitspakete + durchgehende Kalibrierung
+        </p>
+        <!-- Ebene 4 — Detail -->
+        <p class="angebot-card__detail text-[14px] lg:text-[15px] leading-[1.6] text-[#1f2937] mb-4">
+          Profit-Steuerung als fester Bestandteil Ihrer Führung.
+        </p>
+        <!-- Ebene 5 — Für … -->
+        <p class="angebot-card__fit text-[13px] leading-[1.5] text-[#9ca3af] mt-auto">
+          Für Phasen, in denen sich viel bewegt und die Zahlen jederzeit stehen müssen.
+        </p>
+      </article>
     </div>
-
-
   </div>
 </section>
