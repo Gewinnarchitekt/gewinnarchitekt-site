@@ -1,0 +1,543 @@
+---
+// src/components/Herangehensweise.astro
+// Page-local interactive Gewinn Venn diagram (used only on herangehensweise.astro).
+
+const zones = [
+  {
+    id: "kunden",
+    label: "Kunden",
+    text: "Stehen am Ursprung jeder Geschäftstätigkeit und es gilt Angebote zu entwickeln, für die genug Interesse und Zahlungsbereitschaft besteht.",
+    x: 50,
+    y: 25,
+    popover: "below" as const,
+  },
+  {
+    id: "markt",
+    label: "Markt",
+    text: "Gesamtheit aller Anbieter, welche um die gleichen Kunden werben. Ihr Angebot ist teil davon, aber nur eines von vielen.",
+    x: 30.1,
+    y: 74.6,
+    popover: "above" as const,
+  },
+  {
+    id: "firma",
+    label: "Firma",
+    text: "Koordiniert sämtliche Aktivitäten für die Leistungserstellung. Es gilt Ressourcen optimal aufeinander abzustimmen .",
+    x: 69.9,
+    y: 74.6,
+    popover: "above" as const,
+  },
+  {
+    id: "volumen",
+    label: "Volumen",
+    text: "Eine starke Positionierung und Differenzierung gegenüber der Konkurrenz hat einen direkten Einfluss auf das Volumen.",
+    x: 36.8,
+    y: 45.9,
+    popover: "right" as const,
+  },
+  {
+    id: "marge",
+    label: "Marge",
+    text: "Ergibt sich aus Preisgestaltung und Kostenstruktur. Es gilt kurzfristige Attraktivität und langfristige Profitabilität in Einklang zu bringen.",
+    x: 63.2,
+    y: 45.9,
+    popover: "left" as const,
+  },
+  {
+    id: "kosten",
+    label: "Kosten",
+    text: "Strategische Vor-/Nachteile ergeben sich im Vergleich der eigenen Kostenstrukturen zur Konkurrenz.",
+    x: 50,
+    y: 73.4,
+    popover: "above" as const,
+  },
+  {
+    id: "gewinn",
+    label: "Gewinn",
+    text: "Im Zentrum aller drei Perspektiven entsteht Gewinn: Volumen × Marge − Kosten.",
+    x: 50,
+    y: 55.1,
+    popover: "right" as const,
+  },
+];
+
+const defaultZone = zones.find((z) => z.id === "gewinn")!;
+---
+
+<div class="ga-venn-root" data-venn-root>
+  <!-- Hints (above graphic) -->
+  <p class="ga-hint-mobile mb-4 text-[13px] text-[#6b7280] md:hidden">
+    Bereiche antippen für Erklärung
+  </p>
+  <p class="ga-hint-desktop mb-4 text-center text-[13px] text-[#6b7280] hidden md:block">
+    Bereiche anklicken für die Erklärung.
+  </p>
+
+  <div class="ga-venn-stage" data-venn-stage>
+    <svg
+      viewBox="0 0 680 492"
+      role="img"
+      aria-labelledby="venn-t venn-d"
+      class="ga-venn-svg"
+    >
+      <title id="venn-t">Gewinn aus drei Perspektiven — interaktiv</title>
+      <desc id="venn-d">
+        Interaktives Diagramm mit drei überlappenden Kreisen für Kunden, Markt und Finanzen.
+        Sieben Bereiche auswählbar für Erklärungen.
+      </desc>
+      <circle class="ga-c ga-kunde" cx="340" cy="193" r="140" />
+      <circle class="ga-c ga-markt" cx="269" cy="316" r="140" />
+      <circle class="ga-c ga-firma" cx="411" cy="316" r="140" />
+      <g aria-hidden="true" class="ga-svg-labels ga-svg-labels--hidden">
+        <text class="ga-name ga-t-kunde" x="340" y="123" text-anchor="middle">Kunden</text>
+        <text class="ga-name ga-t-markt" x="205" y="367" text-anchor="middle">Markt</text>
+        <text class="ga-name ga-t-firma" x="475" y="367" text-anchor="middle">Finanzen</text>
+        <text class="ga-lever" x="250" y="226" text-anchor="middle">Volumen</text>
+        <text class="ga-lever" x="430" y="226" text-anchor="middle">Marge</text>
+        <text class="ga-lever" x="340" y="361" text-anchor="middle">Kosten</text>
+        <text class="ga-gewinn" x="340" y="271" text-anchor="middle">Gewinn</text>
+      </g>
+    </svg>
+
+    {zones.map((z) => (
+      <button
+        type="button"
+        class:list={["ga-label-btn", z.id === "gewinn" && "ga-label-btn--gewinn"]}
+        style={`left:${z.x}%;top:${z.y}%`}
+        data-zone={z.id}
+        data-popover={z.popover}
+        aria-expanded="false"
+        aria-controls="venn-mobile-panel venn-popover"
+      >
+        {z.label}
+      </button>
+    ))}
+
+    <!-- Desktop popover -->
+    <div
+      id="venn-popover"
+      class="ga-popover"
+      role="dialog"
+      aria-label="Erklärung"
+      aria-modal="true"
+      hidden
+      data-venn-popover
+    >
+      <button type="button" class="ga-popover-close" aria-label="Schliessen" data-popover-close>
+        <span aria-hidden="true">×</span>
+      </button>
+      <h3 class="font-serif-display text-[#1f2937] text-[18px] leading-tight mb-3" data-popover-title></h3>
+      <p class="text-[14px] leading-[1.65] text-[#6b7280]" data-popover-text></p>
+    </div>
+  </div>
+
+  <!-- Mobile content box -->
+  <div
+    id="venn-mobile-panel"
+    class="ga-mobile-panel mt-6 border border-[#e5e7eb] rounded-[6px] p-6 md:hidden"
+    aria-live="polite"
+    data-venn-mobile-panel
+  >
+    <h3
+      class="font-serif-display text-[#1f2937] text-[20px] leading-tight mb-3"
+      data-mobile-title
+    >
+      {defaultZone.label}
+    </h3>
+    <p class="text-[15px] leading-[1.65] text-[#6b7280]" data-mobile-text>
+      {defaultZone.text}
+    </p>
+  </div>
+
+  <!-- Zone data for JS -->
+  <div class="hidden" aria-hidden="true" data-venn-zones>
+    {zones.map((z) => (
+      <div data-zone-id={z.id} data-zone-label={z.label}>
+        {z.text}
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .ga-venn-stage {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    aspect-ratio: 680 / 492;
+  }
+
+  .ga-venn-svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-family: inherit;
+  }
+
+  .ga-c {
+    stroke-width: 1;
+  }
+  .ga-kunde {
+    fill: rgba(31, 158, 142, 0.1);
+    stroke: #1f9e8e;
+  }
+  .ga-markt {
+    fill: rgba(201, 137, 43, 0.1);
+    stroke: #c9892b;
+  }
+  .ga-firma {
+    fill: rgba(91, 108, 196, 0.1);
+    stroke: #5b6cc4;
+  }
+
+  .ga-svg-labels--hidden {
+    visibility: hidden;
+  }
+  .ga-name {
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .ga-t-kunde {
+    fill: #15706a;
+  }
+  .ga-t-markt {
+    fill: #8a5e16;
+  }
+  .ga-t-firma {
+    fill: #3d49a0;
+  }
+  .ga-lever {
+    font-size: 15px;
+    font-weight: 500;
+    fill: #1f2d3d;
+  }
+  .ga-gewinn {
+    font-size: 16px;
+    font-weight: 600;
+    fill: #16a34a;
+  }
+
+  .ga-label-btn {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    min-width: 44px;
+    min-height: 44px;
+    padding: 8px 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #1f2937;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, font-weight 0.15s ease;
+  }
+
+  .ga-label-btn--gewinn {
+    color: #16a34a;
+    font-weight: 600;
+  }
+
+  .ga-label-btn:hover {
+    border-color: #e5e7eb;
+  }
+
+  .ga-label-btn:focus {
+    outline: none;
+  }
+
+  .ga-label-btn:focus-visible {
+    outline: 2px solid #16a34a;
+    outline-offset: 2px;
+  }
+
+  .ga-label-btn.is-selected {
+    border-color: #16a34a;
+    box-shadow: 0 0 0 1px #16a34a;
+    font-weight: 600;
+  }
+
+  .ga-popover {
+    position: absolute;
+    z-index: 20;
+    width: min(280px, 42vw);
+    padding: 20px 20px 16px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.15s ease, transform 0.15s ease;
+    pointer-events: none;
+  }
+
+  .ga-popover.is-open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .ga-popover-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    line-height: 1;
+    color: #6b7280;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .ga-popover-close:hover {
+    color: #1f2937;
+  }
+
+  .ga-popover-close:focus-visible {
+    outline: 2px solid #16a34a;
+    outline-offset: 2px;
+  }
+
+  .ga-mobile-panel {
+    min-height: 148px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ga-label-btn,
+    .ga-popover {
+      transition: none;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .ga-label-btn {
+      background: transparent;
+      padding: 10px 14px;
+      font-size: 16px;
+    }
+
+    .ga-label-btn--gewinn {
+      font-size: 17px;
+    }
+  }
+</style>
+
+<script>
+  function initVenn(root: HTMLElement) {
+    const stage = root.querySelector<HTMLElement>("[data-venn-stage]");
+    const popover = root.querySelector<HTMLElement>("[data-venn-popover]");
+    const popoverTitle = root.querySelector<HTMLElement>("[data-popover-title]");
+    const popoverText = root.querySelector<HTMLElement>("[data-popover-text]");
+    const popoverClose = root.querySelector<HTMLButtonElement>("[data-popover-close]");
+    const mobilePanel = root.querySelector<HTMLElement>("[data-venn-mobile-panel]");
+    const mobileTitle = root.querySelector<HTMLElement>("[data-mobile-title]");
+    const mobileText = root.querySelector<HTMLElement>("[data-mobile-text]");
+    const zoneBtns = root.querySelectorAll<HTMLButtonElement>("[data-zone]");
+    const zonesContainer = root.querySelector<HTMLElement>("[data-venn-zones]");
+
+    if (
+      !stage ||
+      !popover ||
+      !popoverTitle ||
+      !popoverText ||
+      !popoverClose ||
+      !mobilePanel ||
+      !mobileTitle ||
+      !mobileText ||
+      !zonesContainer
+    ) {
+      return;
+    }
+
+    const zoneData = new Map<string, { label: string; text: string }>();
+    zonesContainer.querySelectorAll<HTMLElement>("[data-zone-id]").forEach((el) => {
+      const id = el.getAttribute("data-zone-id");
+      if (!id) return;
+      zoneData.set(id, {
+        label: el.getAttribute("data-zone-label") ?? "",
+        text: el.textContent?.trim() ?? "",
+      });
+    });
+
+    const desktopMq = window.matchMedia("(min-width: 768px)");
+
+    let activeZone: string | null = null;
+    let lastTrigger: HTMLButtonElement | null = null;
+    const focusableSelector = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+
+    function isDesktop() {
+      return desktopMq.matches;
+    }
+
+    function setSelected(zoneId: string | null) {
+      zoneBtns.forEach((btn) => {
+        const selected = btn.getAttribute("data-zone") === zoneId;
+        btn.classList.toggle("is-selected", selected);
+        btn.setAttribute("aria-expanded", selected ? "true" : "false");
+      });
+    }
+
+    function updateMobile(zoneId: string) {
+      const data = zoneData.get(zoneId);
+      if (!data) return;
+      mobileTitle.textContent = data.label;
+      mobileText.textContent = data.text;
+      activeZone = zoneId;
+      setSelected(zoneId);
+    }
+
+    function positionPopover(trigger: HTMLButtonElement) {
+      const placement = trigger.getAttribute("data-popover") ?? "below";
+      const stageRect = stage!.getBoundingClientRect();
+      const btnRect = trigger.getBoundingClientRect();
+      const popRect = popover!.getBoundingClientRect();
+
+      let top = 0;
+      let left = 0;
+      const offset = 12;
+
+      const relLeft = btnRect.left - stageRect.left + btnRect.width / 2;
+      const relTop = btnRect.top - stageRect.top + btnRect.height / 2;
+
+      if (placement === "below") {
+        top = relTop + btnRect.height / 2 + offset;
+        left = relLeft - popRect.width / 2;
+      } else if (placement === "above") {
+        top = relTop - btnRect.height / 2 - offset - popRect.height;
+        left = relLeft - popRect.width / 2;
+      } else if (placement === "left") {
+        top = relTop - popRect.height / 2;
+        left = relLeft - btnRect.width / 2 - offset - popRect.width;
+      } else {
+        top = relTop - popRect.height / 2;
+        left = relLeft + btnRect.width / 2 + offset;
+      }
+
+      const maxLeft = stageRect.width - popRect.width - 8;
+      left = Math.max(8, Math.min(left, maxLeft));
+      top = Math.max(8, Math.min(top, stageRect.height - popRect.height - 8));
+
+      popover!.style.top = `${top}px`;
+      popover!.style.left = `${left}px`;
+    }
+
+    function openPopover(zoneId: string, trigger: HTMLButtonElement) {
+      const data = zoneData.get(zoneId);
+      if (!data) return;
+
+      popoverTitle.textContent = data.label;
+      popoverText.textContent = data.text;
+      popover!.hidden = false;
+      popover!.classList.add("is-open");
+      activeZone = zoneId;
+      lastTrigger = trigger;
+      setSelected(zoneId);
+
+      requestAnimationFrame(() => {
+        positionPopover(trigger);
+        popoverClose.focus();
+      });
+    }
+
+    function closePopover() {
+      popover!.classList.remove("is-open");
+      popover!.hidden = true;
+      activeZone = null;
+      setSelected(null);
+
+      if (lastTrigger) {
+        lastTrigger.focus();
+        lastTrigger = null;
+      }
+    }
+
+    function handlePopoverKeydown(e: KeyboardEvent) {
+      if (!popover!.classList.contains("is-open")) return;
+
+      if (e.key === "Escape") {
+        e.preventDefault();
+        closePopover();
+        return;
+      }
+
+      if (e.key === "Tab") {
+        const focusables = Array.from(
+          popover!.querySelectorAll<HTMLElement>(focusableSelector)
+        ).filter((el) => !el.hasAttribute("disabled"));
+
+        if (focusables.length === 0) return;
+
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    }
+
+    function handleLabelClick(btn: HTMLButtonElement) {
+      const zoneId = btn.getAttribute("data-zone");
+      if (!zoneId) return;
+
+      if (isDesktop()) {
+        if (activeZone === zoneId && popover!.classList.contains("is-open")) {
+          closePopover();
+        } else {
+          openPopover(zoneId, btn);
+        }
+      } else {
+        updateMobile(zoneId);
+      }
+    }
+
+    function handleOutsideClick(e: MouseEvent) {
+      if (!isDesktop() || !popover!.classList.contains("is-open")) return;
+      const target = e.target as Node;
+      if (
+        !popover!.contains(target) &&
+        !Array.from(zoneBtns).some((btn) => btn.contains(target))
+      ) {
+        closePopover();
+      }
+    }
+
+    zoneBtns.forEach((btn) => {
+      btn.addEventListener("click", () => handleLabelClick(btn));
+    });
+
+    popoverClose.addEventListener("click", closePopover);
+    popover.addEventListener("keydown", handlePopoverKeydown);
+    document.addEventListener("click", handleOutsideClick);
+
+    desktopMq.addEventListener("change", () => {
+      closePopover();
+      if (!isDesktop()) {
+        updateMobile(activeZone ?? "gewinn");
+      } else {
+        setSelected(null);
+      }
+    });
+
+    if (!isDesktop()) {
+      updateMobile("gewinn");
+    }
+  }
+
+  document.querySelectorAll<HTMLElement>("[data-venn-root]").forEach(initVenn);
+</script>
