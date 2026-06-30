@@ -5,7 +5,7 @@
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import SiteSchema from "../components/SiteSchema.astro";
-import Herangehensweise from "../components/Herangehensweise.astro";
+import GewinnVenn from "../components/GewinnVenn.astro";
 import Profil from "../components/Profil.astro";
 import "../styles/global.css";
 import "@fontsource/inter/300.css";
@@ -28,13 +28,19 @@ const ablaufSteps = [
     num: "02",
     title: "Modellierung",
     subtitle: "Die Wirkung sehen, bevor Sie entscheiden.",
-    text: "Auf dieser Grundlage entstehen dynamische Szenarien. Sensitivitätsanalysen zeigen, wie empfindlich Ihr Gewinn auf einzelne Stellschrauben reagiert. So sehen Sie die Wirkung einer Preis-, Mengen- oder Kostenänderung, bevor Sie sie umsetzen.",
+    text: "Auf dieser Grundlage entstehen dynamische Szenarien. Sensitivitätsanalysen zeigen, wie empfindlich Ihr Gewinn auf einzelne Stellschrauben reagiert, und machen die Bandbreite zwischen günstigem und ungünstigem Verlauf sichtbar. So kennen Sie die Wirkung einer Preis-, Volumen- oder Kostenänderung und ihr Risiko, bevor Sie sie umsetzen.",
   },
   {
     num: "03",
     title: "Validierung",
     subtitle: "Annahmen, die am Markt halten.",
     text: "Belastbare Annahmen zur Zahlungsbereitschaft entstehen am Markt und beim Kunden. Ich prüfe die kritischen Punkte Ihres Modells direkt mit Referenzen, Vergleichen und gezielter Marktevidenz. Ihre Entscheidung ruht damit auf belegten Grössen.",
+  },
+  {
+    num: "04",
+    title: "Umsetzung & Steuerung",
+    subtitle: "Aus der Entscheidung wird gesteuerte Wirkung.",
+    text: "Aus der validierten Entscheidung wird ein priorisierter Massnahmenplan. Ich begleite die Umsetzung, halte die Wirkung im Steuerungscockpit nach und plane vom Mehrjahres-Zielbild bis zum laufenden Forecast voraus. So bleibt Ihr Gewinn über das Jahr steuerbar und sichtbar.",
   },
 ];
 ---
@@ -69,16 +75,16 @@ const ablaufSteps = [
           </div>
           <div class="col-span-12 lg:col-span-10">
             <h1 class="font-serif-display text-[#1f2937] font-light leading-[1.05] text-[36px] sm:text-[48px] lg:text-[60px]">
-              Gewinn entsteht aus einer <span class="text-[#16a34a]">gesamtheitlichen Dynamik</span>.
+              Gewinn entsteht aus einer <span class="text-[#16a34a]">gesamtheitlichen </span>Herangehensweise.
             </h1>
             <p class="mt-6 max-w-[720px] text-[16px] leading-[1.6] text-[#6b7280]">
-              Gute Preis- und Profitentscheidungen entstehen nicht in einer einzelnen Disziplin. Sie entstehen dort, wo Kundenverständnis, Marktbeobachtung und Finanzkompetenz zusammenkommen.
+              Gute Preis- und Profitentscheidungen entstehen dort, wo Kundenverständnis, Marktbeobachtung und Finanzkompetenz zusammenkommen.
             </p>
           </div>
         </div>
 
         <div class="mt-10 lg:mt-12">
-          <Herangehensweise />
+          <GewinnVenn />
         </div>
       </div>
     </section>
@@ -97,39 +103,36 @@ const ablaufSteps = [
           </div>
         </div>
 
-        <div class="ablauf-steps max-w-[920px] mx-auto">
-          <div class="flex flex-col md:grid md:grid-cols-3 md:gap-10 md:items-stretch">
+        <div class="ablauf-steps max-w-[720px] mx-auto">
+          <div class="flex flex-col">
             {ablaufSteps.map((step, i) => (
-              <>
+              <div class="relative pb-8 last:pb-0 pl-10 sm:pl-14">
+                {/* Upper rail segment */}
                 {i > 0 && (
-                  <div class="ablauf-mobile-connector md:hidden" aria-hidden="true">
-                    <span class="ablauf-mobile-connector-line"></span>
-                    <span class="ablauf-mobile-connector-chevron">˅</span>
-                  </div>
+                  <div class="absolute left-[11px] sm:left-[15px] top-0 h-[36px] sm:h-[44px] w-[1px] bg-[#e5e7eb]" aria-hidden="true"></div>
                 )}
-                <article class="ablauf-col flex flex-col h-full">
-                  <span class="ablauf-num-row flex items-center justify-between">
-                    <span class="ablauf-num font-serif-display text-[#16a34a] text-[36px] lg:text-[42px] font-light leading-none">
-                      {step.num}
-                    </span>
-                    {/* Arrow points from the right of this number to the next
-                        step's column. Desktop only — on mobile the vertical
-                        connector above handles the sequence. Omitted on 03. */}
-                    {i < ablaufSteps.length - 1 && (
-                      <span class="ablauf-step-arrow hidden md:inline-block" aria-hidden="true">→</span>
-                    )}
-                  </span>
-                  <h3 class="mt-4 font-serif-display text-[#1f2937] text-[20px] lg:text-[22px] font-semibold leading-tight">
+                {/* Lower rail segment */}
+                {i < ablaufSteps.length - 1 && (
+                  <div class="absolute left-[11px] sm:left-[15px] top-[60px] sm:top-[68px] bottom-0 w-[1px] bg-[#e5e7eb]" aria-hidden="true"></div>
+                )}
+                {/* Node marker */}
+                <div class="absolute left-0 sm:left-1 top-[36px] sm:top-[44px] w-6 h-6 rounded-full border border-[#d1d5db] bg-white flex items-center justify-center shadow-sm" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-[#4b5563]">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <polyline points="19 12 12 19 5 12"></polyline>
+                  </svg>
+                </div>
+
+                <article class="bg-white border border-[#e5e7eb] rounded-[6px] p-8 lg:p-10 flex flex-col shadow-sm">
+                  <span class="label-eyebrow mb-2 block">{step.subtitle}</span>
+                  <h3 class="font-serif-display text-[#1f2937] text-[20px] lg:text-[22px] font-semibold leading-tight mb-4">
                     {step.title}
                   </h3>
-                  <p class="mt-2 text-[15px] text-[#6b7280] italic font-serif-display leading-snug">
-                    {step.subtitle}
-                  </p>
-                  <p class="mt-4 text-[15px] lg:text-[16px] leading-[1.65] text-[#1f2937] flex-1">
+                  <p class="text-[15px] lg:text-[16px] leading-[1.65] text-[#1f2937]">
                     {step.text}
                   </p>
                 </article>
-              </>
+              </div>
             ))}
           </div>
         </div>
@@ -141,46 +144,3 @@ const ablaufSteps = [
     <Footer />
   </body>
 </html>
-
-<style>
-  /* Flow arrow pushed to the right end of the column (via justify-between
-     on the number row), kept level with the 01/02 numbers. */
-  .ablauf-step-arrow {
-    font-size: 32px;
-    line-height: 1;
-    color: rgba(107, 114, 128, 0.7);
-  }
-
-  .ablauf-mobile-connector {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1.25rem 0;
-  }
-
-  .ablauf-mobile-connector-line {
-    display: block;
-    width: 1px;
-    height: 1.25rem;
-    background: #e5e7eb;
-  }
-
-  .ablauf-mobile-connector-chevron {
-    margin-top: 2px;
-    font-size: 12px;
-    line-height: 1;
-    color: rgba(107, 114, 128, 0.55);
-  }
-
-  /* On desktop the steps become a 3-column grid, so the vertical
-     "between-steps" connectors must disappear. This scoped rule does the
-     hiding: the Tailwind `md:hidden` utility on the element loses the
-     specificity battle against the scoped `.ablauf-mobile-connector`
-     rule above (Astro adds a data-attribute that raises its weight), so
-     we hide it here at the same specificity instead. */
-  @media (min-width: 768px) {
-    .ablauf-mobile-connector {
-      display: none;
-    }
-  }
-</style>

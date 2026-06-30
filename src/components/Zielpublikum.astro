@@ -1,16 +1,25 @@
 ---
 // src/components/Zielpublikum.astro
+import { Image } from 'astro:assets';
+import imgMarktorientiert from '../assets/marktorientiert-picture.png';
+import imgConcreteJunction from '../assets/concrete-junction.png';
 
 const cards = [
   {
     title: "Marktorientiert",
-    body1: "Sie führen kommerziell, in der Geschäftsleitung, mit P&L-Verantwortung oder als Fractional Product Leader. Den Markt lesen Sie sicher. Was Ihnen fehlt, ist die quantitative Herleitung, die Ihre Entscheidungen belastbar macht.",
-    body2: "Ich bringe die Rechnung dahinter: durchgerechnete Szenarien, saubere Unit Economics und die Sensitivitäten, die zeigen, ab wann eine Entscheidung kippt.",
+    body1: "Sie führen kommerziell, in der Geschäftsleitung, mit P&L-Verantwortung oder als Fractional Product Leader. Sie lesen den Markt sicher, aber es fehlt Ihnen die quantitative Herleitung für belastbare Eintscheidungen.",
+    lead: "Ich bringe die Zahlen:",
+    payoff: "durchgerechnete Szenarien, saubere Margenherleitungen und Sensitivitäten, die zeigen, ab wann eine Entscheidung kippt.",
+    image: imgMarktorientiert,
+    alt: "Architekturaufnahme in Sichtbeton",
   },
   {
     title: "Finanzorientiert",
-    body1: "Sie verantworten die Zahlen, als CFO oder im CFO-as-a-Service-Mandat. Die Herleitung beherrschen Sie. Was Sie suchen, ist die marktseitige Datengrundlage, damit Ihre Modelle auf Evidenz stehen statt auf Annahmen.",
-    body2: "Ich bringe die Marktseite dazu: belegte Zahlungsbereitschaft, Preiselastizität und Wettbewerbsreferenzen, auf denen Ihre Annahmen wirklich tragen.",
+    body1: "Sie verantworten die Zahlen, als CFO oder im CFO-as-a-Service-Mandat. Sie beherrschen die Berechnungen und suchen markt- und kundenorientierte Datengrundlagen, um darauf Ihre Planung aufzubauen.",
+    lead: "Ich bringe das Kundenverständnis:",
+    payoff: "Durchdachte Preismodelle, belegte Zahlungsbereitschaften und Wettbewerbsreferenzen, um Ihren Annahmen die notwendige Substanz zu geben.",
+    image: imgConcreteJunction,
+    alt: "Sichtbeton-Knotenpunkt",
   },
 ];
 ---
@@ -19,33 +28,70 @@ const cards = [
   <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-20 lg:py-28">
     <div class="grid grid-cols-12 gap-6 lg:gap-10 mb-16">
       <div class="col-span-12 lg:col-span-2">
-        <span class="label-eyebrow">03 Zielpublikum</span>
+        <span class="label-eyebrow">Zielpublikum</span>
       </div>
       <div class="col-span-12 lg:col-span-10">
         <h2
           class="font-serif-display text-[#1f2937] font-light leading-[1.05] text-[36px] sm:text-[48px] lg:text-[60px]"
         >
-          Zwei Seiten, eine <span class="text-[#16a34a]">Schnittstelle</span>.
+          Unterschiedliche Rollen mit dem <span class="text-[#16a34a]">gleichen Ziel</span>.
         </h2>
         <p class="mt-6 max-w-[700px] text-[16px] leading-[1.6] text-[#6b7280]">
-          Ich arbeite dort, wo Kundenverständnis, Marktbeobachtung und Finanzkompetenz zusammenkommen. Die meisten kommen von einer der beiden Seiten und brauchen die andere, um wirklich belastbar zu entscheiden.
+          Das konsequente Verknüpfen von Marketing- und Finanzaktivitäten ermöglicht eine optimale Wertschöpfung.
         </p>
       </div>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
-      {
-        cards.map((c) => (
-          <article class="bg-white border border-[#e5e7eb] rounded-[6px] p-8 lg:p-10 flex flex-col">
-            <h3 class="font-serif-display text-[#1f2937] text-[22px] lg:text-[24px] leading-tight mb-4">
-              {c.title}
-            </h3>
-            <p class="text-[15px] leading-[1.65] text-[#6b7280]">
-              {c.body1}<br />{c.body2}
-            </p>
-          </article>
-        ))
-      }
+    {/* Cards with centred triangle overlay (desktop) */}
+    <div class="relative">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+        {
+          cards.map((c) => (
+            <article class="bg-white border border-[#e5e7eb] rounded-[6px] flex flex-col overflow-hidden">
+              <div class="relative w-full h-[160px] sm:h-[200px] bg-[#f3f4f6] border-b border-[#e5e7eb] overflow-hidden card-image-strip">
+                <Image
+                  src={c.image}
+                  alt={c.alt}
+                  widths={[400, 600, 800]}
+                  sizes="(max-width: 1024px) 90vw, 40vw"
+                  class="w-full h-full object-cover object-center block filter grayscale contrast-[1.03]"
+                />
+              </div>
+              <div class="p-8 lg:p-10 flex flex-col flex-1">
+                <h3 class="font-serif-display text-[#1f2937] text-[22px] lg:text-[24px] leading-tight mb-4">
+                  {c.title}
+                </h3>
+                <p class="text-[15px] leading-[1.65] text-[#6b7280]">
+                  {c.body1}
+                </p>
+                <p class="mt-10 text-[15px] leading-[1.65]">
+                  <span class="text-[#16a34a]">{c.lead}</span>
+                  <span class="text-[#6b7280]">{c.payoff}</span>
+                </p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+
+      <div class="mt-12 flex justify-center">
+        <a
+          href="/herangehensweise"
+          class="inline-flex items-center gap-1.5 text-[14px] font-medium text-[#16a34a] hover:text-[#15803d] transition-colors"
+        >
+          Herangehensweise →
+        </a>
+      </div>
     </div>
   </div>
 </section>
+
+<style>
+  .card-image-strip img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+  }
+</style>

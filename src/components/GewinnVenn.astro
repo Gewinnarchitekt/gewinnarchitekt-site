@@ -1,12 +1,12 @@
 ---
-// src/components/Herangehensweise.astro
+// src/components/GewinnVenn.astro
 // Page-local interactive Gewinn Venn diagram (used only on herangehensweise.astro).
 
 const zones = [
   {
     id: "kunden",
     label: "Kunden",
-    text: "Stehen am Ursprung jeder Geschäftstätigkeit und es gilt Angebote zu entwickeln, für die genug Interesse und Zahlungsbereitschaft besteht.",
+    text: "Nur wenn man die Bedürfnisse der Kunden versteht, kann man Lösungen entwickeln, für die echtes Interesse und eine hohe Zahlungsbereitschaft bestehen.",
     x: 50,
     y: 25,
     popover: "below" as const,
@@ -14,7 +14,7 @@ const zones = [
   {
     id: "markt",
     label: "Markt",
-    text: "Gesamtheit aller Anbieter, welche um die gleichen Kunden werben. Ihr Angebot ist teil davon, aber nur eines von vielen.",
+    text: "Der Markt entscheidet über das langfristige Potential des eigenen Angebots. Die bestehende Konkurrenz über die Schwierigkeit, damit Erfolg zu haben.",
     x: 30.1,
     y: 74.6,
     popover: "above" as const,
@@ -22,7 +22,7 @@ const zones = [
   {
     id: "firma",
     label: "Firma",
-    text: "Koordiniert sämtliche Aktivitäten für die Leistungserstellung. Es gilt Ressourcen optimal aufeinander abzustimmen .",
+    text: "Nur wenn sämtliche Ressourcen aufeinander abgestimmt sind, wird die Firma langfristig Erfolg haben.",
     x: 69.9,
     y: 74.6,
     popover: "above" as const,
@@ -30,7 +30,7 @@ const zones = [
   {
     id: "volumen",
     label: "Volumen",
-    text: "Eine starke Positionierung und Differenzierung gegenüber der Konkurrenz hat einen direkten Einfluss auf das Volumen.",
+    text: "Eine klare Positionierung und starke Differenzierung gegenüber der Konkurrenz beeinflussen das Absatzvolumen positiv.",
     x: 36.8,
     y: 45.9,
     popover: "right" as const,
@@ -38,7 +38,7 @@ const zones = [
   {
     id: "marge",
     label: "Marge",
-    text: "Ergibt sich aus Preisgestaltung und Kostenstruktur. Es gilt kurzfristige Attraktivität und langfristige Profitabilität in Einklang zu bringen.",
+    text: "Die optimale Marge bringt Attraktivät für den Kunden mit Profitabilität für die Firma in Einklang.",
     x: 63.2,
     y: 45.9,
     popover: "left" as const,
@@ -46,7 +46,7 @@ const zones = [
   {
     id: "kosten",
     label: "Kosten",
-    text: "Strategische Vor-/Nachteile ergeben sich im Vergleich der eigenen Kostenstrukturen zur Konkurrenz.",
+    text: "Eine optimierte Kostenstruktur ermöglicht strategische Vorteile gegenüber der Konkurrenz.",
     x: 50,
     y: 73.4,
     popover: "above" as const,
@@ -54,7 +54,7 @@ const zones = [
   {
     id: "gewinn",
     label: "Gewinn",
-    text: "Im Zentrum aller drei Perspektiven entsteht Gewinn: Volumen × Marge − Kosten.",
+    text: "Eine optimale Preisgestaltung und Profitarchitektur berücksichtigt sämtliche Einflussfaktoren: Volumen × Marge − Kosten.",
     x: 50,
     y: 55.1,
     popover: "right" as const,
@@ -66,14 +66,15 @@ const defaultZone = zones.find((z) => z.id === "gewinn")!;
 
 <div class="ga-venn-root" data-venn-root>
   <!-- Hints (above graphic) -->
-  <p class="ga-hint-mobile mb-4 text-[13px] text-[#6b7280] md:hidden">
-    Bereiche antippen für Erklärung
+  <p class="ga-hint-mobile mb-6 text-center text-[13px] text-[#6b7280] md:hidden">
+    Begriffe antippen für Erklärung.
   </p>
   <p class="ga-hint-desktop mb-4 text-center text-[13px] text-[#6b7280] hidden md:block">
     Bereiche anklicken für die Erklärung.
   </p>
 
-  <div class="ga-venn-stage" data-venn-stage>
+  <!-- Desktop interactive Venn diagram (md and up only) -->
+  <div class="ga-venn-stage hidden md:block" data-venn-stage>
     <svg
       viewBox="0 0 680 492"
       role="img"
@@ -131,22 +132,117 @@ const defaultZone = zones.find((z) => z.id === "gewinn")!;
     </div>
   </div>
 
-  <!-- Mobile content box -->
-  <div
-    id="venn-mobile-panel"
-    class="ga-mobile-panel mt-6 border border-[#e5e7eb] rounded-[6px] p-6 md:hidden"
-    aria-live="polite"
-    data-venn-mobile-panel
-  >
-    <h3
-      class="font-serif-display text-[#1f2937] text-[20px] leading-tight mb-3"
-      data-mobile-title
-    >
-      {defaultZone.label}
-    </h3>
-    <p class="text-[15px] leading-[1.65] text-[#6b7280]" data-mobile-text>
-      {defaultZone.text}
-    </p>
+  <!-- Mobile-only alternative layout (below md) -->
+  <div class="md:hidden space-y-6 mt-4" data-venn-mobile-interactive>
+    <!-- Small visual Venn diagram (non-interactive) -->
+    <div class="relative w-[280px] h-[280px] mx-auto mb-8 select-none animate-fadeIn" aria-hidden="true">
+      <!-- Circle 1 (Kunden) -->
+      <div class="absolute w-44 h-44 rounded-full bg-[#1f9e8e]/5 border border-[#1f9e8e]/20 left-[52px] top-0">
+        <span class="absolute left-1/2 -translate-x-1/2 top-6 text-[12px] font-semibold text-[#15706a]/70 font-sans tracking-wide">Kunden</span>
+      </div>
+      <!-- Circle 2 (Markt) -->
+      <div class="absolute w-44 h-44 rounded-full bg-[#c9892b]/5 border border-[#c9892b]/20 left-0 bottom-0">
+        <span class="absolute left-6 bottom-6 text-[12px] font-semibold text-[#8a5e16]/70 font-sans tracking-wide">Markt</span>
+      </div>
+      <!-- Circle 3 (Firma) -->
+      <div class="absolute w-44 h-44 rounded-full bg-[#5b6cc4]/5 border border-[#5b6cc4]/20 right-0 bottom-0">
+        <span class="absolute right-6 bottom-6 text-[12px] font-semibold text-[#3d49a0]/70 font-sans tracking-wide">Firma</span>
+      </div>
+      
+      <!-- Overlay badges ①②③④ -->
+      <!-- ① Volumen (Kunden/Markt overlap) -->
+      <div class="absolute left-[84px] top-[128px] w-7 h-7 rounded-full bg-white border border-[#d1d5db] flex items-center justify-center text-[15px] font-semibold text-[#4b5563] shadow-sm">
+        ①
+      </div>
+      <!-- ② Marge (Kunden/Firma overlap) -->
+      <div class="absolute right-[84px] top-[128px] w-7 h-7 rounded-full bg-white border border-[#d1d5db] flex items-center justify-center text-[15px] font-semibold text-[#4b5563] shadow-sm">
+        ②
+      </div>
+      <!-- ③ Kosten (Markt/Firma overlap) -->
+      <div class="absolute left-[126px] bottom-[50px] w-7 h-7 rounded-full bg-white border border-[#d1d5db] flex items-center justify-center text-[15px] font-semibold text-[#4b5563] shadow-sm">
+        ③
+      </div>
+      <!-- ④ Gewinn (Center overlap) -->
+      <div class="absolute left-[124px] top-[140px] w-8 h-8 rounded-full bg-[#16a34a] flex items-center justify-center text-[16px] font-bold text-white shadow-md z-20">
+        ④
+      </div>
+    </div>
+
+    <!-- Row 1: Chips (Kunden, Markt, Firma) -->
+    <div class="flex flex-col items-center">
+      <div class="flex justify-center gap-3">
+        {['kunden', 'markt', 'firma'].map(id => {
+          const z = zones.find(x => x.id === id)!;
+          return (
+            <button
+              type="button"
+              class="ga-mobile-chip px-4 py-2 border border-[#e5e7eb] rounded-full text-[14px] text-[#4b5563] bg-white transition-all font-medium focus:outline-none ga-mobile-btn"
+              data-mobile-zone={id}
+              data-row="row1"
+            >
+              {z.label}
+            </button>
+          );
+        })}
+      </div>
+      <div class="ga-mobile-explanation hidden w-full bg-[#f9fafb] border border-[#e5e7eb] rounded-[6px] p-4 text-left mt-3" data-mobile-explanation="row1">
+        <h4 class="font-serif-display text-[#1f2937] text-[16px] font-semibold mb-1" data-mobile-title></h4>
+        <p class="text-[14px] leading-[1.65] text-[#6b7280]" data-mobile-text></p>
+      </div>
+    </div>
+
+    <!-- Row 2: Relationship line (① Volumen × ② Marge − ③ Kosten = ④ Gewinn) -->
+    <div class="flex flex-col items-center">
+      <div class="flex flex-wrap items-center justify-center gap-x-2 gap-y-2 text-[#6b7280] font-medium text-[16px] sm:text-[18px]">
+        <button
+          type="button"
+          class="ga-mobile-equation-btn border-b border-dashed border-[#d1d5db] pb-0.5 text-[#4b5563] transition-colors focus:outline-none ga-mobile-btn"
+          data-mobile-zone="volumen"
+          data-row="row2"
+        >
+          ① Volumen
+        </button>
+        <span class="select-none text-[#9ca3af] font-light px-0.5">×</span>
+        <button
+          type="button"
+          class="ga-mobile-equation-btn border-b border-dashed border-[#d1d5db] pb-0.5 text-[#4b5563] transition-colors focus:outline-none ga-mobile-btn"
+          data-mobile-zone="marge"
+          data-row="row2"
+        >
+          ② Marge
+        </button>
+        <span class="select-none text-[#9ca3af] font-light px-0.5">−</span>
+        <button
+          type="button"
+          class="ga-mobile-equation-btn border-b border-dashed border-[#d1d5db] pb-0.5 text-[#4b5563] transition-colors focus:outline-none ga-mobile-btn"
+          data-mobile-zone="kosten"
+          data-row="row2"
+        >
+          ③ Kosten
+        </button>
+        <span class="select-none text-[#9ca3af] font-light px-0.5">=</span>
+        <button
+          type="button"
+          class="ga-mobile-equation-btn ga-mobile-equation-btn--gewinn border-b border-dashed border-green-300 pb-0.5 text-[#16a34a] transition-colors focus:outline-none ga-mobile-btn"
+          data-mobile-zone="gewinn"
+          data-row="row2"
+        >
+          ④ Gewinn
+        </button>
+      </div>
+      <div class="ga-mobile-explanation hidden w-full bg-[#f9fafb] border border-[#e5e7eb] rounded-[6px] p-4 text-left mt-3" data-mobile-explanation="row2">
+        <h4 class="font-serif-display text-[#1f2937] text-[16px] font-semibold mb-1" data-mobile-title></h4>
+        <p class="text-[14px] leading-[1.65] text-[#6b7280]" data-mobile-text></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dummy elements for desktop script to pass initial check on mobile removal -->
+  <div class="hidden" aria-hidden="true">
+    <div data-venn-mobile-panel>
+      <div data-mobile-title></div>
+      <div data-mobile-text></div>
+    </div>
   </div>
 
   <!-- Zone data for JS -->
@@ -330,6 +426,28 @@ const defaultZone = zones.find((z) => z.id === "gewinn")!;
     .ga-label-btn--gewinn {
       font-size: 17px;
     }
+  }
+
+  /* Mobile Venn Equation & Chip Active States */
+  .ga-mobile-chip.is-active {
+    border-color: #1f2937 !important;
+    color: #1f2937 !important;
+    background-color: #f8fafc !important;
+    font-weight: 600 !important;
+  }
+  .ga-mobile-equation-btn.is-active {
+    color: #1f2937 !important;
+    border-bottom: 2px solid #1f2937 !important;
+    border-style: solid !important;
+    font-weight: 600 !important;
+    padding-bottom: 1px !important;
+  }
+  .ga-mobile-equation-btn--gewinn.is-active {
+    color: #16a34a !important;
+    border-bottom: 2px solid #16a34a !important;
+    border-style: solid !important;
+    font-weight: 700 !important;
+    padding-bottom: 1px !important;
   }
 </style>
 
@@ -536,6 +654,52 @@ const defaultZone = zones.find((z) => z.id === "gewinn")!;
 
     if (!isDesktop()) {
       updateMobile("gewinn");
+    }
+
+    // New mobile-only interactive logic
+    const mobileInteractive = root.querySelector<HTMLElement>("[data-venn-mobile-interactive]");
+    if (mobileInteractive) {
+      const mobBtns = mobileInteractive.querySelectorAll<HTMLButtonElement>("[data-mobile-zone]");
+      const row1Expl = mobileInteractive.querySelector<HTMLElement>('[data-mobile-explanation="row1"]');
+      const row2Expl = mobileInteractive.querySelector<HTMLElement>('[data-mobile-explanation="row2"]');
+
+      function closeMobileExplanations() {
+        mobBtns.forEach((btn) => {
+          btn.classList.remove("is-active");
+        });
+        if (row1Expl) row1Expl.classList.add("hidden");
+        if (row2Expl) row2Expl.classList.add("hidden");
+      }
+
+      mobBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const zoneId = btn.getAttribute("data-mobile-zone")!;
+          const row = btn.getAttribute("data-row")!;
+          const data = zoneData.get(zoneId);
+          if (!data) return;
+
+          const isActive = btn.classList.contains("is-active");
+
+          closeMobileExplanations();
+
+          if (!isActive) {
+            btn.classList.add("is-active");
+            if (row === "row1") {
+              if (row1Expl) {
+                row1Expl.querySelector<HTMLElement>('[data-mobile-title]')!.textContent = data.label;
+                row1Expl.querySelector<HTMLElement>('[data-mobile-text]')!.textContent = data.text;
+                row1Expl.classList.remove("hidden");
+              }
+            } else {
+              if (row2Expl) {
+                row2Expl.querySelector<HTMLElement>('[data-mobile-title]')!.textContent = data.label;
+                row2Expl.querySelector<HTMLElement>('[data-mobile-text]')!.textContent = data.text;
+                row2Expl.classList.remove("hidden");
+              }
+            }
+          }
+        });
+      });
     }
   }
 

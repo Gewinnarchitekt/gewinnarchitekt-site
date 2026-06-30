@@ -5,7 +5,7 @@
 // variant="page"  → Darstellung auf der Leistungsseite (num, title, description, items, Bild)
 import { Image } from 'astro:assets';
 import imgTowerFacade from '../assets/tower-facade.png';
-import imgConcreteJunction from '../assets/concrete-junction.png';
+import imgRecursiveStairwell from '../assets/recursive-stairwell.png';
 import imgModularBuilding from '../assets/modular-building.png';
 
 interface Props {
@@ -44,14 +44,14 @@ const leistungen = [
       'Packaging & Angebotsstruktur',
     ],
     imageSide: 'left' as const,
-    alt: 'Detail eines Betontragwerks mit sichtbaren Lastpfaden',
-    image: imgConcreteJunction,
+    alt: 'Treppenhaus in Sichtbeton',
+    image: imgRecursiveStairwell,
   },
   {
     num: '03',
     id: 'planen-steuern',
     title: 'Planen & steuern',
-    lead: 'Statt Vergangenheit zu erklären, Gewinn aktiv steuern.',
+    lead: 'Aufgrund der Vergangenheit aktiv die Zukunft planen.',
     description: 'Erfahren Sie, ob die Richtung trägt, und erhalten Sie die Steuerung, die Ihren Gewinn planbar hält — vom Mehrjahres-Zielbild bis zum laufenden Forecast.',
     items: [
       'Mittel- und Langfristplanung',
@@ -72,16 +72,15 @@ const leistungen = [
     <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-20 lg:py-28">
       <div class="grid grid-cols-12 gap-6 lg:gap-10 mb-16">
         <div class="col-span-12 lg:col-span-2">
-          <span class="label-eyebrow">04 Leistungen</span>
+          <span class="label-eyebrow">Leistungen</span>
         </div>
         <div class="col-span-12 lg:col-span-10">
           <h2 class="font-serif-display text-[#1f2937] font-light leading-[1.05] text-[36px] sm:text-[48px] lg:text-[60px]">
-            Drei Dimensionen der{' '}
-            <span class="text-[#16a34a]">Gewinnmaximierung</span>.
+            Diensteistungen über {' '}
+            <span class="text-[#16a34a]">drei Bereiche</span> hinweg.
           </h2>
           <p class="mt-6 max-w-[640px] text-[16px] leading-[1.6] text-[#6b7280]">
-            Wählen Sie den Einstiegspunkt, der zu Ihrer Phase passt; von dort
-            aus kalibrieren wir die Arbeit.
+            Auf Ihre Bedürfnisse zugeschnitten entscheiden wir über den optimalen Einstiegspunkt.
           </p>
         </div>
       </div>
