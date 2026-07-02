@@ -1,7 +1,6 @@
 ---
 // src/pages/herangehensweise.astro
 // Standalone "Herangehensweise" page — interactive Gewinn Venn diagram + Ablauf.
-// NOT linked from nav/footer/sitemap; noindex while unfinished.
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import SiteSchema from "../components/SiteSchema.astro";
@@ -51,7 +50,6 @@ const ablaufSteps = [
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="robots" content="noindex,nofollow" />
     <meta name="generator" content={Astro.generator} />
     <title>Herangehensweise | Gewinnarchitekt</title>
     <SiteSchema />
