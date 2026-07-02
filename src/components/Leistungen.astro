@@ -2,7 +2,7 @@
 // src/components/Leistungen.astro
 // Single Source of Truth für alle Leistungs-Daten.
 // variant="index" → Darstellung auf der Startseite (num, title, lead, description, link)
-// variant="page"  → Darstellung auf der Leistungsseite (num, title, description, items, Bild)
+// variant="page"  → Darstellung auf der Angebotsseite (num, title, description, items, Bild)
 import { Image } from 'astro:assets';
 import imgTowerFacade from '../assets/tower-facade.png';
 import imgRecursiveStairwell from '../assets/recursive-stairwell.png';
@@ -106,7 +106,7 @@ const leistungen = [
                 {s.description}
               </p>
               <a
-                href={`/leistungsseite#${s.id}`}
+                href={`/angebot#${s.id}`}
                 class="mt-4 inline-flex items-center gap-1.5 text-[14px] font-medium text-[#16a34a] hover:text-[#15803d] transition-colors"
               >
                 Mehr erfahren
@@ -120,7 +120,7 @@ const leistungen = [
   </section>
 )}
 
-{/* ── Page-Variante: Alternating Text/Photo auf der Leistungsseite ── */}
+{/* ── Page-Variante: Alternating Text/Photo auf der Angebotsseite ── */}
 {variant === 'page' && (
   <section class="bg-white">
     <div class="max-w-[1280px] mx-auto px-6 lg:px-10">

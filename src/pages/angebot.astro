@@ -1,6 +1,6 @@
 ---
-// src/pages/leistungsseite.astro
-// Leistungsseite — bezieht Leistungen direkt aus der Komponente Leistungen.astro.
+// src/pages/angebot.astro
+// Angebot — bezieht Leistungen direkt aus der Komponente Leistungen.astro.
 // Header, FAQ, Angebot, Profil und Footer werden hier zusammengesetzt.
 import Nav from "../components/Nav.astro";
 import Leistungen from "../components/Leistungen.astro";
@@ -69,7 +69,7 @@ const faqJsonLd = {
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Gewinnarchitekt | Leistungen</title>
+    <title>Gewinnarchitekt | Angebot</title>
     <SiteSchema />
 
     <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} is:inline />

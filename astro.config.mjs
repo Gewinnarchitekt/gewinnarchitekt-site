@@ -7,6 +7,10 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   redirects: {
     '/so-arbeite-ich': '/herangehensweise',
+    '/leistungsseite': {
+      status: 301,
+      destination: '/angebot'
+    }
   },
   vite: {
     plugins: [tailwindcss()]
