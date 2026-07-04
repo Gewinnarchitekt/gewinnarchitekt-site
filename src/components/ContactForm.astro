@@ -1,0 +1,208 @@
+---
+// src/components/ContactForm.astro
+---
+
+<div class="w-full contact-form-container">
+  <!-- Success State Message (completely replaces the form on HTTP 200) -->
+  <div id="success-message" class="hidden py-8 border-t border-[#e5e7eb]">
+    <p class="text-[16px] leading-[1.65] text-[#1f2937] font-medium">
+      Danke — Ihre Nachricht ist angekommen und ich werde mich mich zeitnah melden.
+    </p>
+  </div>
+
+  <!-- Form element -->
+  <form id="contact-form" class="space-y-6">
+    <!-- Error Message Banner (shown inline above the fields/button if POST fails) -->
+    <div id="error-message" class="hidden p-4 bg-[#f9fafb] border border-[#1f2937]/15 text-[#1f2937] text-[14px] leading-relaxed">
+      Das hat nicht geklappt. Schreiben Sie mir direkt an <a href="mailto:info@gewinnarchitekt.ch" class="text-[#16a34a] hover:underline font-medium">info@gewinnarchitekt.ch</a> oder rufen Sie an: +41 76 535 26 04.
+    </div>
+
+    <!-- 1. E-Mail -->
+    <div class="space-y-2">
+      <label for="email" class="block text-[11px] uppercase tracking-[0.18em] font-medium text-[#6b7280]">
+        E-Mail *
+      </label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        required
+        class="w-full bg-[#f9fafb] border border-[#e5e7eb] px-4 py-3.5 text-[14px] text-[#1f2937] placeholder-[#6b7280]/50 focus:outline-none focus:border-[#16a34a] transition-colors rounded-none"
+      />
+    </div>
+
+    <!-- 2. Vor- und Nachname -->
+    <div class="space-y-2">
+      <label for="name" class="block text-[11px] uppercase tracking-[0.18em] font-medium text-[#6b7280]">
+        Vor- und Nachname *
+      </label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        required
+        class="w-full bg-[#f9fafb] border border-[#e5e7eb] px-4 py-3.5 text-[14px] text-[#1f2937] placeholder-[#6b7280]/50 focus:outline-none focus:border-[#16a34a] transition-colors rounded-none"
+      />
+    </div>
+
+    <!-- 4. Firmenname (optional) -->
+    <div class="space-y-2">
+      <label for="firmenname" class="block text-[11px] uppercase tracking-[0.18em] font-medium text-[#6b7280]">
+        Firmenname
+      </label>
+      <input
+        type="text"
+        name="firmenname"
+        id="firmenname"
+        class="w-full bg-[#f9fafb] border border-[#e5e7eb] px-4 py-3.5 text-[14px] text-[#1f2937] placeholder-[#6b7280]/50 focus:outline-none focus:border-[#16a34a] transition-colors rounded-none"
+      />
+    </div>
+
+    <!-- 5. Nachricht -->
+    <div class="space-y-2 nachricht-wrapper">
+      <label for="nachricht" class="block text-[11px] uppercase tracking-[0.18em] font-medium text-[#6b7280]">
+        Nachricht *
+      </label>
+      <textarea
+        name="nachricht"
+        id="nachricht"
+        required
+        class="w-full bg-[#f9fafb] border border-[#e5e7eb] px-4 py-3.5 text-[14px] text-[#1f2937] placeholder-[#6b7280]/50 focus:outline-none focus:border-[#16a34a] transition-colors rounded-none resize-y"
+      ></textarea>
+    </div>
+
+    <!-- Hidden Honeypot Field (visually hidden + aria-hidden) -->
+    <div style="display: none;" aria-hidden="true">
+      <label for="company_website">Company Website</label>
+      <input
+        type="text"
+        name="company_website"
+        id="company_website"
+        tabindex="-1"
+        autocomplete="off"
+      />
+    </div>
+
+    <!-- Actions & Datenschutz note -->
+    <div class="pt-4 space-y-4">
+      <button
+        type="submit"
+        id="submit-btn"
+        class="inline-flex items-center justify-center bg-[#16a34a] text-white text-[14px] font-medium px-6 py-4 hover:bg-[#15803d] transition-colors cursor-pointer rounded-none disabled:bg-[#6b7280] disabled:cursor-not-allowed w-full sm:w-auto"
+      >
+        Senden
+      </button>
+
+      <p class="text-[12px] leading-relaxed text-[#6b7280]">
+        Mit dem Absenden stimmen Sie der <a href="/datenschutz" class="text-[#16a34a] hover:underline" target="_blank" rel="noopener">Datenschutzerklärung</a> zu.
+      </p>
+    </div>
+  </form>
+</div>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement | null;
+  const successContainer = document.getElementById('success-message');
+  const errorContainer = document.getElementById('error-message');
+
+  if (form && submitBtn) {
+    // Capture the button's resting label once, so the "Senden …" submitting
+    // label can always be restored after an error.
+    const originalLabel = (submitBtn.textContent || 'Senden').trim();
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Clear any error banner left over from a previous attempt
+      if (errorContainer) {
+        errorContainer.classList.add('hidden');
+      }
+
+      // Prepare request data
+      const formData = new FormData(form);
+      const payload: Record<string, string> = {};
+      formData.forEach((value, key) => {
+        payload[key] = value.toString();
+      });
+
+      // Enter the submitting state — this only lives until the response resolves.
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Senden …';
+
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(payload),
+        });
+
+        if (!response.ok) {
+          // Non-200 response: fall through to the catch block below.
+          throw new Error('API returned error status ' + response.status);
+        }
+
+        // Success (real 200 only): remove the whole form — fields and button —
+        // and leave only the confirmation message. An inline display:none is
+        // used (not just the `hidden` class) so it wins over the ID-level
+        // `#contact-form` flex rule in the <style> block and the form truly hides.
+        form.classList.add('hidden');
+        form.style.display = 'none';
+        if (successContainer) {
+          successContainer.classList.remove('hidden');
+        }
+      } catch (err) {
+        console.error('Contact Form submission error:', err);
+        // Error: surface the fallback banner and keep the populated fields so
+        // the user can retry.
+        if (errorContainer) {
+          errorContainer.classList.remove('hidden');
+        }
+      } finally {
+        // The "Senden …" submitting state must never outlive the response.
+        // On success the form is hidden, so resetting here is invisible; on
+        // error it returns the button to an enabled, retryable "Senden".
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalLabel;
+      }
+    });
+  }
+</script>
+
+<style>
+  /* Mobile / stacked: textarea keeps a normal ~6-row height. */
+  #nachricht {
+    min-height: 9.5rem;
+  }
+
+  /* Desktop: the grid stretches both columns to a shared height
+     (see items-stretch on the wrapper in Profil.astro). The form
+     column becomes a full-height flex column and the textarea
+     absorbs the leftover space, so "Senden" drops to the column
+     bottom and aligns with "Potenzial-Check starten" on the left. */
+  @media (min-width: 1024px) {
+    .contact-form-container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #contact-form {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nachricht-wrapper {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #nachricht {
+      flex: 1 1 auto;
+    }
+  }
+</style>

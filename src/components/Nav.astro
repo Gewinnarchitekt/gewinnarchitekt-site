@@ -5,7 +5,8 @@ import Logo from './Logo.astro';
 const links = [
   { href: '/', label: 'Home' },
   { href: '/herangehensweise', label: 'Herangehensweise' },
-  { href: '/angebot', label: 'Angebot' }
+  { href: '/angebot', label: 'Angebot' },
+  { href: '#kontakt', label: 'Kontakt' }
 ];
 ---
 
@@ -25,7 +26,7 @@ const links = [
 
     <div class="flex items-center gap-3">
       <a href="https://tidycal.com/gewinnarchitekt/potenzialcheck" target="_blank" rel="noopener" data-ph-event="cta_clicked" data-ph-location="nav" class="hidden md:inline-flex items-center gap-2 bg-[#16a34a] text-white text-[13px] font-medium px-4 py-2.5 hover:bg-[#15803d] transition-colors">
-        Potenzial-Check
+        Termin vereinbaren
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
       </a>
       <button id="mobile-menu-btn" class="lg:hidden inline-flex items-center justify-center w-10 h-10 border border-[#e5e7eb] text-[#1f2937]" aria-label="Menü öffnen" aria-expanded="false">
@@ -43,7 +44,7 @@ const links = [
         </a>
       ))}
       <a href="https://tidycal.com/gewinnarchitekt/potenzialcheck" target="_blank" rel="noopener" data-ph-event="cta_clicked" data-ph-location="nav_mobile" class="mobile-menu-link mt-4 inline-flex items-center justify-between bg-[#16a34a] text-white text-[13px] font-medium px-4 py-3">
-        Potenzial-Check buchen
+        Termin vereinbaren
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
       </a>
     </nav>
@@ -72,6 +73,16 @@ const links = [
     link.addEventListener('click', () => {
       if (btn?.getAttribute('aria-expanded') === 'true') {
         toggleMenu();
+      }
+    });
+  });
+
+  // Handle contact link redirect if #kontakt is not present on the current page
+  document.querySelectorAll('a[href="#kontakt"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      if (!document.getElementById('kontakt')) {
+        e.preventDefault();
+        window.location.href = '/#kontakt';
       }
     });
   });
