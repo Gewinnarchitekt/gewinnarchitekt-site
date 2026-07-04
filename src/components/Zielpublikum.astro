@@ -7,17 +7,19 @@ import imgConcreteJunction from '../assets/concrete-junction.png';
 const cards = [
   {
     title: "Marktorientiert",
-    body1: "Sie führen kommerziell, in der Geschäftsleitung, mit P&L-Verantwortung oder als Fractional Product Leader. Sie lesen den Markt sicher, aber es fehlt Ihnen die quantitative Herleitung für belastbare Entscheidungen.",
-    lead: "Ich bringe die Zahlen:",
-    payoff: "durchgerechnete Szenarien, saubere Margenherleitungen und Sensitivitäten, die zeigen, ab wann eine Entscheidung kippt.",
+    person: "Kommerzielle Führung in Geschäftsleitung oder mit P&L-Verantwortung. Liest den Markt sicher und entscheidet nah am Geschäft.",
+    need: "Belastbare Entscheidungsgrundlagen, die das eigene Marktgespür quantitativ untermauern.",
+    ichBringe: "Ich bringe durchgerechnete Szenarien, saubere Margenherleitungen und Sensitivitäten, die zeigen, ab wann eine Entscheidung kippt.",
+    exclusion: "Weniger passend, wenn Seniorität schwerer wiegt als die Herleitung.",
     image: imgMarktorientiert,
     alt: "Architekturaufnahme in Sichtbeton",
   },
   {
     title: "Finanzorientiert",
-    body1: "Sie verantworten die Zahlen, als CFO oder im CFO-as-a-Service-Mandat. Sie beherrschen die Berechnungen und suchen markt- und kundenorientierte Datengrundlagen, um darauf Ihre Planung aufzubauen.",
-    lead: "Ich bringe das Kundenverständnis:",
-    payoff: "Durchdachte Preismodelle, belegte Zahlungsbereitschaften und Wettbewerbsreferenzen, um Ihren Annahmen die notwendige Substanz zu geben.",
+    person: "Verantwortet die Zahlen als Geschäftsführer, CFO oder im externen Finanzmandat. Beherrscht die Berechnungen und plant strukturiert.",
+    need: "Markt- und kundenorientierte Datengrundlagen, um die interne Finanzsicht um die Marktperspektive zu ergänzen.",
+    ichBringe: "Ich bringe durchdachte Preismodelle, belegte Zahlungsbereitschaften und Wettbewerbsvergleiche, welche den Annahmen die nötige Substanz geben.",
+    exclusion: "Weniger passend, wenn die interne Buchhaltung als die einzige Wahrheit betrachtet wird.",
     image: imgConcreteJunction,
     alt: "Sichtbeton-Knotenpunkt",
   },
@@ -34,10 +36,10 @@ const cards = [
         <h2
           class="font-serif-display text-[#1f2937] font-light leading-[1.05] text-[36px] sm:text-[48px] lg:text-[60px]"
         >
-          Unterschiedliche Rollen mit dem <span class="text-[#16a34a]">gleichen Ziel</span>.
+          Ich arbeite für <span class="text-[#16a34a]">zwei Schlüsselrollen</span> mit dem gleichen Ziel.
         </h2>
         <p class="mt-6 max-w-[700px] text-[16px] leading-[1.6] text-[#6b7280]">
-          Das konsequente Verknüpfen von Marketing- und Finanzaktivitäten ermöglicht eine optimale Wertschöpfung.
+          Die gesamtheitliche Betrachtung von Marketing- und Finanzaktivitäten erschliesst zusätzliches Gewinnpotenzial.
         </p>
       </div>
     </div>
@@ -58,16 +60,23 @@ const cards = [
                 />
               </div>
               <div class="p-8 lg:p-10 flex flex-col flex-1">
-                <h3 class="font-serif-display text-[#1f2937] text-[22px] lg:text-[24px] leading-tight mb-4">
+                <h3 class="font-serif-display text-[#1f2937] text-[22px] lg:text-[24px] leading-tight mb-6">
                   {c.title}
                 </h3>
-                <p class="text-[15px] leading-[1.65] text-[#6b7280]">
-                  {c.body1}
-                </p>
-                <p class="mt-10 text-[15px] leading-[1.65]">
-                  <span class="text-[#16a34a]">{c.lead}</span>
-                  <span class="text-[#6b7280]">{c.payoff}</span>
-                </p>
+                <div class="space-y-4">
+                  <p class="text-[15px] leading-[1.65] text-[#6b7280]">
+                    <span class="font-medium text-[#1f2937]">Person:</span> {c.person}
+                  </p>
+                  <p class="text-[15px] leading-[1.65] text-[#6b7280]">
+                    <span class="font-medium text-[#1f2937]">Bedürfnis:</span> {c.need}
+                  </p>
+                  <p class="text-[15px] leading-[1.65] text-[#6b7280]">
+                    <span class="text-[#16a34a] font-bold">Ich bringe</span>{c.ichBringe.slice("Ich bringe".length)}
+                  </p>
+                  <p class="text-[15px] leading-[1.65] text-[#6b7280]">
+                    <span class="font-medium text-[#1f2937]">Ausschluss:</span> {c.exclusion}
+                  </p>
+                </div>
               </div>
             </article>
           ))
