@@ -17,13 +17,13 @@ const { variant = 'index' } = Astro.props;
 const leistungen = [
   {
     num: '01',
-    id: 'gewinntreiber-verstehen',
-    title: 'Gewinntreiber verstehen',
-    lead: 'Transparenz über die echten Gewinntreiber schaffen.',
-    description: 'Verstehen Sie, wo Ihr Gewinn entsteht und wo er unterwegs verloren geht — durchgerechnet auf Ihren eigenen Zahlen, nicht geschätzt.',
+    id: 'gewinn-marge',
+    title: 'Gewinn & Marge',
+    lead: 'Transparenz über die wichtigsten Gewinntreiber erhalten.',
+    description: 'Verstehen Sie, wo Gewinn entsteht und wo er unterwegs verloren geht. Sie erhalten konkrete Handlungsempfehlungen heruntergebrochen auf Produkt-, Kunden- und Transaktionsebene.',
     items: [
-      'Produkt- & Sortimentsprofitabilität',
-      'Kundenprofitabilität',
+      'Produkt- und Kundenprofitabilität',
+      'Kundensegmentierung',
       'Preiswasserfall-Analyse',
       'Werttreiberbaum',
     ],
@@ -33,15 +33,15 @@ const leistungen = [
   },
   {
     num: '02',
-    id: 'preis-angebot-schaerfen',
-    title: 'Preis & Angebot schärfen',
-    lead: 'Kundennutzen, Preislogik und Marge in einer Linie.',
-    description: 'Erkennen Sie, wie Sie Ihr Angebot von der Value Proposition bis zur Preislogik schärfen — damit der Mehrwert greifbar wird und Ihre Marge nicht im Rabatt verschwindet.',
+    id: 'preis-angebot',
+    title: 'Preis & Angebot',
+    lead: 'Abstimmen von Werteversprechen und Erlösmodell.',
+    description: 'Schärfen Sie Ihr Angebot von der Value Proposition bis zur Preispunktoptimierung. Sie erhalten skalierbare Preismodelle, zugeschnitten auf die Segmente mit der höchsten Zahlungsbereitschaft.',
     items: [
       'Wert- und Nutzenargumentation',
-      'Strategische Preisgestaltung',
-      'Konditionen- & Rabattlogik',
       'Packaging & Angebotsstruktur',
+      'Preismetrik & Preisniveau',
+      'Konditionen- & Rabattlogik',
     ],
     imageSide: 'left' as const,
     alt: 'Treppenhaus in Sichtbeton',
@@ -49,15 +49,15 @@ const leistungen = [
   },
   {
     num: '03',
-    id: 'planen-steuern',
-    title: 'Planen & steuern',
-    lead: 'Aufgrund der Vergangenheit aktiv die Zukunft planen.',
-    description: 'Erfahren Sie, ob die Richtung trägt, und erhalten Sie die Steuerung, die Ihren Gewinn planbar hält — vom Mehrjahres-Zielbild bis zum laufenden Forecast.',
+    id: 'planung-steuerung',
+    title: 'Planung & Steuerung',
+    lead: 'Aus den Zahlen von Gestern die Entscheide für morgen.',
+    description: 'Bewerten Sie unterschiedliche Szenarien und planen Sie Ihr langfristiges Wachstum. Sie erhalten Klarheit über die besten Optionen.',
     items: [
+      'Business Cases und Szenarios',
       'Mittel- und Langfristplanung',
-      'Kurzfrist- und Liquiditätsplanung',
       'Reporting und Abweichungsanalyse',
-      'Gewinn- und KPI-Dashboards',
+      'Wachstumsstrategien',
     ],
     imageSide: 'right' as const,
     alt: 'Modulare Gebäudestruktur mit klar gegliederten Elementen',
@@ -72,15 +72,14 @@ const leistungen = [
     <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-20 lg:py-28">
       <div class="grid grid-cols-12 gap-6 lg:gap-10 mb-16">
         <div class="col-span-12 lg:col-span-2">
-          <span class="label-eyebrow">Leistungen</span>
+          <span class="label-eyebrow">Angebot</span>
         </div>
         <div class="col-span-12 lg:col-span-10">
           <h2 class="font-serif-display text-[#1f2937] font-light leading-[1.05] text-[36px] sm:text-[48px] lg:text-[60px]">
-            Dienstleistungen über {' '}
-            <span class="text-[#16a34a]">drei Bereiche</span> hinweg.
+            Ich unterstütze in folgenden Bereichen.
           </h2>
           <p class="mt-6 max-w-[640px] text-[16px] leading-[1.6] text-[#6b7280]">
-            Auf Ihre Bedürfnisse zugeschnitten entscheiden wir über den optimalen Einstiegspunkt.
+            Von den Gewinntreibern über das Erlösmodell bis zur Wachstumsplanung: Ich steuere Profitabilität mit System.
           </p>
         </div>
       </div>
