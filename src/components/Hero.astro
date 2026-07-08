@@ -1,13 +1,9 @@
 ---
 // src/components/Hero.astro
-const stats = [
-  { k: "20+", v: "Jahre Erfahrung" },
-  { k: "12", v: "Produkteportfolios" },
-  { k: "CFM", v: "Chartered Financial Modeler" },
-  { k: "Zürich", v: "Schweiz" },
-];
-
-const stationen = ["Goldbach", "TX Group", "Swisscard", "Sunrise"];
+import goldbachLogo from '../assets/logos/goldbach.svg';
+import txgroupLogo from '../assets/logos/txgroup.svg';
+import swisscardLogo from '../assets/logos/swisscard.svg';
+import sunriseLogo from '../assets/logos/sunrise.svg';
 ---
 
 <!-- Dark hero with architectural background + upward-panning facade -->
@@ -107,57 +103,37 @@ const stationen = ["Goldbach", "TX Group", "Swisscard", "Sunrise"];
     </div>
   </div>
 
-  <!-- Trustbar — integrated into hero, white text on semi-transparent background -->
-  <div class="relative bg-white/10 backdrop-blur-sm border-t border-white/15">
+  <!-- Berufliche Stationen Logo Band -->
+  <div 
+    class="relative bg-white/10 backdrop-blur-sm border-t border-white/15 py-6 md:py-8" 
+    aria-label="Berufliche Stationen"
+  >
     <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
-      <div class="grid grid-cols-2 lg:grid-cols-4">
-        {
-          stats.map((s, i) => (
-            <div
-              class={`py-7 lg:py-8 px-4 lg:px-6
-              ${i > 0 ? "lg:border-l border-white/15" : ""}
-              ${i === 1 ? "border-l border-white/15" : ""}
-              ${i >= 2 ? "border-t lg:border-t-0 border-white/15" : ""}
-              ${i === 3 ? "border-l border-white/15" : ""}
-            `}
-            >
-              <div class="font-display font-light text-white text-3xl lg:text-5xl leading-none">
-                {s.k}
-              </div>
-              <div class="text-[11px] tracking-[0.15em] uppercase text-white/60 mt-3">
-                {s.v}
-              </div>
-            </div>
-          ))
-        }
-      </div>
-    </div>
-  </div>
-
-  <!-- Stationen strip — directly below trustbar / credentials row -->
-  <div class="relative border-t border-white/10 bg-white/10 backdrop-blur-sm">
-    <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-3.5 lg:py-4">
-      <div
-        class="grid w-full grid-cols-[1fr_3fr] items-center font-sans text-[12px] md:text-[13px] font-normal tracking-[0.1em]"
-      >
-        <span
-          class="inline-flex items-center gap-2 justify-self-start whitespace-nowrap"
-        >
-          <span class="text-[#16a34a]/80" aria-hidden="true">■</span>
-          <span class="uppercase text-white/50">STATIONEN</span>
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 lg:gap-12">
+        <span class="text-[11px] tracking-[0.18em] uppercase font-semibold text-white/50 whitespace-nowrap">
+          20 JAHRE ERFAHRUNG BEI
         </span>
-        <div
-          class="flex w-full min-w-0 flex-wrap items-center justify-between gap-x-2 gap-y-2 sm:flex-nowrap"
-        >
-          {
-            stationen.map((name) => (
-              <span
-                class="cursor-pointer text-white/75 decoration-1 underline-offset-[0.2em] transition-colors duration-200 ease-in-out hover:text-white hover:underline"
-              >
-                {name}
-              </span>
-            ))
-          }
+        <div class="flex flex-wrap items-center justify-around lg:justify-between gap-y-5 gap-x-6 sm:gap-x-10 lg:gap-x-12 w-full max-w-[480px] lg:max-w-none mx-auto lg:mx-0 lg:w-auto lg:flex-nowrap">
+          <img 
+            src={goldbachLogo.src} 
+            alt="Goldbach" 
+            class="h-[16px] sm:h-[20px] md:h-[24px] w-auto object-contain opacity-55 brightness-0 invert" 
+          />
+          <img 
+            src={txgroupLogo.src} 
+            alt="TX Group" 
+            class="h-[22px] sm:h-[26px] md:h-[30px] w-auto object-contain opacity-55 brightness-0 invert" 
+          />
+          <img 
+            src={swisscardLogo.src} 
+            alt="Swisscard" 
+            class="h-[18px] sm:h-[22px] md:h-[26px] w-auto object-contain opacity-55 brightness-0 invert" 
+          />
+          <img 
+            src={sunriseLogo.src} 
+            alt="Sunrise" 
+            class="h-[24px] sm:h-[28px] md:h-[32px] w-auto object-contain opacity-55 brightness-0 invert" 
+          />
         </div>
       </div>
     </div>
