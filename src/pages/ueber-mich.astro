@@ -1,0 +1,219 @@
+---
+// src/pages/ueber-mich.astro
+import Nav from "../components/Nav.astro";
+import ProfilCard from "../components/ProfilCard.astro";
+import Profil from "../components/Profil.astro";
+import Footer from "../components/Footer.astro";
+import SiteSchema from "../components/SiteSchema.astro";
+
+import "../styles/global.css";
+import "@fontsource/inter/300.css";
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
+import "@fontsource/inter/700.css";
+
+const PH_KEY = import.meta.env.PUBLIC_POSTHOG_KEY;
+const PH_HOST = import.meta.env.PUBLIC_POSTHOG_HOST;
+---
+
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Karl Aschwanden — Über mich | Gewinnarchitekt</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <SiteSchema />
+
+    {PH_KEY && (
+      <script is:inline define:vars={{ PH_KEY, PH_HOST }}>
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+        posthog.init(PH_KEY, { api_host: PH_HOST, defaults: '2025-05-24' });
+      </script>
+      <script is:inline>
+        document.addEventListener('click', function (e) {
+          var el = e.target.closest('[data-ph-event]');
+          if (!el || !window.posthog) return;
+          var event = el.getAttribute('data-ph-event');
+          var location = el.getAttribute('data-ph-location');
+          window.posthog.capture(event, location ? { location: location } : {});
+        });
+      </script>
+    )}
+  </head>
+  <body class="bg-white text-slate-900 antialiased">
+    <Nav />
+
+    <section class="bg-[#f9fafb] border-b border-[#e5e7eb]">
+      <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-20 lg:py-28">
+        <!-- Section Header Pattern -->
+        <div class="grid grid-cols-12 gap-6 lg:gap-10 mb-16">
+          <div class="col-span-12 lg:col-span-2">
+            <span class="label-eyebrow">ÜBER MICH</span>
+          </div>
+          <div class="col-span-12 lg:col-span-10">
+            <h1 class="font-serif-display text-[#1f2937] font-light leading-[1.05] text-[36px] sm:text-[48px] lg:text-[60px]">
+              Karl Aschwanden
+            </h1>
+          </div>
+        </div>
+
+        <!-- Main Two-Column Layout -->
+        <div class="grid grid-cols-12 gap-6 lg:gap-16 items-start">
+          
+          <!-- Left Column: Biography with Progressive Disclosure -->
+          <div class="col-span-12 lg:col-span-7">
+            <article
+              id="bio-article"
+              class="bg-white border border-[#e5e7eb] rounded-[6px] shadow-xs p-6 sm:p-8 lg:p-10 text-[#1f2937] relative"
+            >
+              <!-- Main Single Heading: Werdegang -->
+              <h3 class="font-serif-display text-[20px] sm:text-[22px] font-semibold text-[#1f2937] leading-tight mb-4">
+                Werdegang
+              </h3>
+
+              <!-- Block 1: Initial Visible Content -->
+              <div class="space-y-4">
+                <p class="text-[15px] sm:text-[16px] leading-[1.7] text-[#4b5563]">
+                  Angefangen habe ich vor 20 Jahren als Produktmanager in der Medienbranche. Meine Aufgabe bestand darin, im Markt die Kundensegmente mit dem höchsten Umsatzpotenzial zu identifizieren und für diese passende Angebote zu erstellen.
+                </p>
+                <p class="text-[15px] sm:text-[16px] leading-[1.7] text-[#4b5563]">
+                  Mit der Zeit interessierte ich mich für die zugrundeliegenden Erfolgstreiber und ich wechselte 2010 ins Pricing bei Sunrise Communications AG. Mit Finanzplanungen, Business Cases und Preismodellen ging ich vermehrt der Frage nach, wann ein gutes Kundenangebot auch gut für das Unternehmen ist.
+                </p>
+              </div>
+
+              <!-- Collapsible Section for Remaining Paragraphs -->
+              <div
+                id="bio-collapsible"
+                class="bio-collapsible overflow-hidden transition-[max-height,opacity] duration-300 ease-out"
+              >
+                <div id="bio-collapsible-inner" class="pt-4 space-y-4">
+                  <p class="text-[15px] sm:text-[16px] leading-[1.7] text-[#4b5563]">
+                    Mit einem starken Kunden- und Profitabilitätsverständnis ausgestattet, entwickelte ich ab 2014 für Swisscard AECS GmbH langfristige Umsatzwachstumsstrategien und berechnete sämtliche Gewinneffekte von geplanten Portfolioanpassungen im Consumer Bereich.
+                  </p>
+                  <p class="text-[15px] sm:text-[16px] leading-[1.7] text-[#4b5563]">
+                    Ein komplett neues Produktportfolio konnte ich ab 2018 aufbauen, als mir Swisscard AECS GmbH die Verantwortung für die Entwicklung des neuen Cashback Portfolios übertrug. Bis heute gehören Cashback Cards zu den bestbewerteten Kartenprodukten auf moneyland.ch.
+                  </p>
+                  <p class="text-[15px] sm:text-[16px] leading-[1.7] text-[#4b5563]">
+                    Meine technologischen Kompetenzen baute ich ab 2022 aus, als ich für Goldbach neXT AG die Verantwortung für digitales Pricing und Revenue Management übernahm. Es galt taktische Preisoptimierungen für 20minuten.ch und tagesanzeiger.ch umzusetzen, 360° Transparenz über die wichtigsten Umsatztreiber herzustellen und das gesamtheitliche Preisgefüge über Interessengruppen hinweg zu koordinieren.
+                  </p>
+                  <p class="text-[15px] sm:text-[16px] leading-[1.7] text-[#4b5563]">
+                    Heute unterstütze ich KMU zwischen 5 und 50 Millionen Franken Umsatz mit der gesamtheitlichen Umsetzung von Gewinnmassnahmen. Ich bin überzeugt, dass ein solches Vorgehen ausgezeichneten Mehrwert bietet für ein Kundensegment, für das sich das Anstellen mehrerer Spezialistenfunktionen nicht rechnet.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Fade-out Gradient Overlay (Bottom ~4rem fade) -->
+              <div
+                id="bio-fade-overlay"
+                class="absolute bottom-[4.5rem] left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent pointer-events-none transition-opacity duration-300 opacity-0"
+                aria-hidden="true"
+              ></div>
+
+              <!-- Trigger Button -->
+              <div class="pt-6 border-t border-[#e5e7eb] mt-6 flex justify-start">
+                <button
+                  type="button"
+                  id="bio-toggle-btn"
+                  aria-expanded="false"
+                  aria-controls="bio-collapsible"
+                  class="min-h-[44px] px-4 py-2.5 inline-flex items-center gap-2 font-medium text-[15px] text-[#16a34a] hover:text-[#15803d] transition-colors rounded-[4px] focus-visible:outline-2 focus-visible:outline-[#16a34a] focus-visible:outline-offset-2 cursor-pointer"
+                >
+                  <span id="bio-toggle-label">Weiterlesen</span>
+                  <svg
+                    id="bio-toggle-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.25"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="w-4 h-4 transition-transform duration-300"
+                  >
+                    <path d="m6 9 6 6 6-6"/>
+                  </svg>
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Right Column: Profil Card -->
+          <div class="col-span-12 lg:col-span-5 lg:sticky lg:top-24 mt-12 lg:mt-0">
+            <ProfilCard />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Profil />
+
+    <Footer />
+
+    <style>
+      @media (prefers-reduced-motion: reduce) {
+        .bio-collapsible,
+        #bio-toggle-icon,
+        #bio-fade-overlay {
+          transition: none !important;
+        }
+      }
+    </style>
+
+    <script>
+      function initProgressiveDisclosure() {
+        const toggleBtn = document.getElementById('bio-toggle-btn') as HTMLButtonElement | null;
+        const collapsible = document.getElementById('bio-collapsible');
+        const collapsibleInner = document.getElementById('bio-collapsible-inner');
+        const fadeOverlay = document.getElementById('bio-fade-overlay');
+        const label = document.getElementById('bio-toggle-label');
+        const icon = document.getElementById('bio-toggle-icon');
+        const article = document.getElementById('bio-article');
+
+        if (!toggleBtn || !collapsible || !collapsibleInner) return;
+
+        // Progressive Enhancement: Initialize collapsed state dynamically via JS
+        let isExpanded = false;
+        collapsible.style.maxHeight = '0px';
+        collapsible.style.opacity = '0';
+        collapsible.setAttribute('aria-hidden', 'true');
+        if (fadeOverlay) fadeOverlay.style.opacity = '1';
+
+        toggleBtn.addEventListener('click', () => {
+          isExpanded = !isExpanded;
+
+          toggleBtn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+          collapsible.setAttribute('aria-hidden', isExpanded ? 'false' : 'true');
+
+          if (isExpanded) {
+            const innerHeight = collapsibleInner.offsetHeight;
+            collapsible.style.maxHeight = `${innerHeight}px`;
+            collapsible.style.opacity = '1';
+            if (fadeOverlay) fadeOverlay.style.opacity = '0';
+            if (label) label.textContent = 'Weniger anzeigen';
+            if (icon) icon.style.transform = 'rotate(180deg)';
+          } else {
+            collapsible.style.maxHeight = '0px';
+            collapsible.style.opacity = '0';
+            if (fadeOverlay) fadeOverlay.style.opacity = '1';
+            if (label) label.textContent = 'Weiterlesen';
+            if (icon) icon.style.transform = 'rotate(0deg)';
+
+            // Smoothly scroll back to the top of the article when collapsing
+            if (article) {
+              article.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }
+        });
+      }
+
+      initProgressiveDisclosure();
+      document.addEventListener('astro:page-load', initProgressiveDisclosure);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,181 @@
+---
+// src/components/ProfilCard.astro
+import { Image } from 'astro:assets';
+import karlPortrait from '../assets/karl.jpeg';
+
+const facts = [
+  { k: 'Jahre Erfahrung', v: '20+' },
+  { k: 'Tätigkeitsgebiet', v: 'Deutschschweiz' },
+  { k: 'Branchen', v: 'Finanzdienstleistungen, Telekommunikation, Medien, Abomodelle' },
+  { k: 'Aus- & Weiterbildung', v: ['MBA IE Business School', 'Betriebsökonom FH', 'Chartered Financial Modeler', 'diverse Kurse in Applied Data Science & AI'] }
+];
+---
+
+<div 
+  class="flip-card aspect-[4/5] w-full max-w-[480px] cursor-pointer relative mx-auto lg:mx-0" 
+  id="flip-card"
+  role="button"
+  tabindex="0"
+  aria-label="Karl Aschwanden Visitenkarte. Klicken oder Leertaste drücken zum Umdrehen für Details und Ausbildung."
+  aria-expanded="false"
+>
+  <div class="flip-card-inner border border-[#e5e7eb] rounded-[6px] shadow-sm bg-white">
+    <!-- FRONT FACE -->
+    <div class="flip-card-front overflow-hidden rounded-[6px]">
+      <Image
+        src={karlPortrait}
+        alt="Karl Aschwanden · Zürich"
+        widths={[400, 600, 800, 1200]}
+        sizes="(max-width: 1024px) 90vw, 40vw"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+      <!-- Overlaid Name Plate -->
+      <div class="absolute bottom-4 inset-x-4 bg-[#1f2937] text-white p-4 rounded-[4px] flex items-center justify-between shadow-md">
+        <div class="space-y-0.5 pr-2">
+          <div class="font-display font-medium text-[16px] sm:text-[18px] leading-tight">Karl Aschwanden</div>
+          <div class="text-[10px] sm:text-[11px] text-white/75 font-sans tracking-wide">
+            Produktstrategie, Pricing &amp; Finanzmodellierung
+          </div>
+        </div>
+        <!-- Affordance Icon -->
+        <div class="text-white/60 hover:text-white transition-colors p-1 shrink-0">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- BACK FACE -->
+    <div class="flip-card-back p-6 sm:p-7 lg:p-8 flex flex-col justify-between overflow-hidden rounded-[6px] bg-white">
+      <div class="flex-1 flex flex-col justify-between">
+        <!-- Header -->
+        <div class="border-b border-[#e5e7eb] pb-3 mb-2 sm:mb-4">
+          <h3 class="font-display text-[#1f2937] text-[20px] sm:text-[24px] font-semibold">
+            Karl Aschwanden
+          </h3>
+        </div>
+
+        <!-- Credentials table -->
+        <dl class="border-t border-[#e5e7eb] text-[12px] sm:text-[13.5px] lg:text-[14px] flex-1 flex flex-col justify-between py-1">
+          {facts.map((f) => (
+            <div class="grid grid-cols-12 py-2.5 sm:py-3.5 border-b border-[#e5e7eb] items-baseline">
+              <dt class="col-span-5 text-[#6b7280] font-normal">{f.k}</dt>
+              <dd class="col-span-7 text-[#1f2937] font-medium leading-snug">
+                {Array.isArray(f.v) ? (
+                  <span class="flex flex-col gap-1">
+                    {f.v.map((line) => (
+                      <span>{line}</span>
+                    ))}
+                  </span>
+                ) : (
+                  f.v
+                )}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+
+      <!-- Bottom Row: Contact Links + Return Button -->
+      <div class="mt-4 pt-3 border-t border-[#e5e7eb] flex items-center justify-between shrink-0">
+        <!-- Contact Info -->
+        <div class="flex items-center gap-4 text-[12px] sm:text-[13px] font-medium">
+          <a 
+            href="mailto:karl@gewinnarchitekt.ch" 
+            class="text-[#1f2937] hover:text-[#16a34a] flex items-center gap-1.5 transition-colors"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            Email
+          </a>
+          <a 
+            href="https://www.linkedin.com/in/karlaschwanden/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="text-[#1f2937] hover:text-[#16a34a] flex items-center gap-1.5 transition-colors"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+        </div>
+
+        <!-- Return Button -->
+        <button 
+          class="text-[#6b7280] hover:text-[#1f2937] text-[12px] font-medium inline-flex items-center gap-1.5 transition-colors cursor-pointer" 
+          id="flip-trigger-back"
+          aria-label="Zur Vorderseite zurückdrehen"
+        >
+          Zur Vorderseite
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .flip-card {
+    perspective: 1000px;
+  }
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+  }
+  .flip-card.is-flipped .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  .flip-card-back {
+    transform: rotateY(180deg);
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .flip-card-inner {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  const card = document.getElementById('flip-card');
+
+  if (card) {
+    const frontFace = card.querySelector('.flip-card-front');
+    if (frontFace) {
+      frontFace.addEventListener('click', () => {
+        card.classList.add('is-flipped');
+        card.setAttribute('aria-expanded', 'true');
+      });
+    }
+
+    const backFace = card.querySelector('.flip-card-back');
+    if (backFace) {
+      backFace.addEventListener('click', (e) => {
+        const target = e.target as HTMLElement | null;
+        if (target && target.closest('a')) {
+          return;
+        }
+        card.classList.remove('is-flipped');
+        card.setAttribute('aria-expanded', 'false');
+      });
+    }
+
+    card.addEventListener('keydown', (e) => {
+      if (e.key === ' ' || e.key === 'Enter') {
+        e.preventDefault();
+        card.classList.toggle('is-flipped');
+        const isFlipped = card.classList.contains('is-flipped');
+        card.setAttribute('aria-expanded', isFlipped ? 'true' : 'false');
+      }
+    });
+  }
+</script>
