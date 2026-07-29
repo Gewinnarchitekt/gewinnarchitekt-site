@@ -1,5 +1,6 @@
 ---
 // This is the "Frontmatter" - it runs on the server at build time.
+import { getImage } from 'astro:assets';
 import Nav from "../components/Nav.astro";
 import Hero from "../components/Hero.astro";
 import Diagnose from "../components/Diagnose.astro";
@@ -8,6 +9,7 @@ import Leistungen from "../components/Leistungen.astro";
 import Profil from "../components/Profil.astro";
 import Footer from "../components/Footer.astro";
 import SiteSchema from "../components/SiteSchema.astro";
+import heroBg from "../assets/hero-bg.jpg";
 import "../styles/global.css";
 import "@fontsource/inter/300.css";
 import "@fontsource/inter/400.css";
@@ -18,6 +20,8 @@ import "@fontsource/inter/700.css";
 const PH_KEY = import.meta.env.PUBLIC_POSTHOG_KEY;
 const PH_HOST = import.meta.env.PUBLIC_POSTHOG_HOST;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const optimizedBg = await getImage({ src: heroBg, width: 1200, format: 'webp', quality: 75 });
 ---
 
 <html lang="de">
@@ -30,6 +34,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<title>Gewinnarchitekt | Preis & Profitarchitektur für KMU</title>
 		<meta name="description" content="Beratung für Pricing und Profitarchitektur in der Schweiz. Wertbasierte Preislogik, Finanzmodellierung und Controlling für Schweizer Startups und KMU." />
 		<link rel="canonical" href={canonicalURL} />
+		<link rel="preload" href={optimizedBg.src} as="image" type="image/webp" />
 		<SiteSchema />
 
 		{PH_KEY && (
@@ -50,7 +55,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 	</head>
 	<body class="bg-white text-slate-900 antialiased">
 		<Nav />
-		<Hero />
+		<Hero bgUrl={optimizedBg.src} />
 		<Diagnose />
 		<Zielpublikum />
 		<Leistungen />

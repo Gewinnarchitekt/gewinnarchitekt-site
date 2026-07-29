@@ -4,6 +4,12 @@ import goldbachLogo from '../assets/logos/goldbach.svg';
 import txgroupLogo from '../assets/logos/txgroup.svg';
 import swisscardLogo from '../assets/logos/swisscard.svg';
 import sunriseLogo from '../assets/logos/sunrise.svg';
+
+interface Props {
+  bgUrl?: string;
+}
+
+const { bgUrl } = Astro.props;
 ---
 
 <!-- Dark hero with architectural background + upward-panning facade -->
@@ -12,7 +18,7 @@ import sunriseLogo from '../assets/logos/sunrise.svg';
   <div class="absolute inset-0 overflow-hidden" aria-hidden="true">
     <div
       class="hero-bg-img absolute inset-x-0 grayscale"
-      style="top: 0; height: 140%; background-image: url('https://images.unsplash.com/photo-1494522855154-9297ac14b55f?auto=format&fit=crop&w=2000&q=85'); background-size: cover; background-position: center;"
+      style={`top: 0; height: 140%; background-image: url('${bgUrl}'); background-size: cover; background-position: center;`}
     ></div>
 
     <!-- Layered overlays for legibility -->
