@@ -12,6 +12,7 @@ import "@fontsource/inter/700.css";
 
 const PH_KEY = import.meta.env.PUBLIC_POSTHOG_KEY;
 const PH_HOST = import.meta.env.PUBLIC_POSTHOG_HOST;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <html lang="de">
@@ -22,6 +23,8 @@ const PH_HOST = import.meta.env.PUBLIC_POSTHOG_HOST;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Datenschutzerklärung | Gewinnarchitekt</title>
+    <meta name="description" content="Datenschutzerklärung von Gewinnarchitekt. Informationen darüber, wie wir Ihre personenbezogenen Daten erheben, verarbeiten und schützen." />
+    <link rel="canonical" href={canonicalURL} />
     <SiteSchema />
 
     {PH_KEY && (

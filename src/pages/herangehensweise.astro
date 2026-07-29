@@ -42,6 +42,7 @@ const ablaufSteps = [
     text: "Aus den validierten Entscheidungen entsteht ein priorisierter Massnahmenplan. Ich begleite die Umsetzung, überwache die Wirkung und plane mit Mehrjahreszielbild und rollierendem Forecast. So bleibt Ihr Gewinn jederzeit sichtbar und steuerbar.",
   },
 ];
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <html lang="de">
@@ -52,6 +53,8 @@ const ablaufSteps = [
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Herangehensweise | Gewinnarchitekt</title>
+    <meta name="description" content="Wie nachhaltiger Gewinn entsteht. Entdecken Sie die Gewinnarchitektur im Schnittpunkt von Kundenverständnis, Marktbeobachtung und Finanzkompetenz." />
+    <link rel="canonical" href={canonicalURL} />
     <SiteSchema />
 
     {PH_KEY && (

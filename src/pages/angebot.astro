@@ -59,6 +59,7 @@ const faqJsonLd = {
     },
   })),
 };
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <html lang="de">
@@ -69,6 +70,8 @@ const faqJsonLd = {
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Gewinnarchitekt | Angebot</title>
+    <meta name="description" content="Erhalten Sie volle Transparenz über die Hebel zur Gewinnoptimierung. Übersicht über das Gewinnfundament, Gewinnoptimierung und Gewinnsteuerung." />
+    <link rel="canonical" href={canonicalURL} />
     <SiteSchema />
 
     <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} is:inline />

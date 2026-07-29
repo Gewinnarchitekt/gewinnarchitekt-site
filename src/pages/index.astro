@@ -17,6 +17,7 @@ import "@fontsource/inter/700.css";
 
 const PH_KEY = import.meta.env.PUBLIC_POSTHOG_KEY;
 const PH_HOST = import.meta.env.PUBLIC_POSTHOG_HOST;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <html lang="de">
@@ -27,6 +28,8 @@ const PH_HOST = import.meta.env.PUBLIC_POSTHOG_HOST;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Gewinnarchitekt | Preis & Profitarchitektur für KMU</title>
+		<meta name="description" content="Beratung für Pricing und Profitarchitektur in der Schweiz. Wertbasierte Preislogik, Finanzmodellierung und Controlling für Schweizer Startups und KMU." />
+		<link rel="canonical" href={canonicalURL} />
 		<SiteSchema />
 
 		{PH_KEY && (

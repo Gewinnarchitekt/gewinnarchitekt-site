@@ -1,12 +1,15 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import vercel from '@astrojs/vercel';
+import sitemap from '@astrojs/sitemap';
 
 import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://gewinnarchitekt.ch',
   adapter: vercel(),
+  integrations: [sitemap()],
   redirects: {
     '/so-arbeite-ich': '/herangehensweise',
     '/leistungsseite': {
