@@ -11,6 +11,7 @@ export default defineConfig({
   adapter: vercel(),
   integrations: [sitemap()],
   redirects: {
+    '/sitemap.xml': '/sitemap-index.xml',
     '/so-arbeite-ich': '/herangehensweise',
     '/leistungsseite': {
       status: 301,
