@@ -46,21 +46,21 @@ const columns = [
       {columns.map((c) => (
         <article class="bg-white border border-[#e5e7eb] rounded-[6px] p-8 lg:p-10 flex flex-col lg:grid lg:grid-rows-subgrid lg:row-span-5">
           <span class="label-eyebrow mb-6 block">{c.label}</span>
-          <h3 class="font-serif-display text-[#1f2937] text-[28px] lg:text-[32px] leading-tight mb-8">
+          <h3 class="font-serif-display text-[#1f2937] text-[28px] lg:text-[32px] leading-tight mb-6">
             {c.question}
           </h3>
-          <p class="text-[15px] leading-[1.65] text-[#6b7280] mb-4">
-            <span class="font-bold text-[#1f2937]">Die Situation:</span> {c.situation}
-          </p>
-          <p class="text-[15px] leading-[1.65] text-[#6b7280] mb-8">
-            <span class="font-bold text-[#1f2937]">Die Ursache:</span> {c.ursache}
-          </p>
-          <div class="pt-6 border-l border-[#e5e7eb] pl-4">
+          <div class="border-l border-[#e5e7eb] pl-4 mb-8">
             <p class="text-[15px] leading-[1.65] text-[#6b7280]">
               <span class="font-bold text-[#1f2937] block mb-1">Hauptgedanke:</span>
               <span class="italic">{c.hauptgedanke}</span>
             </p>
           </div>
+          <p class="text-[15px] leading-[1.65] text-[#6b7280] mb-4">
+            <span class="font-bold text-[#1f2937]">Die Situation:</span> {c.situation}
+          </p>
+          <p class="text-[15px] leading-[1.65] text-[#6b7280]">
+            <span class="font-bold text-[#1f2937]">Die Ursache:</span> {c.ursache}
+          </p>
         </article>
       ))}
     </div>
