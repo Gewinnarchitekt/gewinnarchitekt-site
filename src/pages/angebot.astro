@@ -4,6 +4,7 @@
 // Header, FAQ, Angebot, Profil und Footer werden hier zusammengesetzt.
 import Nav from "../components/Nav.astro";
 import Leistungen from "../components/Leistungen.astro";
+import Ablauf from "../components/Ablauf.astro";
 import Angebot from "../components/Angebot.astro";
 import Profil from "../components/Profil.astro";
 import Footer from "../components/Footer.astro";
@@ -25,24 +26,20 @@ const intro =
 
 const faqs = [
   {
+    q: "Was kostet eine Zusammenarbeit?",
+    a: "Das hängt von Ihrer Ausgangslage und vom Umfang ab. Nach der Bestandesaufnahme erhalten Sie ein konkretes Angebot mit klar definierter Nutzenerwartung",
+  },
+  {
     q: "Wann beginnt die bezahlte Zusammenarbeit?",
-    a: "Erst wenn Sie von einem echten Mehrwert für Ihre Firma überzeugt sind. Erstgespräch, Bestandesaufnahme und Vorschlag sind kostenlos und unverbindlich.",
+    a: "Erst wenn Sie von einem echten Mehrwert für Ihre Firma überzeugt sind. Kennenlernen und Bestandesaufnahme sind kostenlos und unverbindlich.",
   },
   {
-    q: "Welche Daten werden für die Gewinndiagnose benötigt?",
-    a: "Transaktions- und Umsatzdaten der letzten 12 bis 24 Monate, angefallene Kosten über denselben Zeitraum sowie Preis- und Konditionenlisten. Am besten funktionieren Systemexporte und Buchhaltungsauszüge.",
+    q: "Kann ich zwischen den verschiedenen Angeboten wechseln?",
+    a: "Ja. Wechsel und Kündigung sind jederzeit möglich.",
   },
   {
-    q: "Wann genügt die Gewinndiagnose, wann braucht es eine laufende Begleitung?",
-    a: "Das Gewinnfundament prüft einmalig Ihr gesamtes Gewinnpotential, während Gewinnoptimierung und Gewinnsteuerung einem kontinuierlichen Verbesserungsprozess entsprechen. Die optimale Lösung ist für jedes Unternehmen unterschiedlich und wird in der Bestandesaufnahme ermittelt.",
-  },
-  {
-    q: "Kann ich zwischen Gewinnoptimierung und Gewinnsteuerung wechseln?",
-    a: "Jederzeit. Up-, Downgrade und Kündigung sind jederzeit möglich.",
-  },
-  {
-    q: "Wie geschieht die Zusammenarbeit - remote oder vor Ort?",
-    a: "Standardmässig remote, nach Bedarf vor Ort in der Region Zürich.",
+    q: "Wie läuft die Zusammenarbeit: remote oder vor Ort?",
+    a: "Standardmässig remote, bei Bedarf vor Ort in der Region Zürich.",
   },
 ];
 
@@ -70,7 +67,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Gewinnarchitekt | Angebot</title>
-    <meta name="description" content="Erhalten Sie volle Transparenz über die Hebel zur Gewinnoptimierung. Übersicht über das Gewinnfundament, Gewinnoptimierung und Gewinnsteuerung." />
+    <meta name="description" content="Transparenz über die Hebel zur Gewinnoptimierung. Übersicht über Leistungen und Formen der Zusammenarbeit: Gewinnbooster, Gewinnoptimierung und Gewinnsteuerung." />
     <link rel="canonical" href={canonicalURL} />
     <SiteSchema />
 
@@ -107,6 +104,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
     <!-- B) Leistungen — aus Komponente mit variant="page" --------------- -->
     <Leistungen variant="page" />
+
+    <Ablauf />
 
     <!-- C) Angebot --------------------------------------------------------- -->
     <Angebot />

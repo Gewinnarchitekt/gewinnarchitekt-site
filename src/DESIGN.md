@@ -1,4 +1,4 @@
-
+> Leitendes Dokument ist src/SITE.md. Dieses Dokument gilt nur noch für Farben und Typografie. Bei Widerspruch gilt SITE.md.
 
 # Gewinnarchitekt — Design Guide
 

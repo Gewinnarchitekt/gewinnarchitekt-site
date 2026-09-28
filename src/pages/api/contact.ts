@@ -62,10 +62,10 @@ export const POST: APIRoute = async ({ request }) => {
 
     // Send email using Resend
     // From: info@gewinnarchitekt.ch
-    // To: karl@gewinnarchitekt.ch
+    // To: info@gewinnarchitekt.ch
     const { data, error } = await resend.emails.send({
       from: 'info@gewinnarchitekt.ch',
-      to: 'karl@gewinnarchitekt.ch',
+      to: 'info@gewinnarchitekt.ch',
       subject: `Kontaktanfrage von ${name}`,
       text: `
 Neue Kontaktanfrage über gewinnarchitekt.ch:

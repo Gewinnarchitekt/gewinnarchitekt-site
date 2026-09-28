@@ -1,0 +1,78 @@
+---
+// src/components/Ablauf.astro
+const ablaufSteps = [
+  {
+    num: "01",
+    title: "Analyse",
+    subtitle: "Klarheit über Ihre Gewinnstruktur.",
+    text: "Ihre eigenen Zahlen sind der Ausgangspunkt und eine umfassende Analyse von Kundendaten, Finanzkennzahlen und Angebotsstruktur zeigt auf, wo das grösste ungenutzte Erlöspotential liegt. Ich erarbeite Transparenz über Kundensegmente, Produkteprofitabilität und Kanalattraktivität.".replace("und ihr Risiko", "und Ihr Risiko"),
+  },
+  {
+    num: "02",
+    title: "Hypothese",
+    subtitle: "Die Wirkung beurteilen können.",
+    text: "Durchgerechnete Szenarien und Sensitivitätsanalysen zeigen auf, wie empfindlich Ihr Gewinn auf einzelne Stellschrauben reagieren wird. Die Auswirkungen einzelner Entscheidungen werden sichtbar und zugrundeliegende Risiken erkannt.".replace("und ihr Risiko", "und Ihr Risiko"),
+  },
+  {
+    num: "03",
+    title: "Validierung",
+    subtitle: "Die kritischen Annahmen absichern.",
+    text: "In Kundengesprächen wird Feedback zu den wichtigsten Annahmen abgeholt und quantitative Umfragen ermöglichen eine klare Herleitung über das zu erwartende Gewinnpotenzial. Es werden Risiken bewertet und Mitigationsmassnahmen definiert.".replace("und ihr Risiko", "und Ihr Risiko"),
+  },
+  {
+    num: "04",
+    title: "Umsetzung",
+    subtitle: "Zusätzlichen Gewinn abschöpfen.",
+    text: "Aus den validierten Entscheidungen entsteht ein priorisierter Massnahmenplan. Ich begleite die Umsetzung, überwache die Wirkung und plane mit Mehrjahreszielbild und rollierendem Forecast. So bleibt Ihr Gewinn jederzeit sichtbar und steuerbar.".replace("und ihr Risiko", "und Ihr Risiko"),
+  },
+];
+---
+
+<section class="bg-[#f9fafb] border-b border-[#e5e7eb]">
+  <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-20 lg:py-28">
+    <div class="grid grid-cols-12 gap-6 lg:gap-10 mb-16">
+      <div class="col-span-12 lg:col-span-2">
+        <span class="label-eyebrow">Ablauf</span>
+      </div>
+      <div class="col-span-12 lg:col-span-10">
+        <h2 class="font-serif-display text-[#1f2937] font-light leading-[1.05] text-[36px] sm:text-[48px] lg:text-[60px]">
+          Vom Befund zum zusätzlichen Gewinn.
+        </h2>
+      </div>
+    </div>
+
+    <div class="ablauf-steps max-w-[720px] mx-auto">
+      <div class="flex flex-col">
+        {ablaufSteps.map((step, i) => (
+          <div class="relative pb-8 last:pb-0 pl-10 sm:pl-14">
+            {/* Upper rail segment */}
+            {i > 0 && (
+              <div class="absolute left-[11px] sm:left-[15px] top-0 h-[36px] sm:h-[44px] w-[1px] bg-[#e5e7eb]" aria-hidden="true"></div>
+            )}
+            {/* Lower rail segment */}
+            {i < ablaufSteps.length - 1 && (
+              <div class="absolute left-[11px] sm:left-[15px] top-[60px] sm:top-[68px] bottom-0 w-[1px] bg-[#e5e7eb]" aria-hidden="true"></div>
+            )}
+            {/* Node marker */}
+            <div class="absolute left-0 sm:left-1 top-[36px] sm:top-[44px] w-6 h-6 rounded-full border border-[#d1d5db] bg-white flex items-center justify-center shadow-sm" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-[#4b5563]">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <polyline points="19 12 12 19 5 12"></polyline>
+              </svg>
+            </div>
+
+            <article class="bg-white border border-[#e5e7eb] rounded-[6px] p-8 lg:p-10 flex flex-col shadow-sm">
+              <span class="label-eyebrow mb-2 block">{step.subtitle}</span>
+              <h3 class="font-serif-display text-[#1f2937] text-[20px] lg:text-[22px] font-semibold leading-tight mb-4">
+                {step.title}
+              </h3>
+              <p class="text-[15px] lg:text-[16px] leading-[1.65] text-[#1f2937]">
+                {step.text}
+              </p>
+            </article>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
