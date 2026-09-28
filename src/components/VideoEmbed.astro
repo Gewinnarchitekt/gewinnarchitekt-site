@@ -1,0 +1,104 @@
+---
+// src/components/VideoEmbed.astro
+interface Props {
+  youtubeId: string;
+  title?: string;
+}
+
+const { youtubeId: rawYoutubeId, title = "YouTube Video" } = Astro.props;
+
+function extractYoutubeId(input: string): string {
+  if (!input) return "";
+  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+  const match = input.match(regExp);
+  return match && match[2].length === 11 ? match[2] : input.trim();
+}
+
+const videoId = extractYoutubeId(rawYoutubeId);
+const posterUrl = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+---
+
+<div
+  class="relative w-full aspect-[16/9] bg-[#1f2937] border border-[#e5e7eb] overflow-hidden js-video-embed my-8"
+  data-youtube-id={videoId}
+  data-video-title={title}
+>
+  <!-- Static Poster & Play Facade -->
+  <div class="js-video-facade absolute inset-0 flex items-center justify-center cursor-pointer">
+    <img
+      src={posterUrl}
+      alt={title}
+      loading="lazy"
+      class="absolute inset-0 w-full h-full object-cover grayscale opacity-80"
+    />
+    <!-- Dark tint overlay -->
+    <div class="absolute inset-0 bg-[#1f2937]/30"></div>
+
+    <!-- Square Green Play Button (border-radius 0, no shadow) -->
+    <button
+      type="button"
+      aria-label={`Video abspielen: ${title}`}
+      data-ph-event="video_played"
+      data-ph-location="blog_post"
+      class="js-play-btn relative z-10 w-16 h-16 bg-[#16a34a] hover:bg-[#15803d] text-white flex items-center justify-center transition-colors cursor-pointer rounded-none"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="w-7 h-7 ml-0.5"
+      >
+        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Container for Injected Iframe -->
+  <div class="js-iframe-container absolute inset-0 hidden"></div>
+</div>
+
+<script>
+  function initVideoEmbeds() {
+    const embeds = document.querySelectorAll('.js-video-embed');
+
+    embeds.forEach((container) => {
+      const facade = container.querySelector('.js-video-facade');
+      const playBtn = container.querySelector('.js-play-btn');
+      const iframeContainer = container.querySelector('.js-iframe-container');
+      const videoId = container.getAttribute('data-youtube-id');
+      const videoTitle = container.getAttribute('data-video-title') || 'YouTube Video';
+
+      if (!facade || !iframeContainer || !videoId) return;
+
+      const loadIframe = () => {
+        if (iframeContainer.children.length > 0) return;
+
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`;
+        iframe.title = videoTitle;
+        iframe.width = '100%';
+        iframe.height = '100%';
+        iframe.setAttribute('loading', 'lazy');
+        iframe.setAttribute(
+          'allow',
+          'accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share'
+        );
+        iframe.setAttribute('allowfullscreen', 'true');
+        iframe.className = 'w-full h-full border-0';
+
+        iframeContainer.appendChild(iframe);
+        iframeContainer.classList.remove('hidden');
+        facade.classList.add('hidden');
+      };
+
+      facade.addEventListener('click', loadIframe);
+      playBtn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        loadIframe();
+      });
+    });
+  }
+
+  initVideoEmbeds();
+  document.addEventListener('astro:page-load', initVideoEmbeds);
+</script>

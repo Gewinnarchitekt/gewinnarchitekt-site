@@ -1,0 +1,187 @@
+---
+// src/pages/blog/[slug].astro
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+import SiteSchema from "../../components/SiteSchema.astro";
+import BlogPostCta from "../../components/BlogPostCta.astro";
+import VideoEmbed from "../../components/VideoEmbed.astro";
+
+import "../../styles/global.css";
+import "@fontsource/inter/300.css";
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
+import "@fontsource/inter/700.css";
+
+import { Image } from "astro:assets";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", ({ data }) =>
+    import.meta.env.PROD ? !data.draft : true
+  );
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const PH_KEY = import.meta.env.PUBLIC_POSTHOG_KEY;
+const PH_HOST = import.meta.env.PUBLIC_POSTHOG_HOST;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const formattedPubDate = post.data.pubDate.toLocaleDateString("de-CH", {
+  day: "2-digit",
+  month: "long",
+  year: "numeric",
+});
+
+const formattedUpdatedDate = post.data.updatedDate
+  ? post.data.updatedDate.toLocaleDateString("de-CH", {
+      day: "2-digit",
+      month: "long",
+      year: "numeric",
+    })
+  : null;
+
+function extractYoutubeId(input: string): string {
+  if (!input) return "";
+  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+  const match = input.match(regExp);
+  return match && match[2].length === 11 ? match[2] : input.trim();
+}
+
+const parsedYoutubeId = post.data.youtubeId ? extractYoutubeId(post.data.youtubeId) : null;
+
+const schemaImage = post.data.heroImage
+  ? new URL(post.data.heroImage.src, Astro.site).toString()
+  : parsedYoutubeId
+  ? `https://i.ytimg.com/vi/${parsedYoutubeId}/hqdefault.jpg`
+  : canonicalURL.toString();
+
+const blogPostingSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: post.data.pubDate.toISOString(),
+  ...(post.data.updatedDate && {
+    dateModified: post.data.updatedDate.toISOString(),
+  }),
+  image: schemaImage,
+  mainEntityOfPage: canonicalURL.toString(),
+  author: { "@id": "https://gewinnarchitekt.ch/#karl-aschwanden" },
+  publisher: { "@id": "https://gewinnarchitekt.ch/#organization" },
+};
+---
+
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{post.data.title} · Gewinnarchitekt</title>
+    <meta name="description" content={post.data.description} />
+    <link rel="canonical" href={canonicalURL} />
+    <SiteSchema />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(blogPostingSchema)}
+    />
+
+    {
+      PH_KEY && (
+        <script is:inline define:vars={{ PH_KEY, PH_HOST }}>
+          !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+          posthog.init(PH_KEY, { api_host: PH_HOST, defaults: '2025-05-24' });
+        </script>
+        <script is:inline>
+          document.addEventListener('click', function (e) {
+            var el = e.target.closest('[data-ph-event]');
+            if (!el || !window.posthog) return;
+            var event = el.getAttribute('data-ph-event');
+            var location = el.getAttribute('data-ph-location');
+            window.posthog.capture(event, location ? { location: location } : {});
+          });
+        </script>
+      )
+    }
+  </head>
+  <body class="bg-white text-slate-900 antialiased">
+    <Nav />
+
+    <section class="bg-[#f9fafb] border-b border-[#e5e7eb]">
+      <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-16 lg:py-24">
+        <div class="grid grid-cols-12 gap-6 lg:gap-10">
+          <!-- Left Eyebrow / Back link -->
+          <div class="col-span-12 lg:col-span-2">
+            <a
+              href="/blog"
+              class="label-eyebrow inline-flex items-center gap-1 hover:text-[#16a34a] transition-colors"
+            >
+              ← BLOG
+            </a>
+          </div>
+
+          <!-- Main Article Container -->
+          <div class="col-span-12 lg:col-span-10 max-w-[800px]">
+            <!-- Article Header -->
+            <header class="mb-10">
+              <h1
+                class="font-serif-display text-[#1f2937] font-light leading-[1.05] text-[36px] sm:text-[48px] lg:text-[60px] mb-4"
+              >
+                {post.data.title}
+              </h1>
+
+              <div class="text-[14px] text-[#6b7280]">
+                <time datetime={post.data.pubDate.toISOString()}>
+                  {formattedPubDate}
+                </time>
+                {
+                  formattedUpdatedDate && (
+                    <span> · Aktualisiert: {formattedUpdatedDate}</span>
+                  )
+                }
+              </div>
+            </header>
+
+            <!-- Hero Media Container (Video replaces Hero Image if present) -->
+            {
+              post.data.youtubeId ? (
+                <div class="mb-12">
+                  <VideoEmbed
+                    youtubeId={post.data.youtubeId}
+                    title={post.data.title}
+                  />
+                </div>
+              ) : post.data.heroImage ? (
+                <div class="mb-12 border border-[#e5e7eb]">
+                  <Image
+                    src={post.data.heroImage}
+                    alt={post.data.heroImageAlt || post.data.title}
+                    class="w-full h-auto grayscale"
+                  />
+                </div>
+              ) : null
+            }
+
+            <!-- Article Body -->
+            <article class="prose-ga text-[16px] sm:text-[17px] leading-[1.75] text-[#4b5563]">
+              <Content />
+            </article>
+
+            <!-- End-of-Post CTA -->
+            <BlogPostCta />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+  </body>
+</html>

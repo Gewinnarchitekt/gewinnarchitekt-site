@@ -1,0 +1,120 @@
+---
+// src/components/BlogCard.astro
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+interface Props {
+  index: number | string;
+  title: string;
+  description: string;
+  pubDate: Date;
+  slug: string;
+  tags?: string[];
+  heroImage?: ImageMetadata;
+  heroImageAlt?: string;
+  youtubeId?: string;
+}
+
+const {
+  index,
+  title,
+  description,
+  pubDate,
+  slug,
+  tags = [],
+  heroImage,
+  heroImageAlt = Astro.props.title,
+  youtubeId,
+} = Astro.props;
+
+const formattedIndex =
+  typeof index === "number" ? String(index).padStart(2, "0") : index;
+
+const formattedDate = pubDate.toLocaleDateString("de-CH", {
+  day: "2-digit",
+  month: "long",
+  year: "numeric",
+});
+
+const isoDate = pubDate.toISOString();
+const firstTag = tags.length > 0 ? tags[0] : null;
+
+function extractYoutubeId(input?: string): string | null {
+  if (!input) return null;
+  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+  const match = input.match(regExp);
+  return match && match[2].length === 11 ? match[2] : input.trim();
+}
+
+const videoId = extractYoutubeId(youtubeId);
+const youtubePosterUrl = videoId
+  ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`
+  : null;
+---
+
+<article class="border-t border-[#e5e7eb] py-8 sm:py-10">
+  <div class="grid md:grid-cols-[1fr_240px] gap-6 md:gap-10 items-start">
+    <div class="grid grid-cols-12 gap-6 lg:gap-10 items-start">
+      <div class="col-span-12 sm:col-span-2">
+        <span class="label-eyebrow">
+          {formattedIndex}
+        </span>
+      </div>
+      <div class="col-span-12 sm:col-span-10">
+        <h2
+          class="font-serif-display text-[22px] sm:text-[26px] font-light leading-[1.2] text-[#1f2937] mb-3"
+        >
+          <a
+            href={`/blog/${slug}`}
+            class="hover:text-[#16a34a] transition-colors"
+          >
+            {title}
+          </a>
+        </h2>
+        <p class="text-[15px] sm:text-[16px] leading-[1.7] text-[#4b5563] mb-4">
+          {description}
+        </p>
+        <div class="text-[13px] text-[#6b7280]">
+          <time datetime={isoDate}>{formattedDate}</time>
+          {firstTag && <span> · {firstTag}</span>}
+        </div>
+      </div>
+    </div>
+
+    {
+      youtubePosterUrl ? (
+        <div>
+          <a
+            href={`/blog/${slug}`}
+            tabindex="-1"
+            aria-hidden="true"
+            class="block border border-[#e5e7eb]"
+          >
+            <img
+              src={youtubePosterUrl}
+              alt={heroImageAlt}
+              loading="lazy"
+              class="w-full aspect-[3/2] object-cover grayscale"
+            />
+          </a>
+        </div>
+      ) : heroImage ? (
+        <div>
+          <a
+            href={`/blog/${slug}`}
+            tabindex="-1"
+            aria-hidden="true"
+            class="block border border-[#e5e7eb]"
+          >
+            <Image
+              src={heroImage}
+              alt={heroImageAlt}
+              width={480}
+              class="w-full aspect-[3/2] object-cover grayscale"
+            />
+          </a>
+        </div>
+      ) : null
+    }
+  </div>
+</article>

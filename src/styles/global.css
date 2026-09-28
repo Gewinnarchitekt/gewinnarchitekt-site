@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 :root {
   --ga-green: #16a34a;
@@ -51,4 +52,123 @@ button, a.btn {
 ::selection {
   background: #16a34a;
   color: #ffffff;
+}
+
+/* Brand Prose Override for Blog Articles (.prose-ga) */
+.prose-ga {
+  @apply prose;
+  max-width: 68ch;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #4b5563;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+.prose-ga h2 {
+  color: #1f2937;
+  font-weight: 300;
+  font-size: 1.75rem;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin-top: 2.5em;
+  margin-bottom: 0.8em;
+}
+
+.prose-ga h3 {
+  color: #1f2937;
+  font-weight: 300;
+  font-size: 1.35rem;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  margin-top: 2em;
+  margin-bottom: 0.6em;
+}
+
+.prose-ga h4 {
+  color: #1f2937;
+  font-weight: 300;
+  font-size: 1.15rem;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  margin-top: 1.75em;
+  margin-bottom: 0.5em;
+}
+
+.prose-ga a {
+  color: #16a34a;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: inherit;
+  transition: color 0.15s ease;
+}
+
+.prose-ga a:hover {
+  color: #15803d;
+}
+
+.prose-ga strong {
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.prose-ga blockquote {
+  border-left: 2px solid #e5e7eb;
+  padding-left: 1.25em;
+  color: #6b7280;
+  font-style: normal;
+  quotes: none;
+}
+
+.prose-ga blockquote p::before,
+.prose-ga blockquote p::after {
+  content: none;
+}
+
+.prose-ga code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0;
+  padding: 0.2em 0.4em;
+  font-size: 0.875em;
+  color: #1f2937;
+  font-weight: 400;
+}
+
+.prose-ga code::before,
+.prose-ga code::after {
+  content: none;
+}
+
+.prose-ga pre {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 1em 1.25em;
+}
+
+.prose-ga pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.prose-ga ul > li::marker,
+.prose-ga ol > li::marker {
+  color: #6b7280;
+}
+
+.prose-ga img {
+  width: 100%;
+  border-radius: 0;
+  filter: grayscale(1);
+}
+
+.prose-ga hr {
+  border-color: #e5e7eb;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  border-top-width: 1px;
 }

@@ -2,6 +2,8 @@
 import { defineConfig } from 'astro/config';
 import vercel from '@astrojs/vercel';
 import sitemap from '@astrojs/sitemap';
+import react from '@astrojs/react';
+import keystatic from '@keystatic/astro';
 
 import tailwindcss from '@tailwindcss/vite';
 
@@ -9,7 +11,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://gewinnarchitekt.ch',
   adapter: vercel(),
-  integrations: [sitemap()],
+  integrations: [react(), keystatic(), sitemap()],
   redirects: {
     '/sitemap.xml': '/sitemap-index.xml',
     '/so-arbeite-ich': '/herangehensweise',
