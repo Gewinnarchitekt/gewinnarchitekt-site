@@ -88,9 +88,9 @@
       <button
         type="submit"
         id="submit-btn"
-        class="inline-flex items-center justify-center bg-[#16a34a] text-white text-[14px] font-medium px-6 py-4 hover:bg-[#15803d] transition-colors cursor-pointer rounded-none disabled:bg-[#6b7280] disabled:cursor-not-allowed w-full sm:w-auto"
+        class="inline-flex items-center justify-center bg-[#1f2937] text-white text-[14px] font-medium px-6 py-4 hover:bg-[#374151] transition-colors cursor-pointer rounded-none disabled:bg-[#6b7280] disabled:cursor-not-allowed w-full sm:w-auto"
       >
-        Senden
+        oder Nachricht senden
       </button>
 
       <p class="text-[12px] leading-relaxed text-[#6b7280]">
@@ -109,7 +109,7 @@
   if (form && submitBtn) {
     // Capture the button's resting label once, so the "Senden …" submitting
     // label can always be restored after an error.
-    const originalLabel = (submitBtn.textContent || 'Senden').trim();
+    const originalLabel = (submitBtn.textContent || 'oder Nachricht senden').trim();
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
