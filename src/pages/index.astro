@@ -31,8 +31,8 @@ const optimizedBg = await getImage({ src: heroBg, width: 1200, format: 'webp', q
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Gewinnarchitekt | Preis & Profitarchitektur für KMU</title>
-		<meta name="description" content="Beratung für Pricing und Profitarchitektur in der Schweiz. Wertbasierte Preislogik, Finanzmodellierung und Controlling für Schweizer Startups und KMU." />
+		<title>Gewinnarchitekt | Pricing & Profitarchitektur</title>
+		<meta name="description" content="Beratung für Pricing und Profitarchitektur in der Schweiz. Wertbasierte Preislogik, Finanzmodellierung und Controlling für Startups und KMU mit digitalen Produkten." />
 		<link rel="canonical" href={canonicalURL} />
 		<link rel="preload" href={optimizedBg.src} as="image" type="image/webp" />
 		<SiteSchema />
@@ -57,8 +57,8 @@ const optimizedBg = await getImage({ src: heroBg, width: 1200, format: 'webp', q
 		<Nav />
 		<Hero bgUrl={optimizedBg.src} />
 		<Diagnose />
-		<Zielpublikum />
 		<Leistungen />
+		<Zielpublikum />
 		<Profil />
 		<Footer />
 	</body>

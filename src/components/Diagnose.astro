@@ -1,39 +1,28 @@
 ---
 // src/components/Diagnose.astro
 
-const row1 = [
+const columns = [
   {
-    title: 'Gewinn hält nicht mit dem Umsatz Schritt',
-    body: 'Der Umsatz wächst spürbar, das Bankkonto aber nicht. Niemand weiss, wo Marge verloren geht.'
+    label: "01 · Unsichtbare Gewinnfresser",
+    question: "Wo bleibt die Marge?",
+    situation: "Der Umsatz wächst oder bleibt stabil, aber am Ende des Monats bleibt spürbar zu wenig Gewinn übrig.",
+    ursache: "Unklare Kunden- und Produktprofitabilität, versteckte Rabatte und ineffiziente Kostenstrukturen.",
+    hauptgedanke: "«Ich verkaufe viel, aber ich weiss nicht genau, welche Produkte und Kunden mein Geschäft wirklich tragen.»"
   },
   {
-    title: 'Unklare Produkteprofitabilität',
-    body: 'Das Portfolio rechnet sich als Ganzes, aber es fehlt Transparenz über die Profitabilität einzelner Produkte.'
+    label: "02 · Unter Wert verkauft",
+    question: "Stimmt der Preis?",
+    situation: "Preise basieren auf Bauchgefühl oder Konkurrenzvergleichen statt auf echtem Gegenwert und Zahlungsbereitschaft.",
+    ursache: "Fehlende Preis- und Angebotsstruktur, unstrukturierte Rabattlogik und Scheu vor Preisanpassungen.",
+    hauptgedanke: "«Wenn ich die Preise erhöhe, laufen mir die Kunden weg. Also bleibe ich lieber zu günstig.»"
   },
   {
-    title: 'Lücken zwischen Listenpreis und Geschäftserlös',
-    body: 'Sonderkonditionen und Zugeständnisse wirken einzeln klein, kosten in Summe aber ein Vermögen.'
+    label: "03 · Entscheiden im Blindflug",
+    question: "Rechnet sich das?",
+    situation: "Strategische Entscheide zu neuen Produkten, Rabatten oder Wachstumsschritten fallen ohne verlässliches Finanzmodell.",
+    ursache: "Fehlendes Reporting, keine Szenarioanalysen und unklare Kennzahlen im Alltag.",
+    hauptgedanke: "«Ich hoffe, dass sich die Investition rechnet, aber eine fundierte Modellierung habe ich dafür nicht.»"
   }
-];
-
-const row2 = [
-  {
-    title: 'Angebote verkaufen sich unter den Erwartungen',
-    body: 'Das Produkt ist stark, aber die Kunden verstehen den Mehrwert nicht. Der Preis wird als Hindernis wahrgenommen.'
-  },
-  {
-    title: 'Entscheidungen ohne Datengrundlage',
-    body: 'Investitions- oder Produktentscheide werden aufgrund von Intuition gefällt. Es fehlen durchgerechnete Szenarien als Entscheidungshilfe.'
-  },
-  {
-    title: 'Geschäftsmodell stösst an Grenzen',
-    body: 'Bisherige Erfolgsrezepte funktionieren nicht mehr und das Geschäft ist zu wenig auf den Markt ausgerichtet.'
-  }
-];
-
-const groups = [
-  { label: 'Vergangenheit', cards: row1 },
-  { label: 'Zukunft', cards: row2 }
 ];
 ---
 
@@ -41,33 +30,39 @@ const groups = [
   <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-20 lg:py-28">
     <div class="grid grid-cols-12 gap-6 lg:gap-10 mb-16">
       <div class="col-span-12 lg:col-span-2">
-        <span class="label-eyebrow">Diagnose</span>
+        <span class="label-eyebrow">DIAGNOSE</span>
       </div>
       <div class="col-span-12 lg:col-span-10">
         <h2 class="font-serif-display text-[#1f2937] font-light leading-[1.05] text-[36px] sm:text-[48px] lg:text-[60px]">
           Gewinne optimieren heisst <span class="text-[#16a34a]">Schwachstellen eliminieren</span>.
         </h2>
         <p class="mt-6 max-w-[700px] text-[16px] leading-[1.6] text-[#6b7280]">
-          Für KMU mit 5 mCHF bis 50 mCHF Umsatz, die sich in einer der folgenden Situationen wiederfinden:
+          Für Startups und KMU mit digitalen Produkten, die sich oftmals die folgenden Fragen stellen:
         </p>
       </div>
     </div>
 
-    {groups.map((group, i) => (
-      <div class={`${i > 0 ? 'mt-8' : ''} grid grid-cols-1 lg:grid-cols-3 gap-5`}>
-        {group.cards.map((c) => (
-          <article class="bg-white border border-[#e5e7eb] rounded-[6px] p-8 lg:p-10 flex flex-col">
-            <h3 class="font-serif-display text-[#1f2937] text-[22px] lg:text-[24px] leading-tight mb-4">
-              {c.title}
-            </h3>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-y-0">
+      {columns.map((c) => (
+        <article class="bg-white border border-[#e5e7eb] rounded-[6px] p-8 lg:p-10 flex flex-col lg:grid lg:grid-rows-subgrid lg:row-span-5">
+          <span class="label-eyebrow mb-6 block">{c.label}</span>
+          <h3 class="font-serif-display text-[#1f2937] text-[28px] lg:text-[32px] leading-tight mb-8">
+            {c.question}
+          </h3>
+          <p class="text-[15px] leading-[1.65] text-[#6b7280] mb-4">
+            <span class="font-bold text-[#1f2937]">Die Situation:</span> {c.situation}
+          </p>
+          <p class="text-[15px] leading-[1.65] text-[#6b7280] mb-8">
+            <span class="font-bold text-[#1f2937]">Die Ursache:</span> {c.ursache}
+          </p>
+          <div class="pt-6 border-l border-[#e5e7eb] pl-4">
             <p class="text-[15px] leading-[1.65] text-[#6b7280]">
-              {c.body}
+              <span class="font-bold text-[#1f2937] block mb-1">Hauptgedanke:</span>
+              <span class="italic">{c.hauptgedanke}</span>
             </p>
-          </article>
-        ))}
-      </div>
-    ))}
+          </div>
+        </article>
+      ))}
+    </div>
   </div>
 </section>
-
-

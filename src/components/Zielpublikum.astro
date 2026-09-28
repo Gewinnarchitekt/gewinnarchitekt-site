@@ -2,88 +2,83 @@
 // src/components/Zielpublikum.astro
 import { Image } from 'astro:assets';
 import imgMarktorientiert from '../assets/marktorientiert-picture.png';
-import imgConcreteJunction from '../assets/concrete-junction.png';
-
-const cards = [
-  {
-    title: "Marktorientiert",
-    person: "Kommerzielle Führung in Geschäftsleitung oder mit P&L-Verantwortung. Liest den Markt sicher und entscheidet nah am Geschäft.",
-    need: "Belastbare Entscheidungsgrundlagen, die das eigene Marktgespür quantitativ untermauern.",
-    ichBringe: "Ich bringe durchgerechnete Szenarien, saubere Margenherleitungen und Sensitivitäten, die zeigen, ab wann eine Entscheidung kippt.",
-    exclusion: "Weniger passend, wenn Seniorität schwerer wiegt als die Herleitung.",
-    image: imgMarktorientiert,
-    alt: "Architekturaufnahme in Sichtbeton",
-  },
-  {
-    title: "Finanzorientiert",
-    person: "Verantwortet die Zahlen als Geschäftsführer, CFO oder im externen Finanzmandat. Beherrscht die Berechnungen und plant strukturiert.",
-    need: "Markt- und kundenorientierte Datengrundlagen, um die interne Finanzsicht um die Marktperspektive zu ergänzen.",
-    ichBringe: "Ich bringe durchdachte Preismodelle, belegte Zahlungsbereitschaften und Wettbewerbsvergleiche, welche den Annahmen die nötige Substanz geben.",
-    exclusion: "Weniger passend, wenn die interne Buchhaltung als die einzige Wahrheit betrachtet wird.",
-    image: imgConcreteJunction,
-    alt: "Sichtbeton-Knotenpunkt",
-  },
-];
 ---
 
 <section id="zielpublikum" class="bg-white border-b border-[#e5e7eb]">
   <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-20 lg:py-28">
     <div class="grid grid-cols-12 gap-6 lg:gap-10 mb-16">
       <div class="col-span-12 lg:col-span-2">
-        <span class="label-eyebrow">Zielpublikum</span>
+        <span class="label-eyebrow">ZIELPUBLIKUM</span>
       </div>
       <div class="col-span-12 lg:col-span-10">
-        <h2
-          class="font-serif-display text-[#1f2937] font-light leading-[1.05] text-[36px] sm:text-[48px] lg:text-[60px]"
-        >
-          Ich arbeite für <span class="text-[#16a34a]">zwei Schlüsselrollen</span> mit dem gleichen Ziel.
+        <h2 class="font-serif-display text-[#1f2937] font-light leading-[1.05] text-[36px] sm:text-[48px] lg:text-[60px]">
+          Für alle, die Umsatz und Marge verantworten.
         </h2>
         <p class="mt-6 max-w-[700px] text-[16px] leading-[1.6] text-[#6b7280]">
-          Die gesamtheitliche Betrachtung von Marketing- und Finanzaktivitäten erschliesst zusätzliches Gewinnpotenzial.
+          Sie lesen den Markt sicher und entscheiden nah am Geschäft. Was Ihnen fehlt, ist die quantitative Grundlage für Ihr Marktgespür.
         </p>
       </div>
     </div>
 
-    {/* Cards with centred triangle overlay (desktop) */}
-    <div class="relative">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
-        {
-          cards.map((c) => (
-            <article class="bg-white border border-[#e5e7eb] rounded-[6px] flex flex-col overflow-hidden">
-              <div class="relative w-full h-[160px] sm:h-[200px] bg-[#f3f4f6] border-b border-[#e5e7eb] overflow-hidden card-image-strip">
-                <Image
-                  src={c.image}
-                  alt={c.alt}
-                  widths={[400, 600, 800]}
-                  sizes="(max-width: 1024px) 90vw, 40vw"
-                  class="w-full h-full object-cover object-center block filter grayscale contrast-[1.03]"
-                />
-              </div>
-              <div class="p-8 lg:p-10 flex flex-col flex-1">
-                <h3 class="font-serif-display text-[#1f2937] text-[22px] lg:text-[24px] leading-tight mb-6">
-                  {c.title}
-                </h3>
-                <div class="space-y-4">
-                  <p class="text-[15px] leading-[1.65] text-[#6b7280]">
-                    <span class="font-medium text-[#1f2937]">Person:</span> {c.person}
-                  </p>
-                  <p class="text-[15px] leading-[1.65] text-[#6b7280]">
-                    <span class="font-medium text-[#1f2937]">Bedürfnis:</span> {c.need}
-                  </p>
-                  <p class="text-[15px] leading-[1.65] text-[#6b7280]">
-                    <span class="text-[#16a34a] font-bold">Ich bringe</span>{c.ichBringe.slice("Ich bringe".length)}
-                  </p>
-                  <p class="text-[15px] leading-[1.65] text-[#6b7280]">
-                    <span class="font-medium text-[#1f2937]">Ausschluss:</span> {c.exclusion}
-                  </p>
-                </div>
-              </div>
-            </article>
-          ))
-        }
+    <div class="bg-white border border-[#e5e7eb] rounded-[6px] overflow-hidden">
+      <div class="relative w-full h-[200px] sm:h-[280px] bg-[#f3f4f6] border-b border-[#e5e7eb] overflow-hidden card-image-strip">
+        <Image
+          src={imgMarktorientiert}
+          alt="Architekturaufnahme in Sichtbeton"
+          widths={[400, 800, 1200]}
+          sizes="(max-width: 1280px) 90vw, 1200px"
+          class="w-full h-full object-cover object-center block filter grayscale contrast-[1.03]"
+        />
       </div>
-
-      <div class="mt-12 flex justify-center">
+      
+      <div class="p-8 lg:p-12 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+        <div>
+          <h3 class="font-serif-display text-[#1f2937] text-[20px] lg:text-[22px] leading-tight mb-6">
+            Was Ihnen eine Zusammenarbeit nicht bringen wird
+          </h3>
+          <ul class="space-y-3">
+            <li class="flex items-start text-[15px] leading-[1.65] text-[#6b7280]">
+              <span class="mr-3 text-[#9ca3af] mt-[2px]">—</span>
+              <span>Einen Foliensatz, der in der Schublade landet.</span>
+            </li>
+            <li class="flex items-start text-[15px] leading-[1.65] text-[#6b7280]">
+              <span class="mr-3 text-[#9ca3af] mt-[2px]">—</span>
+              <span>Eine Standardlösung aus dem Beratungsbaukasten.</span>
+            </li>
+            <li class="flex items-start text-[15px] leading-[1.65] text-[#6b7280]">
+              <span class="mr-3 text-[#9ca3af] mt-[2px]">—</span>
+              <span>Preiserhöhungen um jeden Preis, die Ihre Kunden vergraulen.</span>
+            </li>
+            <li class="flex items-start text-[15px] leading-[1.65] text-[#6b7280]">
+              <span class="mr-3 text-[#9ca3af] mt-[2px]">—</span>
+              <span>Ein Team von Junior-Beratern. Sie arbeiten direkt mit mir.</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="font-serif-display text-[#1f2937] text-[20px] lg:text-[22px] leading-tight mb-6">
+            Was Sie von einer Zusammenarbeit erwarten können
+          </h3>
+          <ul class="space-y-3">
+            <li class="flex items-start text-[15px] leading-[1.65] text-[#6b7280]">
+              <span class="mr-3 text-[#9ca3af] mt-[2px]">—</span>
+              <span>Empfehlungen mit beziffertem Effekt auf Ihren Gewinn, in Franken.</span>
+            </li>
+            <li class="flex items-start text-[15px] leading-[1.65] text-[#6b7280]">
+              <span class="mr-3 text-[#9ca3af] mt-[2px]">—</span>
+              <span>Durchgerechnete Szenarien und Sensitivitäten, die zeigen, ab wann eine Entscheidung kippt.</span>
+            </li>
+            <li class="flex items-start text-[15px] leading-[1.65] text-[#6b7280]">
+              <span class="mr-3 text-[#9ca3af] mt-[2px]">—</span>
+              <span>Analysen auf Ihren eigenen Daten statt Benchmarks aus fremden Branchen.</span>
+            </li>
+            <li class="flex items-start text-[15px] leading-[1.65] text-[#6b7280]">
+              <span class="mr-3 text-[#9ca3af] mt-[2px]">—</span>
+              <span>Massnahmen, die Ihr Team nach der Zusammenarbeit selbst weiterführen kann.</span>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
