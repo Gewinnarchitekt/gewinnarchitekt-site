@@ -14,7 +14,14 @@ export default defineConfig({
   integrations: [react(), keystatic(), sitemap()],
   redirects: {
     '/sitemap.xml': '/sitemap-index.xml',
-    '/so-arbeite-ich': '/herangehensweise',
+    '/so-arbeite-ich': {
+      status: 301,
+      destination: '/angebot'
+    },
+    '/herangehensweise': {
+      status: 301,
+      destination: '/angebot'
+    },
     '/leistungsseite': {
       status: 301,
       destination: '/angebot'
