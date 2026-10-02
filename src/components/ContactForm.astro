@@ -128,11 +128,24 @@
 
       // PostHog identification & event capture
       const email = (payload.email || '').trim();
+      const name = (payload.name || '').trim();
+      const firmenname = (payload.firmenname || '').trim();
       const ph = typeof window !== 'undefined' ? (window as any).posthog : undefined;
       if (ph && email) {
-        ph.identify(email, { email });
+        const personProperties: Record<string, string> = { email };
+        if (name) personProperties.name = name;
+        if (firmenname) {
+          personProperties.company = firmenname;
+          personProperties.firmenname = firmenname;
+        }
+
+        ph.identify(email, personProperties);
         console.log('[PostHog] Identified email:', email, 'distinct_id:', ph.get_distinct_id ? ph.get_distinct_id() : undefined);
-        ph.capture('contact_form_submitted', { email });
+        ph.capture('contact_form_submitted', {
+          email,
+          ...(name ? { name } : {}),
+          ...(firmenname ? { firmenname, company: firmenname } : {}),
+        });
       }
 
       // Enter the submitting state — this only lives until the response resolves.
