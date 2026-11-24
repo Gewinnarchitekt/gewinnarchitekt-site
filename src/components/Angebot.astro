@@ -1,8 +1,7 @@
 ---
 // src/components/Angebot.astro
-// Angebots-Karten (Gewinndiagnose, Gewinnoptimierung, Gewinnsteuerung).
-// Enthält Eyebrow, Headline, Subline und das Karten-Grid.
-// CTA wird bewusst NICHT mitgeliefert — die einbindende Seite setzt ihn selbst.
+// Angebots-Karten (Gewinnmodul, Gewinnoptimierung, Gewinnsteuerung).
+// Enthält Eyebrow, Headline, Subline, Karten-Grid, Kleingedrucktes und CTA.
 ---
 
 <section id="Angebot" class="bg-[#f9fafb] border-b border-[#e5e7eb]">
@@ -16,7 +15,7 @@
         <h2
           class="font-serif-display text-[#1f2937] font-light leading-[1.05] text-[36px] sm:text-[48px] lg:text-[60px]"
         >
-          Je nach Ausgangslage die passende Zusammenarbeit.
+          Auf Ihre Bedürfnisse ausgerichtet.
         </h2>
         <p class="mt-4 max-w-[700px] text-[15px] leading-[1.6] text-[#6b7280]">
           Ob einmaliges Projekt oder laufende Begleitung, Sie wählen die für Sie passende Art der Zusammenarbeit.
@@ -29,75 +28,90 @@
 
       <!-- Karte 1 -->
       <article class="angebot-card angebot-card--featured lg:col-span-2 bg-[#f3f6f4] border border-[#e5e7eb] border-t-4 border-t-[#16a34a] p-8 lg:p-10 flex flex-col">
-        <div class="flex items-center gap-3 mb-4">
-          <h3 class="angebot-card__title font-serif-display text-[#1f2937] text-[22px] lg:text-[24px] leading-tight">
-            Gewinnbooster
-          </h3>
-        </div>
-        <!-- Type line instead of price -->
-        <div class="flex items-baseline gap-3 mb-5">
-          <p class="angebot-card__price text-[20px] lg:text-[22px] font-semibold text-[#1f2937]">
-            ab CHF 5'000
+        <h3 class="angebot-card__title font-serif-display text-[#1f2937] text-[22px] lg:text-[24px] leading-tight mb-3">
+          Gewinnmodul
+        </h3>
+        <p class="angebot-card__promise text-[14px] font-medium text-[#16a34a] mb-5">
+          Klare, auf Ihre Bedürfnisse ausgerichtete, Ergebnisse
+        </p>
+        <div class="mb-5">
+          <p class="angebot-card__price text-[20px] lg:text-[22px] font-semibold text-[#1f2937] leading-snug">
+            CHF 4'900 pro Modul
           </p>
-          <span class="angebot-card__freq text-[12px] text-[#9ca3af]">einmalig</span>
+          <p class="angebot-card__secondary text-[13px] lg:text-[14px] leading-[1.5] text-[#6b7280] mt-1">
+            Alle sechs Module: CHF 24'500
+          </p>
         </div>
-        <!-- Outcome -->
-        <p class="angebot-card__promise text-[14px] font-medium text-[#16a34a] mb-4">
-          Sie erhalten konkret umsetzbare Massnahmen mit einem klar bezifferten Gewinnpotenzial.
-        </p>
-        <!-- List intro & Detail -->
-        <p class="angebot-card__detail text-[14px] lg:text-[15px] leading-[1.6] text-[#1f2937] mb-4">
-          Gewinntreiberbaum · Deckungsbeitragsrechnung · Preiswasserfall-Analyse · Preismodellüberprüfung · Massnahmenplan · Business Cases · Steuerungscockpit
-        </p>
-        <!-- Fit line -->
-        <p class="angebot-card__fit text-[13px] leading-[1.5] text-[#9ca3af] mt-auto">
-          Für einen planbaren ROI von 10:1
+        <p class="angebot-card__fit text-[13px] leading-[1.55] text-[#6b7280] mt-auto pt-4 border-t border-[#e5e7eb]">
+          Die Module des P·R·O·F·I·T Frameworks, einzeln oder als Gesamtpaket.
         </p>
       </article>
 
       <!-- Karte 2 -->
       <article class="angebot-card bg-white border border-[#e5e7eb] p-8 lg:p-10 flex flex-col">
-        <h3 class="angebot-card__title font-serif-display text-[#1f2937] text-[22px] lg:text-[24px] leading-tight mb-4">
+        <h3 class="angebot-card__title font-serif-display text-[#1f2937] text-[22px] lg:text-[24px] leading-tight mb-3">
           Gewinnoptimierung
         </h3>
-        <div class="flex items-baseline gap-3 mb-5">
-          <p class="angebot-card__price text-[20px] lg:text-[22px] font-semibold text-[#1f2937]">
-            ab CHF 1'900
+        <p class="angebot-card__promise text-[14px] font-medium text-[#16a34a] mb-5">
+          Kontinuierliche Kontrolle auch nach Projektabschluss.
+        </p>
+        <div class="mb-5">
+          <p class="angebot-card__price text-[20px] lg:text-[22px] font-semibold text-[#1f2937] leading-snug lg:whitespace-nowrap">
+            1&nbsp;% des Monatsumsatzes
           </p>
-          <span class="angebot-card__freq text-[12px] text-[#9ca3af]">pro Monat</span>
+          <p class="angebot-card__secondary text-[13px] lg:text-[14px] leading-[1.5] text-[#6b7280] mt-2.5 lg:whitespace-nowrap">
+            Maximal CHF&nbsp;3'700 pro Monat
+          </p>
+          <p class="angebot-card__secondary text-[13px] lg:text-[14px] leading-[1.5] text-[#6b7280] mt-1.5">
+            Einmaliges Setup: CHF&nbsp;2'900
+          </p>
         </div>
-        <p class="angebot-card__promise text-[14px] font-medium text-[#16a34a] mb-4">
-          Kontinuierliche Verbesserung Ihrer Profitabilität.
-        </p>
-        <p class="angebot-card__detail text-[14px] lg:text-[15px] leading-[1.6] text-[#1f2937] mb-4">
-          Erfolgstracking · Aktualisierung von Modellen und Dashboards · Optimierungsmassnahmen · Monatliche Abstimmung
-        </p>
-        <p class="angebot-card__fit text-[13px] leading-[1.5] text-[#9ca3af] mt-auto">
-          Für das Geschäft im Normalbetrieb.
+        <p class="angebot-card__fit text-[13px] leading-[1.55] text-[#6b7280] mt-auto pt-4 border-t border-[#e5e7eb]">
+          Monatliche Abstimmung · laufende Aktualisierung von Modellen und Dashboards · Erfolgskontrolle laufender Massnahmen
         </p>
       </article>
 
       <!-- Karte 3 -->
       <article class="angebot-card bg-white border border-[#e5e7eb] p-8 lg:p-10 flex flex-col">
-        <h3 class="angebot-card__title font-serif-display text-[#1f2937] text-[22px] lg:text-[24px] leading-tight mb-4">
+        <h3 class="angebot-card__title font-serif-display text-[#1f2937] text-[22px] lg:text-[24px] leading-tight mb-3">
           Gewinnsteuerung
         </h3>
-        <div class="flex items-baseline gap-3 mb-5">
-          <p class="angebot-card__price text-[20px] lg:text-[22px] font-semibold text-[#1f2937]">
-            ab CHF 4'900
+        <p class="angebot-card__promise text-[14px] font-medium text-[#16a34a] mb-5">
+          Proaktive Planung auch nach Projektabschluss.
+        </p>
+        <div class="mb-5">
+          <p class="angebot-card__price text-[20px] lg:text-[22px] font-semibold text-[#1f2937] leading-snug lg:whitespace-nowrap">
+            2&nbsp;% des Monatsumsatzes
           </p>
-          <span class="angebot-card__freq text-[12px] text-[#9ca3af]">pro Monat</span>
+          <p class="angebot-card__secondary text-[13px] lg:text-[14px] leading-[1.5] text-[#6b7280] mt-2.5 lg:whitespace-nowrap">
+            Maximal CHF&nbsp;7'400 pro Monat
+          </p>
+          <p class="angebot-card__secondary text-[13px] lg:text-[14px] leading-[1.5] text-[#6b7280] mt-1.5">
+            Einmaliges Setup: CHF&nbsp;4'900
+          </p>
         </div>
-        <p class="angebot-card__promise text-[14px] font-medium text-[#16a34a] mb-4">
-          Proaktive Steuerung Ihres Wachstums.
-        </p>
-        <p class="angebot-card__detail text-[14px] lg:text-[15px] leading-[1.6] text-[#1f2937] mb-4">
-          Tätigkeiten aus Gewinnoptimierung · Business Cases · Szenarioanalysen · Entscheidungsworkshops · Wöchentliche Abstimmung
-        </p>
-        <p class="angebot-card__fit text-[13px] leading-[1.5] text-[#9ca3af] mt-auto">
-          Für intensive Phasen, in denen sich viel bewegt.
+        <p class="angebot-card__fit text-[13px] leading-[1.55] text-[#6b7280] mt-auto pt-4 border-t border-[#e5e7eb]">
+          Wöchentliche Abstimmung · Umsetzung zentraler Pricing-Projekte · alle Leistungen der Gewinnoptimierung
         </p>
       </article>
+    </div>
+
+    <p class="mt-5 text-[13px] leading-[1.5] text-[#6b7280]">
+      Berechnungsbasis: Umsatz des abgelaufenen Monats. Monatlich kündbar.
+    </p>
+
+    <div class="mt-8">
+      <a
+        href="https://tidycal.com/gewinnarchitekt/kennenlernen"
+        target="_blank"
+        rel="noopener"
+        data-ph-event="cta_clicked"
+        data-ph-location="angebot_cards"
+        class="inline-flex items-center gap-2 bg-[#16a34a] text-white text-[14px] font-medium px-6 py-4 hover:bg-[#15803d] transition-colors w-full sm:w-auto justify-center"
+      >
+        Erstgespräch buchen: 20 Minuten, kostenlos
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+      </a>
     </div>
   </div>
 </section>

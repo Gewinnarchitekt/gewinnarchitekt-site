@@ -1,29 +1,41 @@
 ---
 // src/components/Ablauf.astro
-const ablaufSteps = [
+const profitSteps = [
   {
-    num: "01",
-    title: "Analyse",
-    subtitle: "Klarheit über Ihre Gewinnstruktur.",
-    text: "Ihre eigenen Zahlen sind der Ausgangspunkt. Eine umfassende Analyse von Kundendaten, Finanzkennzahlen und Angebotsstruktur zeigt auf, wo das grösste ungenutzte Erlöspotential liegt. Darauf aufbauend  erarbeite ich Transparenz über Kundensegmente, Produkteprofitabilität und Kanalattraktivität.",
+    letter: "P",
+    title: "Portfolio",
+    question: "Wo verdienen Sie Geld, und wo verlieren Sie es?",
+    keywords: "Deckungsbeiträge nach Produkt, Kunde und Transaktion · Gewinntreiberbaum · Preiswasserfall",
   },
   {
-    num: "02",
-    title: "Hypothese",
-    subtitle: "Die Wirkung beurteilen können.",
-    text: "Wir erarbeiten verschiedene Massnahmen und bewerten mithilfe durchgerechneter Szenarien und Sensitivitätsanalysen, wie empfindlich Ihr Gewinn auf diese  reagieren wird. Sie erkennen die Auswirkungen einzelner Entscheidungen und die zugrundeliegenden Risiken.",
+    letter: "R",
+    title: "Recherche",
+    question: "Was sind Ihre Kunden wirklich bereit zu zahlen?",
+    keywords: "Kundeninterviews · Zahlungsbereitschaft · Wettbewerbsvergleiche",
   },
   {
-    num: "03",
-    title: "Validierung",
-    subtitle: "Die kritischen Annahmen absichern.",
-    text: "In Kundengesprächen holen wir Feedback zu den wichtigsten Annahmen und mithilfe quantitativer Umfragen ermöglichen wir eine klare Herleitung über das zu erwartende Gewinnpotenzial. Die ursprünglichen Hypothesen lassen sich nun mit klaren Zahlen hinterlegen.",
+    letter: "O",
+    title: "Offer",
+    question: "Angebote, die ihren Preis rechtfertigen.",
+    keywords: "Pakete · Preismetrik · Preisniveau · Rabattlogik",
   },
   {
-    num: "04",
-    title: "Umsetzung",
-    subtitle: "Zusätzlichen Gewinn abschöpfen.",
-    text: "Aus den validierten Entscheidungen entsteht ein priorisierter Massnahmenplan. Bei Bedarf begleite ich die Umsetzung, überwache die Wirkung und plane mit rollierendem Forecast. So bleibt Ihr Gewinn jederzeit sichtbar und steuerbar.",
+    letter: "F",
+    title: "Finanzplanung",
+    question: "Chancen und Risiken bewerten können.",
+    keywords: "Business Cases · Szenarien · Sensitivitäten",
+  },
+  {
+    letter: "I",
+    title: "Implementierung",
+    question: "Vom Konzept in den Markt.",
+    keywords: "Massnahmenpläne · Kommunikationskonzepte · Strukturen und Prozesse",
+  },
+  {
+    letter: "T",
+    title: "Tracking",
+    question: "Kontinuierlich die Kontrolle behalten.",
+    keywords: "Steuerungscockpit · Kennzahlen · Abweichungsanalyse",
   },
 ];
 ---
@@ -36,43 +48,31 @@ const ablaufSteps = [
       </div>
       <div class="col-span-12 lg:col-span-10">
         <h2 class="font-serif-display text-[#1f2937] font-light leading-[1.05] text-[36px] sm:text-[48px] lg:text-[60px]">
-          Vom Befund zum zusätzlichen Gewinn.
+          Das P·R·O·F·I·T Framework
         </h2>
+        <p class="mt-6 max-w-[700px] text-[16px] leading-[1.6] text-[#6b7280]">
+          Sechs Module, einzeln oder kombiniert buchbar. Jedes mit einem klar definierten Ergebnis.
+        </p>
       </div>
     </div>
 
-    <div class="ablauf-steps max-w-[720px] mx-auto">
-      <div class="flex flex-col">
-        {ablaufSteps.map((step, i) => (
-          <div class="relative pb-8 last:pb-0 pl-10 sm:pl-14">
-            {/* Upper rail segment */}
-            {i > 0 && (
-              <div class="absolute left-[11px] sm:left-[15px] top-0 h-[36px] sm:h-[44px] w-[1px] bg-[#e5e7eb]" aria-hidden="true"></div>
-            )}
-            {/* Lower rail segment */}
-            {i < ablaufSteps.length - 1 && (
-              <div class="absolute left-[11px] sm:left-[15px] top-[60px] sm:top-[68px] bottom-0 w-[1px] bg-[#e5e7eb]" aria-hidden="true"></div>
-            )}
-            {/* Node marker */}
-            <div class="absolute left-0 sm:left-1 top-[36px] sm:top-[44px] w-6 h-6 rounded-full border border-[#d1d5db] bg-white flex items-center justify-center shadow-sm" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-[#4b5563]">
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <polyline points="19 12 12 19 5 12"></polyline>
-              </svg>
-            </div>
-
-            <article class="bg-white border border-[#e5e7eb] rounded-[6px] p-8 lg:p-10 flex flex-col shadow-sm">
-              <span class="label-eyebrow mb-2 block">{step.subtitle}</span>
-              <h3 class="font-serif-display text-[#1f2937] text-[20px] lg:text-[22px] font-semibold leading-tight mb-4">
-                {step.title}
-              </h3>
-              <p class="text-[15px] lg:text-[16px] leading-[1.65] text-[#1f2937]">
-                {step.text}
-              </p>
-            </article>
-          </div>
-        ))}
-      </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      {profitSteps.map((step) => (
+        <article class="bg-white border border-[#e5e7eb] rounded-[6px] p-8 lg:p-10 flex flex-col">
+          <span class="font-serif-display text-[#16a34a] text-[36px] lg:text-[42px] font-light leading-none mb-5 block">
+            {step.letter}
+          </span>
+          <h3 class="font-serif-display text-[#1f2937] text-[20px] lg:text-[22px] font-semibold leading-tight mb-3">
+            {step.title}
+          </h3>
+          <p class="text-[15px] lg:text-[16px] leading-[1.6] text-[#1f2937] mb-6">
+            {step.question}
+          </p>
+          <p class="text-[13px] leading-[1.55] text-[#6b7280] mt-auto pt-4 border-t border-[#e5e7eb]">
+            {step.keywords}
+          </p>
+        </article>
+      ))}
     </div>
   </div>
 </section>

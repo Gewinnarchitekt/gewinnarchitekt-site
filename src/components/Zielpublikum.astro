@@ -21,9 +21,9 @@ import imgMarktorientiert from '../assets/marktorientiert-picture.png';
       </div>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-      {/* Box 1: Ausschluss */}
-      <article class="bg-white border border-[#e5e7eb] rounded-[6px] overflow-hidden flex flex-col">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 lg:gap-y-0">
+      {/* Box 1: Abgrenzung */}
+      <article class="bg-white border border-[#e5e7eb] rounded-[6px] overflow-hidden flex flex-col lg:grid lg:grid-rows-subgrid lg:row-span-7">
         <div class="relative w-full h-[200px] sm:h-[240px] bg-[#f3f4f6] border-b border-[#e5e7eb] overflow-hidden card-image-strip">
           <Image
             src={imgConcreteJunction}
@@ -33,34 +33,46 @@ import imgMarktorientiert from '../assets/marktorientiert-picture.png';
             class="w-full h-full object-cover object-center block filter grayscale contrast-[1.03]"
           />
         </div>
-        <div class="p-8 lg:p-10 flex flex-col flex-1">
-          <span class="label-eyebrow mb-6 block">Ausschluss</span>
+        <div class="p-8 lg:p-10 flex flex-col flex-1 lg:grid lg:grid-rows-subgrid lg:row-span-6">
+          <span class="label-eyebrow mb-6 block">Abgrenzung</span>
           <h3 class="font-serif-display text-[#1f2937] text-[22px] lg:text-[24px] leading-snug mb-6">
-            Was Sie nicht erwarten sollten
+            Wofür andere die bessere Wahl sind
           </h3>
-          <ul class="space-y-4 flex-1">
-            <li class="flex items-start text-[15px] leading-[1.7] text-[#6b7280]">
+          <ul class="flex-1 lg:grid lg:grid-rows-subgrid lg:row-span-4">
+            <li class="flex items-start text-[15px] leading-[1.7] text-[#6b7280] mb-4 last:mb-0">
               <span class="mr-3 text-[#9ca3af] mt-[2px]">–</span>
-              <span><span class="font-bold text-[#1f2937]">Buchhaltung und Jahresabschluss:</span> Ich mache keine Abschlüsse, sondern zeige, welche Zahlen für die Zukunft zählen.</span>
+              <span>
+                <span class="font-bold text-[#1f2937] block">Buchhaltung und Jahresabschluss:</span>
+                Dafür ist Ihr Treuhänder der richtige Partner.
+              </span>
             </li>
-            <li class="flex items-start text-[15px] leading-[1.7] text-[#6b7280]">
+            <li class="flex items-start text-[15px] leading-[1.7] text-[#6b7280] mb-4 last:mb-0">
               <span class="mr-3 text-[#9ca3af] mt-[2px]">–</span>
-              <span><span class="font-bold text-[#1f2937]">Pauschale Preiserhöhungen:</span> Ich erhöhe nicht einfach die Preise, sondern zeige, wo tatsächliches Gewinnpotenzial verborgen liegt.</span>
+              <span>
+                <span class="font-bold text-[#1f2937] block">Operativer Vertrieb:</span>
+                Ihr Verkaufsteam kennt Ihre Kunden am besten.
+              </span>
             </li>
-            <li class="flex items-start text-[15px] leading-[1.7] text-[#6b7280]">
+            <li class="flex items-start text-[15px] leading-[1.7] text-[#6b7280] mb-4 last:mb-0">
               <span class="mr-3 text-[#9ca3af] mt-[2px]">–</span>
-              <span><span class="font-bold text-[#1f2937]">Operativer Vertrieb:</span> Ich verkaufe nicht, sondern liefere die Grundlagen, damit Ihr Team profitabler verkaufen kann.</span>
+              <span>
+                <span class="font-bold text-[#1f2937] block">Social Media und Reichweite:</span>
+                Dafür gibt es spezialisierte Agenturen.
+              </span>
             </li>
-            <li class="flex items-start text-[15px] leading-[1.7] text-[#6b7280]">
+            <li class="flex items-start text-[15px] leading-[1.7] text-[#6b7280] mb-4 last:mb-0">
               <span class="mr-3 text-[#9ca3af] mt-[2px]">–</span>
-              <span><span class="font-bold text-[#1f2937]">Social-Media-Kampagnen und Reichweite:</span> Ich generiere keine Klicks, sondern helfe, Abschlussquote und Marge zu verbessern.</span>
+              <span>
+                <span class="font-bold text-[#1f2937] block">Pauschale Preiserhöhungen:</span>
+                Dafür braucht es keinen Pricing-Spezialisten.
+              </span>
             </li>
           </ul>
         </div>
       </article>
 
       {/* Box 2: Mehrwert */}
-      <article class="bg-white border border-[#e5e7eb] rounded-[6px] overflow-hidden flex flex-col">
+      <article class="bg-white border border-[#e5e7eb] rounded-[6px] overflow-hidden flex flex-col lg:grid lg:grid-rows-subgrid lg:row-span-7">
         <div class="relative w-full h-[200px] sm:h-[240px] bg-[#f3f4f6] border-b border-[#e5e7eb] overflow-hidden card-image-strip">
           <Image
             src={imgMarktorientiert}
@@ -70,27 +82,27 @@ import imgMarktorientiert from '../assets/marktorientiert-picture.png';
             class="w-full h-full object-cover object-center block filter grayscale contrast-[1.03]"
           />
         </div>
-        <div class="p-8 lg:p-10 flex flex-col flex-1">
+        <div class="p-8 lg:p-10 flex flex-col flex-1 lg:grid lg:grid-rows-subgrid lg:row-span-6">
           <span class="label-eyebrow mb-6 block">Mehrwert</span>
           <h3 class="font-serif-display text-[#1f2937] text-[22px] lg:text-[24px] leading-snug mb-6">
-            Was wir gemeinsam erreichen können
+            Wo ich Ihnen helfe
           </h3>
-          <ul class="space-y-4 flex-1">
-            <li class="flex items-start text-[15px] leading-[1.7] text-[#6b7280]">
+          <ul class="flex-1 lg:grid lg:grid-rows-subgrid lg:row-span-4">
+            <li class="flex items-start text-[15px] leading-[1.7] text-[#6b7280] mb-4 last:mb-0">
               <span class="mr-3 text-[#9ca3af] mt-[2px]">–</span>
-              <span><span class="font-bold text-[#1f2937]">Transparenz:</span> Sie wissen genau, welches die profitabelsten Kunden und Angebote sind.</span>
+              <span><span class="font-bold text-[#1f2937]">Transparenz:</span> Sie wissen, welche Angebote, Kunden und Produkte wirklich Geld verdienen, und planen auf dieser Basis.</span>
             </li>
-            <li class="flex items-start text-[15px] leading-[1.7] text-[#6b7280]">
+            <li class="flex items-start text-[15px] leading-[1.7] text-[#6b7280] mb-4 last:mb-0">
               <span class="mr-3 text-[#9ca3af] mt-[2px]">–</span>
-              <span><span class="font-bold text-[#1f2937]">Verkaufsstarke Angebote:</span> Sie gewinnen mehr Abschlüsse, weil Ihre Angebote bestens auf die Kunden ausgerichtet sind.</span>
+              <span><span class="font-bold text-[#1f2937]">Verkaufssicherheit:</span> Ihr Team verkauft mit klarer Preislogik, überzeugenden Argumenten und verbindlichen Rabattregeln.</span>
             </li>
-            <li class="flex items-start text-[15px] leading-[1.7] text-[#6b7280]">
+            <li class="flex items-start text-[15px] leading-[1.7] text-[#6b7280] mb-4 last:mb-0">
               <span class="mr-3 text-[#9ca3af] mt-[2px]">–</span>
-              <span><span class="font-bold text-[#1f2937]">Planungssicherheit für Investitionen:</span> Sie entscheiden aufgrund  fundierter Szenarien und klarer Entscheidungsgrundlagen.</span>
+              <span><span class="font-bold text-[#1f2937]">Mehr Gewinn pro Abschluss:</span> Sie holen mehr aus der bestehenden Nachfrage heraus, mit höheren Abschlussquoten und besseren Margen.</span>
             </li>
-            <li class="flex items-start text-[15px] leading-[1.7] text-[#6b7280]">
+            <li class="flex items-start text-[15px] leading-[1.7] text-[#6b7280] mb-4 last:mb-0">
               <span class="mr-3 text-[#9ca3af] mt-[2px]">–</span>
-              <span><span class="font-bold text-[#1f2937]">Mehr Gewinn:</span> Sie erzielen mehr Gewinn dank eines starken Preismodells, optimierter Preispunkte und sauberer Rabattlogik.</span>
+              <span><span class="font-bold text-[#1f2937]">Planungssicherheit:</span> Jede Preisänderung ist vorher durchgerechnet, mit Szenarien, Sensitivitäten und den Auswirkungen auf Volumen und Marge.</span>
             </li>
           </ul>
         </div>
